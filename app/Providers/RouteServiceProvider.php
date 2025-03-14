@@ -19,7 +19,6 @@ class RouteServiceProvider extends ServiceProvider
      * Bootstrap services.
      */
     public function boot(): void {
-        Log::debug("XXXXXXXXXXX");
         Route::middleware('api')
             ->prefix('/api/test')
             ->namespace('App\Http\Controllers')

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class TestController extends Controller {
 
     public function test() {
-        return "Success";
+        return response()->json(['payload' => 'Success']);
     }
 
 }

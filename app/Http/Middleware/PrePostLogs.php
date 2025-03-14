@@ -15,11 +15,8 @@ class PrePostLogs {
      */
     public function handle(Request $request, Closure $next): Response {
         $this->preRequestLogs($request);
-
         $response = $next($request);
-
         $this->postRequestLogs($response, $request);
-
         return $response;
     }
 
