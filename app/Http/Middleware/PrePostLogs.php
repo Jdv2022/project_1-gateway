@@ -32,11 +32,11 @@ class PrePostLogs {
 
     private function postRequestLogs(Response $response, Request $request): void {
         $status = $response->getStatusCode();
-        Log::info("Request URL: " . $request->fullUrl());
-        Log::info("Response Status: " . $status);
         if($status > 199 && $status < 299) {
             Log::debug("Response data: " . $response->getContent());
         }
+        Log::info("Response Status: " . $status);
+        Log::info("Request URL: " . $request->fullUrl());
         Log::info("<-----------------------------------[Post Controller Process]----------------------------------->");
     }
 
