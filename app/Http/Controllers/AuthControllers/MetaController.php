@@ -32,7 +32,7 @@ class MetaController extends ApiBaseController {
             'frontend_version' => '1.0',
             'cue' => $privateKey
         ];
-        return $this->returnSuccess([], "Startup Data", $metaData);
+        return $this->returnSuccess([], "Follow up Data", $metaData);
     }
 
     private function encryptWithPublicKey() {
