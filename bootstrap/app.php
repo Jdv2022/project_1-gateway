@@ -33,7 +33,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
             $responseData = [
                 'status' => 'Error',
-                'error_type' => 1,
+                'error' => 1,
                 'message' => $e->getMessage(),
                 'payload' => null,
             ];

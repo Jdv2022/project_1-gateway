@@ -29,7 +29,7 @@ class Encrypt {
             throw new Exception("No Payload");
         }
         
-        $normalData = $normalData['payload'];
+        $normalData = json_encode($normalData['payload']);
 
         $key = base64_decode(env('APP_KEY'));
         $iv = random_bytes(16); 

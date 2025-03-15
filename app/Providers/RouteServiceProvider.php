@@ -20,9 +20,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void {
         Route::middleware('api')
-            ->prefix('/api/test')
-            ->namespace('App\Http\Controllers')
-            ->group(base_path('routes/test_api.php'));
+            ->prefix('/api')
+            ->group(base_path('routes/api.php'));
     }
 
 }

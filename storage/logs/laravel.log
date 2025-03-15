@@ -1,0 +1,58 @@
+[2025-03-15 07:47:51] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-15 07:47:51] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-15 07:47:51] local.INFO: Request Method: POST  
+[2025-03-15 07:47:51] local.DEBUG: Request data: {
+    "data": {
+        "NAME": "JOHN",
+        "ID": 1
+    },
+    "timestamp": "2025-03-14T12:00:00Z",
+    "device": "BROWSER",
+    "platform": "WEB",
+    "app_version": "1.0",
+    "language": "en-US",
+    "payload": ""
+}  
+[2025-03-15 07:47:51] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": [],
+    "gateway_version": "1.0",
+    "backend_version": "1.0",
+    "frontend_version": "1.0",
+    "cue": "PtFCB+u4TUqYJ5jjNoiG7vyBsDbeAzncOvKOkWhpUg\/Kh9FYo\/pNonNSPHQ2s10wWMWpRncixr8F38V+8sd6PZnARuhjtqjNLOzDoC1eOjIi5GtJf3B5Q5ctlDgO7mRE6xqfFXGh\/CZI\/yzTAmudf37BwtpzpFwxV8OAqIz5SnFKMCy1iIAR8tUhCWuIlZRTBIHRx0jkLPj4OuG0ppzFKIjrZU\/dQBMgqXyx7AOHxeYMiFcePPQy0+mGl3+EAeIuC3jkGzZBrGyBo73OH1MQrQD65KLDFbPnWF\/iYAr0TrR1o3uhFTlF62wAykdM0mVo4tR0IKQBQx7bn0w5UX7gFQ=="
+}  
+[2025-03-15 07:47:51] local.INFO: Response Status: 200  
+[2025-03-15 07:47:51] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-15 07:47:51] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-15 07:59:14] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-15 07:59:14] local.INFO: Request URL: http://gateway.local/api/cue  
+[2025-03-15 07:59:14] local.INFO: Request Method: POST  
+[2025-03-15 07:59:14] local.DEBUG: Request data: {
+    "data": {
+        "NAME": "JOHN",
+        "ID": 1
+    },
+    "timestamp": "2025-03-14T12:00:00Z",
+    "device": "BROWSER",
+    "platform": "WEB",
+    "app_version": "1.0",
+    "language": "en-US",
+    "payload": ""
+}  
+[2025-03-15 07:59:14] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": [],
+    "gateway_version": "1.0",
+    "backend_version": "1.0",
+    "frontend_version": "1.0",
+    "cue": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuYoFvmjzZDry\/\nc3ooIZDx\/PHfi0IbnCUfOquvDWFleCpVND5WZKCWwhD1SmqrVLE+bmpiBkRkAuKW\nOzesUnqWE1YpQAgx82YCmkECCr92ZjRU7qlBku8Clo43vIYqZg5GWPbd0\/xBaWQj\nNoW9JMLG6z6OCtjOY6JRGpxS9EZL\/YjdHiOPjKjvbqH+703GMZAksulwtvd8PiJ5\nLDkWsGNHQZPznlLUnxOEzisOTI2YMKcMY0MSM6lzZ\/apYTe\/nh1rKGzYYYa10vgz\nV1nBAE41l3yBijVJbC4\/UxhajtLUdxsl6AsG00rSNGwytPXSQo0heUizorHFaYdu\nejFYsWhlAgMBAAECggEABj0yfdRyHF71XFEsm+51gd7npXSVSSkZP+iIt3LeWvPF\nafZ8S3l+sF4hnrEKp3YYgFARgM\/SFxTuV+sm9wSda6yl7sRidq0LZ4juzfyl9H28\nHhTK2\/R+liReUrqtPyuXE6e\/r1iUBCAZ69OZzdZYnKbSfmD\/eETizA2MbcBdGn9Y\nw5T53s57XvgeEra9NzyZh92ri3PUsnsmjAYNBKzu4izSBSyaQkL1zMzqS7zgysX2\nNY5AAm9fcQ1n8ETHf\/gkC8jDTwjir83D\/LBQVn+qjmbIxcbyTGJYATHg5MEf1YsX\ngLt7uxknvfXZvrOuojP0eH8weSo4MUQmbBpgv0xOAQKBgQDErjsAqppI4K9DI5kr\nmc7DwNNS0TyJAvNGvz93eclyyvxy\/8rHowElP625VOhnlLFDGZ\/6enBq+WzWDlSS\n9KfjKug\/s+QvKo1\/uH5PvjPGb1DC8KlK6bpAF3EtR6AkkusDxTui80sMAwS9RhIc\nk2zXDziyaZ\/QGelBYMWYlYtqAQKBgQDi+s83VbD7+NuyubrAKNuTs752Q9XMhpMM\n8o0jI\/2PfpFeo8iwB5YCKrx6tv9fPBtpIefhCufqK5s2shAGuj3uDSzeXSkA45Ny\nssUOZgsOqLuxO\/eW5ZbBsB\/sQqtcizKBB0+igYsn82WKj8lTREi9oyTiySFiuOuM\nv08FYJSWZQKBgEUirZDdZ2BowpLKJ6Rg64J5\/I6nCC1tQRDEV03rHHniinzuF1y3\nmsZ6LNnx08PdS7Y3grmsYmnoBW71GJuTrpQ21+7UkEhYH+cediAXzuFY7b2olQnF\nQPgYhWsSO2O\/1Sa9JOpxtRai1P6na+Rpmh+6tQZaBJhFE24s0yiAoMIBAoGBAJvb\n8bJjizZaujHNy2jsJWsU\/\/IhvovE1PENFNFOg2ynUpcUDFijvOQcCHSTeGQi2Aen\nGpyzanCoJNq4Br034hK2xVqjyeYsXzFhhGLQu0MDpm6baPYbDRxPHnyTgyv3AWUM\naiiCn9V9EvrEpVAiEXj2r\/tydRRfOo\/ZRh\/BJAbpAoGAJBX\/gpCNcRzRXfRmIcob\nYb7UWOzsjmoj6jUdm\/IR43srBHNnDc5rMH485V0z2VukAa1PSl3oL6AYP2lUb42q\ndXEX+oSx18DyNgRnZPCpafP5\/LjvaFJVVSIF5rDYqGlQ0KMaYQdPlfC6VaDl3eh6\nFX873Qvz6HtT35R4VJKtobA=\n-----END PRIVATE KEY-----\n"
+}  
+[2025-03-15 07:59:14] local.INFO: Response Status: 200  
+[2025-03-15 07:59:14] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
+[2025-03-15 07:59:14] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
