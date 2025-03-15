@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Exception;
 use Log;
 
-class EncryptDecrypt {
+class Decrypt {
     /**
      * Handle an incoming request.
      *
@@ -16,33 +16,13 @@ class EncryptDecrypt {
      */
     public function handle(Request $request, Closure $next): Response {
         $request['payload'] = $this->decryptData($request);
-        $response = $next($request);
-        $data['payload'] = $this->encryptData($response);
-        $response->setData($data);
-        return $response;
-    }
-
-    private function encryptData(Response $response): string|object {
-        $normalData = $response->getData(true);
-
-        if(!isset($normalData['payload'])) {
-            return "No Payload";
-        }
-        
-        $normalData = $normalData['payload'];
-
-        $key = base64_decode(env('APP_KEY'));
-        $iv = random_bytes(16); 
-        $ciphertext = openssl_encrypt($normalData, 'AES-256-CBC', $key, 0, $iv);
-        $hmac = hash_hmac('sha256', $ciphertext, $key, true); 
-    
-        return base64_encode($iv . $ciphertext . $hmac); 
+        return $next($request);
     }
 
     private function decryptData(Request $request): string|object {
         $encryptedData = $request->all();
 
-        if (!isset($encryptedData['payload'])) {
+        if(!array_key_exists('payload', $encryptedData)) {
             throw new Exception("EncryptDecrypt 'payload' property does not exist.");
         }
 

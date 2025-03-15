@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Tymon\JWTAuth\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('connected', 'TestController@test');
+
+Route::middleware([Authenticate::class])->group(function () {
+    Route::post('connected', 'TestController@test');
+});
 
