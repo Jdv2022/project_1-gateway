@@ -15,35 +15,49 @@ class Decrypt {
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
-        $request['payload'] = $this->decryptData($request);
-        return $next($request);
-    }
-
-    private function decryptData(Request $request): string|object {
         $encryptedData = $request->all();
 
         if(!array_key_exists('payload', $encryptedData)) {
-            throw new Exception("EncryptDecrypt 'payload' property does not exist.");
+            throw new Exception("Decrypt 'payload' property does not exist.");
         }
+        $request['payload'] = $this->decryptData($encryptedData['payload']);
 
-        $encryptedData = $encryptedData['payload'];
-        $key = base64_decode(env('APP_KEY'));
-        $decoded = base64_decode($encryptedData);
+        return $next($request);
+    }
+
+    function decryptData($encryptedData):array {
+        $appKey = config('app.key');
     
-        if (strlen($decoded) < 48) { 
+        if (!$appKey || strpos($appKey, 'base64:') !== 0) {
+            throw new Exception("Invalid APP_KEY format.");
+        }
+    
+        $key = base64_decode(substr($appKey, 7)); // Convert to binary
+    
+        $decoded = base64_decode($encryptedData);
+        
+        if (strlen($decoded) < 48) { // IV (16) + HMAC (32) + Ciphertext (>= 0)
             throw new Exception("Invalid encrypted data.");
         }
     
-        $iv = substr($decoded, 0, 16); 
-        $hmac = substr($decoded, -32); 
-        $ciphertext = substr($decoded, 16, -32); 
+        $iv = substr($decoded, 0, 16);
+        $ciphertext = substr($decoded, 16, -32);
+        $hmac = substr($decoded, -32);
     
-        $calculatedHmac = hash_hmac('sha256', $ciphertext, $key, true);
-        // if(!hash_equals($calculatedHmac, $hmac)) {
-        //     throw new Exception("HMAC verification failed. Possible tampering.");
-        // }
+        // Validate HMAC
+        $calculatedHmac = hash_hmac('sha256', $iv . $ciphertext, $key, true);
+        if (!hash_equals($hmac, $calculatedHmac)) {
+            throw new Exception("HMAC validation failed.");
+        }
     
-        return openssl_decrypt($ciphertext, 'AES-256-CBC', $key, 0, $iv);
+        $decrypted = openssl_decrypt($ciphertext, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
+    
+        if ($decrypted === false) {
+            throw new Exception("Decryption failed.");
+        }
+    
+        return json_decode($decrypted, true);
     }
+    
     
 }

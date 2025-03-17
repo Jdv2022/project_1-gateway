@@ -17,26 +17,36 @@ class Encrypt {
     public function handle(Request $request, Closure $next): Response {
         $response = $next($request);
         $originalData = $response->getData(true);
-        $originalData['payload'] = $this->encryptData($response);
+        Log::debug("XXXXX");
+        Log::debug($originalData);
+        if(!array_key_exists('payload', $originalData)) {   
+            throw new Exception("Encrypt 'payload' property does not exist.");
+        }
+        $isString = $originalData['payload'];
+        if(!is_string($isString)) {
+            $originalData['payload'] = json_encode($originalData['payload']);
+        }
+        $originalData['payload'] = $this->encryptData($originalData['payload']);
         $response->setData($originalData);
         return $response;
     }
 
-    private function encryptData(Response $response): string|object {
-        $normalData = $response->getData(true);
-
-        if(!array_key_exists('payload', $normalData)) {
-            throw new Exception("No Payload");
-        }
-        
-        $normalData = json_encode($normalData['payload']);
-
-        $key = base64_decode(env('APP_KEY'));
-        $iv = random_bytes(16); 
-        $ciphertext = openssl_encrypt($normalData, 'AES-256-CBC', $key, 0, $iv);
-        $hmac = hash_hmac('sha256', $ciphertext, $key, true); 
+    function encryptData($data):string {
+        $appKey = config('app.key');
     
-        return base64_encode($iv . $ciphertext . $hmac); 
+        if (!$appKey || strpos($appKey, 'base64:') !== 0) {
+            throw new Exception("Invalid APP_KEY format.");
+        }
+    
+        $key = base64_decode(substr($appKey, 7)); // Convert to binary
+    
+        $iv = random_bytes(16); // Generate random IV
+
+        $ciphertext = openssl_encrypt($data, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
+    
+        $hmac = hash_hmac('sha256', $iv . $ciphertext, $key, true); // Generate HMAC
+    
+        return base64_encode($iv . $ciphertext . $hmac); // Return Base64-encoded result
     }
     
 }

@@ -1,7 +1,7 @@
-[2025-03-15 07:47:51] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-15 07:47:51] local.INFO: Request URL: http://gateway.local/api/meta/data  
-[2025-03-15 07:47:51] local.INFO: Request Method: POST  
-[2025-03-15 07:47:51] local.DEBUG: Request data: {
+[2025-03-16 14:45:44] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-16 14:45:44] local.INFO: Request URL: http://gateway.local/api/cue  
+[2025-03-16 14:45:44] local.INFO: Request Method: POST  
+[2025-03-16 14:45:44] local.DEBUG: Request data: {
     "data": {
         "NAME": "JOHN",
         "ID": 1
@@ -11,85 +11,30 @@
     "platform": "WEB",
     "app_version": "1.0",
     "language": "en-US",
-    "payload": ""
-}  
-[2025-03-15 07:47:51] local.DEBUG: Response data:
-{
-    "status": "Success",
-    "error": 0,
-    "message": "Startup Data",
-    "payload": [],
-    "gateway_version": "1.0",
-    "backend_version": "1.0",
-    "frontend_version": "1.0",
-    "cue": "PtFCB+u4TUqYJ5jjNoiG7vyBsDbeAzncOvKOkWhpUg\/Kh9FYo\/pNonNSPHQ2s10wWMWpRncixr8F38V+8sd6PZnARuhjtqjNLOzDoC1eOjIi5GtJf3B5Q5ctlDgO7mRE6xqfFXGh\/CZI\/yzTAmudf37BwtpzpFwxV8OAqIz5SnFKMCy1iIAR8tUhCWuIlZRTBIHRx0jkLPj4OuG0ppzFKIjrZU\/dQBMgqXyx7AOHxeYMiFcePPQy0+mGl3+EAeIuC3jkGzZBrGyBo73OH1MQrQD65KLDFbPnWF\/iYAr0TrR1o3uhFTlF62wAykdM0mVo4tR0IKQBQx7bn0w5UX7gFQ=="
-}  
-[2025-03-15 07:47:51] local.INFO: Response Status: 200  
-[2025-03-15 07:47:51] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
-[2025-03-15 07:47:51] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-15 07:59:14] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-15 07:59:14] local.INFO: Request URL: http://gateway.local/api/cue  
-[2025-03-15 07:59:14] local.INFO: Request Method: POST  
-[2025-03-15 07:59:14] local.DEBUG: Request data: {
-    "data": {
+    "payload": {
         "NAME": "JOHN",
         "ID": 1
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
-    "payload": ""
+    }
 }  
-[2025-03-15 07:59:14] local.DEBUG: Response data:
-{
-    "status": "Success",
-    "error": 0,
-    "message": "Startup Data",
-    "payload": [],
-    "gateway_version": "1.0",
-    "backend_version": "1.0",
-    "frontend_version": "1.0",
-    "cue": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuYoFvmjzZDry\/\nc3ooIZDx\/PHfi0IbnCUfOquvDWFleCpVND5WZKCWwhD1SmqrVLE+bmpiBkRkAuKW\nOzesUnqWE1YpQAgx82YCmkECCr92ZjRU7qlBku8Clo43vIYqZg5GWPbd0\/xBaWQj\nNoW9JMLG6z6OCtjOY6JRGpxS9EZL\/YjdHiOPjKjvbqH+703GMZAksulwtvd8PiJ5\nLDkWsGNHQZPznlLUnxOEzisOTI2YMKcMY0MSM6lzZ\/apYTe\/nh1rKGzYYYa10vgz\nV1nBAE41l3yBijVJbC4\/UxhajtLUdxsl6AsG00rSNGwytPXSQo0heUizorHFaYdu\nejFYsWhlAgMBAAECggEABj0yfdRyHF71XFEsm+51gd7npXSVSSkZP+iIt3LeWvPF\nafZ8S3l+sF4hnrEKp3YYgFARgM\/SFxTuV+sm9wSda6yl7sRidq0LZ4juzfyl9H28\nHhTK2\/R+liReUrqtPyuXE6e\/r1iUBCAZ69OZzdZYnKbSfmD\/eETizA2MbcBdGn9Y\nw5T53s57XvgeEra9NzyZh92ri3PUsnsmjAYNBKzu4izSBSyaQkL1zMzqS7zgysX2\nNY5AAm9fcQ1n8ETHf\/gkC8jDTwjir83D\/LBQVn+qjmbIxcbyTGJYATHg5MEf1YsX\ngLt7uxknvfXZvrOuojP0eH8weSo4MUQmbBpgv0xOAQKBgQDErjsAqppI4K9DI5kr\nmc7DwNNS0TyJAvNGvz93eclyyvxy\/8rHowElP625VOhnlLFDGZ\/6enBq+WzWDlSS\n9KfjKug\/s+QvKo1\/uH5PvjPGb1DC8KlK6bpAF3EtR6AkkusDxTui80sMAwS9RhIc\nk2zXDziyaZ\/QGelBYMWYlYtqAQKBgQDi+s83VbD7+NuyubrAKNuTs752Q9XMhpMM\n8o0jI\/2PfpFeo8iwB5YCKrx6tv9fPBtpIefhCufqK5s2shAGuj3uDSzeXSkA45Ny\nssUOZgsOqLuxO\/eW5ZbBsB\/sQqtcizKBB0+igYsn82WKj8lTREi9oyTiySFiuOuM\nv08FYJSWZQKBgEUirZDdZ2BowpLKJ6Rg64J5\/I6nCC1tQRDEV03rHHniinzuF1y3\nmsZ6LNnx08PdS7Y3grmsYmnoBW71GJuTrpQ21+7UkEhYH+cediAXzuFY7b2olQnF\nQPgYhWsSO2O\/1Sa9JOpxtRai1P6na+Rpmh+6tQZaBJhFE24s0yiAoMIBAoGBAJvb\n8bJjizZaujHNy2jsJWsU\/\/IhvovE1PENFNFOg2ynUpcUDFijvOQcCHSTeGQi2Aen\nGpyzanCoJNq4Br034hK2xVqjyeYsXzFhhGLQu0MDpm6baPYbDRxPHnyTgyv3AWUM\naiiCn9V9EvrEpVAiEXj2r\/tydRRfOo\/ZRh\/BJAbpAoGAJBX\/gpCNcRzRXfRmIcob\nYb7UWOzsjmoj6jUdm\/IR43srBHNnDc5rMH485V0z2VukAa1PSl3oL6AYP2lUb42q\ndXEX+oSx18DyNgRnZPCpafP5\/LjvaFJVVSIF5rDYqGlQ0KMaYQdPlfC6VaDl3eh6\nFX873Qvz6HtT35R4VJKtobA=\n-----END PRIVATE KEY-----\n"
-}  
-[2025-03-15 07:59:14] local.INFO: Response Status: 200  
-[2025-03-15 07:59:14] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
-[2025-03-15 07:59:14] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-15 08:04:25] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-15 08:04:25] local.INFO: Request URL: http://gateway.local/api/cue  
-[2025-03-15 08:04:25] local.INFO: Request Method: POST  
-[2025-03-15 08:04:25] local.DEBUG: Request data: {
-    "data": {
-        "NAME": "JOHN",
-        "ID": 1
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
-    "payload": ""
-}  
-[2025-03-15 08:04:25] local.ERROR: file_get_contents(/var/www/html/project_1/gateway/storage/keys/private_key.pem): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(/var/www/html/project_1/gateway/storage/keys/private_key.pem): Failed to open stream: No such file or directory at /var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php:28)
+[2025-03-16 14:45:44] local.ERROR: App\Http\Controllers\ApiBaseController::returnSuccess(): Return value must be of type App\Http\Controllers\JsonResponse, Illuminate\Http\JsonResponse returned {"exception":"[object] (TypeError(code: 0): App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned at /var/www/html/project_1/gateway/app/Http/Controllers/ApiBaseController.php:22)
 [stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
-#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
-#2 /var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php(28): file_get_contents()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(47): App\\Http\\Controllers\\AuthControllers\\MetaController->cue()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): Illuminate\\Routing\\Route->runController()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(808): Illuminate\\Routing\\Route->run()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
-#8 /var/www/html/project_1/gateway/app/Http/Middleware/PostRequestLogs.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PostRequestLogs->handle()
-#10 /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#0 /var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php(36): App\\Http\\Controllers\\ApiBaseController->returnSuccess()
+#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(47): App\\Http\\Controllers\\AuthControllers\\MetaController->cue()
+#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): Illuminate\\Routing\\Route->runController()
+#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(808): Illuminate\\Routing\\Route->run()
+#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#6 /var/www/html/project_1/gateway/app/Http/Middleware/PostRequestLogs.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PostRequestLogs->handle()
+#8 /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
+#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreGeneralProcess->handle()
 #14 /var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
 #15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreRequestLogs->handle()
-#16 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
 #17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Decrypt->handle()
 #18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
 #19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
@@ -123,20 +68,795 @@
 #47 /var/www/html/project_1/gateway/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest()
 #48 {main}
 "} 
-[2025-03-15 08:04:25] local.DEBUG: Response data:
+[2025-03-16 14:45:44] local.DEBUG: Response data:
 {
-    "status": "Error",
-    "error": 1,
-    "message": "file_get_contents(\/var\/www\/html\/project_1\/gateway\/storage\/keys\/private_key.pem): Failed to open stream: No such file or directory",
-    "payload": null
+    "message": "App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned",
+    "exception": "TypeError",
+    "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Controllers\/ApiBaseController.php",
+    "line": 22,
+    "trace": [
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Controllers\/AuthControllers\/MetaController.php",
+            "line": 36,
+            "function": "returnSuccess",
+            "class": "App\\Http\\Controllers\\ApiBaseController",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+            "line": 47,
+            "function": "cue",
+            "class": "App\\Http\\Controllers\\AuthControllers\\MetaController",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+            "line": 266,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+            "line": 212,
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 808,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 170,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PostRequestLogs.php",
+            "line": 17,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\PostRequestLogs",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/Encrypt.php",
+            "line": 18,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\Encrypt",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
+            "line": 51,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PreGeneralProcess.php",
+            "line": 24,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\PreGeneralProcess",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PreRequestLogs.php",
+            "line": 18,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\PreRequestLogs",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/Decrypt.php",
+            "line": 25,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\Decrypt",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 127,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 807,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 786,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 750,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 739,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 201,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 170,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php",
+            "line": 110,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/HandleCors.php",
+            "line": 62,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/TrustProxies.php",
+            "line": 58,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 209,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 127,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 176,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 145,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Application.php",
+            "line": 1220,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/html\/project_1\/gateway\/public\/index.php",
+            "line": 20,
+            "function": "handleRequest",
+            "class": "Illuminate\\Foundation\\Application",
+            "type": "->"
+        }
+    ]
 }  
-[2025-03-15 08:04:25] local.INFO: Response Status: 500  
-[2025-03-15 08:04:25] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
-[2025-03-15 08:04:25] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-15 08:11:20] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-15 08:11:20] local.INFO: Request URL: http://gateway.local/api/cue  
-[2025-03-15 08:11:20] local.INFO: Request Method: POST  
-[2025-03-15 08:11:20] local.DEBUG: Request data: {
+[2025-03-16 14:45:44] local.INFO: Response Status: 500  
+[2025-03-16 14:45:44] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
+[2025-03-16 14:45:44] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-16 14:45:44] local.DEBUG: XXXXX  
+[2025-03-16 14:45:44] local.DEBUG: array (
+  'message' => 'App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned',
+  'exception' => 'TypeError',
+  'file' => '/var/www/html/project_1/gateway/app/Http/Controllers/ApiBaseController.php',
+  'line' => 22,
+  'trace' => 
+  array (
+    0 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php',
+      'line' => 36,
+      'function' => 'returnSuccess',
+      'class' => 'App\\Http\\Controllers\\ApiBaseController',
+      'type' => '->',
+    ),
+    1 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php',
+      'line' => 47,
+      'function' => 'cue',
+      'class' => 'App\\Http\\Controllers\\AuthControllers\\MetaController',
+      'type' => '->',
+    ),
+    2 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php',
+      'line' => 266,
+      'function' => 'dispatch',
+      'class' => 'Illuminate\\Routing\\ControllerDispatcher',
+      'type' => '->',
+    ),
+    3 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php',
+      'line' => 212,
+      'function' => 'runController',
+      'class' => 'Illuminate\\Routing\\Route',
+      'type' => '->',
+    ),
+    4 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
+      'line' => 808,
+      'function' => 'run',
+      'class' => 'Illuminate\\Routing\\Route',
+      'type' => '->',
+    ),
+    5 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 170,
+      'function' => 'Illuminate\\Routing\\{closure}',
+      'class' => 'Illuminate\\Routing\\Router',
+      'type' => '->',
+    ),
+    6 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PostRequestLogs.php',
+      'line' => 17,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    7 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'App\\Http\\Middleware\\PostRequestLogs',
+      'type' => '->',
+    ),
+    8 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php',
+      'line' => 18,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    9 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'App\\Http\\Middleware\\Encrypt',
+      'type' => '->',
+    ),
+    10 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php',
+      'line' => 51,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    11 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Routing\\Middleware\\SubstituteBindings',
+      'type' => '->',
+    ),
+    12 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php',
+      'line' => 24,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    13 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'App\\Http\\Middleware\\PreGeneralProcess',
+      'type' => '->',
+    ),
+    14 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php',
+      'line' => 18,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    15 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'App\\Http\\Middleware\\PreRequestLogs',
+      'type' => '->',
+    ),
+    16 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php',
+      'line' => 25,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    17 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'App\\Http\\Middleware\\Decrypt',
+      'type' => '->',
+    ),
+    18 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 127,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    19 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
+      'line' => 807,
+      'function' => 'then',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    20 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
+      'line' => 786,
+      'function' => 'runRouteWithinStack',
+      'class' => 'Illuminate\\Routing\\Router',
+      'type' => '->',
+    ),
+    21 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
+      'line' => 750,
+      'function' => 'runRoute',
+      'class' => 'Illuminate\\Routing\\Router',
+      'type' => '->',
+    ),
+    22 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
+      'line' => 739,
+      'function' => 'dispatchToRoute',
+      'class' => 'Illuminate\\Routing\\Router',
+      'type' => '->',
+    ),
+    23 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
+      'line' => 201,
+      'function' => 'dispatch',
+      'class' => 'Illuminate\\Routing\\Router',
+      'type' => '->',
+    ),
+    24 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 170,
+      'function' => 'Illuminate\\Foundation\\Http\\{closure}',
+      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
+      'type' => '->',
+    ),
+    25 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php',
+      'line' => 21,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    26 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php',
+      'line' => 31,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest',
+      'type' => '->',
+    ),
+    27 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull',
+      'type' => '->',
+    ),
+    28 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php',
+      'line' => 21,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    29 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php',
+      'line' => 51,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest',
+      'type' => '->',
+    ),
+    30 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TrimStrings',
+      'type' => '->',
+    ),
+    31 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php',
+      'line' => 27,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    32 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Http\\Middleware\\ValidatePostSize',
+      'type' => '->',
+    ),
+    33 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php',
+      'line' => 110,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    34 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance',
+      'type' => '->',
+    ),
+    35 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php',
+      'line' => 62,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    36 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Http\\Middleware\\HandleCors',
+      'type' => '->',
+    ),
+    37 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php',
+      'line' => 58,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    38 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Http\\Middleware\\TrustProxies',
+      'type' => '->',
+    ),
+    39 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php',
+      'line' => 22,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    40 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks',
+      'type' => '->',
+    ),
+    41 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php',
+      'line' => 26,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    42 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 209,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Http\\Middleware\\ValidatePathEncoding',
+      'type' => '->',
+    ),
+    43 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
+      'line' => 127,
+      'function' => 'Illuminate\\Pipeline\\{closure}',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    44 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
+      'line' => 176,
+      'function' => 'then',
+      'class' => 'Illuminate\\Pipeline\\Pipeline',
+      'type' => '->',
+    ),
+    45 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
+      'line' => 145,
+      'function' => 'sendRequestThroughRouter',
+      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
+      'type' => '->',
+    ),
+    46 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php',
+      'line' => 1220,
+      'function' => 'handle',
+      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
+      'type' => '->',
+    ),
+    47 => 
+    array (
+      'file' => '/var/www/html/project_1/gateway/public/index.php',
+      'line' => 20,
+      'function' => 'handleRequest',
+      'class' => 'Illuminate\\Foundation\\Application',
+      'type' => '->',
+    ),
+  ),
+)  
+[2025-03-16 14:45:44] local.ERROR: Encrypt 'payload' property does not exist. {"exception":"[object] (Exception(code: 0): Encrypt 'payload' property does not exist. at /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php:23)
+[stacktrace]
+#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
+#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#3 /var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreGeneralProcess->handle()
+#5 /var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreRequestLogs->handle()
+#7 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Decrypt->handle()
+#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
+#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
+#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
+#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
+#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#21 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#22 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
+#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle()
+#32 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle()
+#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
+#36 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#37 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle()
+#38 /var/www/html/project_1/gateway/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest()
+#39 {main}
+"} 
+[2025-03-16 14:46:33] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-16 14:46:33] local.INFO: Request URL: http://gateway.local/api/cue  
+[2025-03-16 14:46:33] local.INFO: Request Method: POST  
+[2025-03-16 14:46:33] local.DEBUG: Request data: {
     "data": {
         "NAME": "JOHN",
         "ID": 1
@@ -146,9 +866,85 @@
     "platform": "WEB",
     "app_version": "1.0",
     "language": "en-US",
-    "payload": ""
+    "payload": {
+        "NAME": "JOHN",
+        "ID": 1
+    }
 }  
-[2025-03-15 08:11:20] local.DEBUG: Response data:
+[2025-03-16 14:46:33] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Follow up Data",
+    "payload": [],
+    "gateway_version": "1.0",
+    "backend_version": "1.0",
+    "frontend_version": "1.0",
+    "cue": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2wyaVB4jQIZbp\npFIRXUwuPYHWMw\/pQzSoysY+n10jHnNFFwwoC3bLBZeUzF1gxcOcUmbse\/El5OVg\nu2FpKxFzZ0rbjz2BixAKH3r0w6BKLUq8a7JnVGec45WYyt90cJWo+oUqnvTjjR7h\nILo7TBoI6rDDJ95xE3l5e48qBbz+BoTwG\/n2\/V7u43+FC3087NT0A3f0AXLxAAL4\nG+bWxSB5xPl1MpkgTCQRsqcXA35pW\/RyfVHR5OPtHYGmhW\/IfABbZCsvfDPiTcPf\nS0sSSg+jbWSg+pyldmWXE0D0Ig\/r7uoYEp0O8Ywk4CqUF5Dltq+r+U+KJNyPUjda\nWNhnEAfBAgMBAAECggEACDROgRYrgBxh5+8md\/0WNGUydOkp57DKpmEj8R+6UJ9H\nUWytcQbCuG5x1Y4vCu8VzuisEiWmN6tE2MjQoKX8TI\/wfla5zhzuBWZQYLh\/c5UA\n6+Bxy82wMQzOZGOHEHUVYtaML9Oe7rAhGL4dXhgWexv9\/2TEyZK0O03eqWZEi6qv\nq8Rf0tgKsRw\/lvG1u\/SXE\/WP9DN+GzOkq5irCf\/KBzXs2q4wYnIMCtDVBsZwSdE2\nk+F8fdQMXLBnMrziOHnZIx+oTabn1hLVJMit+E8NgeSrFK0n9vnH4WkJqyYR6NoF\ne6AhwZCoFE7VnW0Q4vpcCpr1jtR9NrCu9Bd0niTFoQKBgQC+C2c3qhZxcBZI34We\nYt5wg+PNCgIJcFGzDkORtswVF9U9rDK\/pJ5xPNfnEDSzhbDXzgYe6mT8fPIyCq+o\nsnlzS1H63Qf0xpaSHfDSSekg3Er\/r0nuCQS1dRb0hR7q4Hjhso8+kqiQtolbHuwA\n+QsiLdoKmL6Tl9ilJKfa4ABFLQKBgQD2MMD6DvVpp0Ti1XFGmoGvZczWGCoF5XeA\n4eWteYbgqGxVk3slIaqylRU9A+VS9aMSdBRREkOsNA\/S5y746iXpvKQTqsG8Jsuf\nxsOFZqh5vx0Wr+K\/ToAO4Eu8qubcC6QfObDYVXCxNbMNvPxfXa6YuIJz8yLB0NlR\nwC9Ge0fRZQKBgBhnnnmnffpTSolRKveL+sS4KyjJgDl2EwfLbSHpN4v944Rn+Jxj\np3UjOxaRHjNvl6Ye7upJb259HR0QAj7HrJEBuyVb\/QmR9wQMlEBs\/WMa5waum+\/V\neKVUw\/3imnXPHbbeF0cRzlPHHRx2fBgj4yogeT+jHdYWSdvrOSMCYQaBAoGBAMSE\nomZ5blkKFqjjLGrphr\/WCS6VV2Yhh8UvjUFuksXea6vb8B7xwuqOqsdrxrD0N1nR\noy4b4D0jycXWmN5FOkJcPLUeR0vDxCMkbIqeKboVXkjv2ZZQOVSmoo5V9baM7FOo\nn4vwl+Y9MVK0GtidVXO\/RRL9cC86YV8qhBJE8k0pAoGBAJWb5UipJmiOJgJQr85M\n0A3ezXz7Qlvi+bGMkauJyZW9eWrB8rORvn2S47cejmp+Y4sQIScSeyQTOn5l7ODm\nh8YiqgoKWxXh9PPV1468BSpCMO71tne\/ltJGEu\/qNWVG3OwIcs4WTN2KuDP1Hcve\nuiJGgMyD25RxNrgZ3SmllX7K\n-----END PRIVATE KEY-----\n"
+}  
+[2025-03-16 14:46:33] local.INFO: Response Status: 200  
+[2025-03-16 14:46:33] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
+[2025-03-16 14:46:33] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-16 14:46:33] local.DEBUG: XXXXX  
+[2025-03-16 14:46:33] local.DEBUG: array (
+  'status' => 'Success',
+  'error' => 0,
+  'message' => 'Follow up Data',
+  'payload' => 
+  array (
+  ),
+  'gateway_version' => '1.0',
+  'backend_version' => '1.0',
+  'frontend_version' => '1.0',
+  'cue' => '-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2wyaVB4jQIZbp
+pFIRXUwuPYHWMw/pQzSoysY+n10jHnNFFwwoC3bLBZeUzF1gxcOcUmbse/El5OVg
+u2FpKxFzZ0rbjz2BixAKH3r0w6BKLUq8a7JnVGec45WYyt90cJWo+oUqnvTjjR7h
+ILo7TBoI6rDDJ95xE3l5e48qBbz+BoTwG/n2/V7u43+FC3087NT0A3f0AXLxAAL4
+G+bWxSB5xPl1MpkgTCQRsqcXA35pW/RyfVHR5OPtHYGmhW/IfABbZCsvfDPiTcPf
+S0sSSg+jbWSg+pyldmWXE0D0Ig/r7uoYEp0O8Ywk4CqUF5Dltq+r+U+KJNyPUjda
+WNhnEAfBAgMBAAECggEACDROgRYrgBxh5+8md/0WNGUydOkp57DKpmEj8R+6UJ9H
+UWytcQbCuG5x1Y4vCu8VzuisEiWmN6tE2MjQoKX8TI/wfla5zhzuBWZQYLh/c5UA
+6+Bxy82wMQzOZGOHEHUVYtaML9Oe7rAhGL4dXhgWexv9/2TEyZK0O03eqWZEi6qv
+q8Rf0tgKsRw/lvG1u/SXE/WP9DN+GzOkq5irCf/KBzXs2q4wYnIMCtDVBsZwSdE2
+k+F8fdQMXLBnMrziOHnZIx+oTabn1hLVJMit+E8NgeSrFK0n9vnH4WkJqyYR6NoF
+e6AhwZCoFE7VnW0Q4vpcCpr1jtR9NrCu9Bd0niTFoQKBgQC+C2c3qhZxcBZI34We
+Yt5wg+PNCgIJcFGzDkORtswVF9U9rDK/pJ5xPNfnEDSzhbDXzgYe6mT8fPIyCq+o
+snlzS1H63Qf0xpaSHfDSSekg3Er/r0nuCQS1dRb0hR7q4Hjhso8+kqiQtolbHuwA
++QsiLdoKmL6Tl9ilJKfa4ABFLQKBgQD2MMD6DvVpp0Ti1XFGmoGvZczWGCoF5XeA
+4eWteYbgqGxVk3slIaqylRU9A+VS9aMSdBRREkOsNA/S5y746iXpvKQTqsG8Jsuf
+xsOFZqh5vx0Wr+K/ToAO4Eu8qubcC6QfObDYVXCxNbMNvPxfXa6YuIJz8yLB0NlR
+wC9Ge0fRZQKBgBhnnnmnffpTSolRKveL+sS4KyjJgDl2EwfLbSHpN4v944Rn+Jxj
+p3UjOxaRHjNvl6Ye7upJb259HR0QAj7HrJEBuyVb/QmR9wQMlEBs/WMa5waum+/V
+eKVUw/3imnXPHbbeF0cRzlPHHRx2fBgj4yogeT+jHdYWSdvrOSMCYQaBAoGBAMSE
+omZ5blkKFqjjLGrphr/WCS6VV2Yhh8UvjUFuksXea6vb8B7xwuqOqsdrxrD0N1nR
+oy4b4D0jycXWmN5FOkJcPLUeR0vDxCMkbIqeKboVXkjv2ZZQOVSmoo5V9baM7FOo
+n4vwl+Y9MVK0GtidVXO/RRL9cC86YV8qhBJE8k0pAoGBAJWb5UipJmiOJgJQr85M
+0A3ezXz7Qlvi+bGMkauJyZW9eWrB8rORvn2S47cejmp+Y4sQIScSeyQTOn5l7ODm
+h8YiqgoKWxXh9PPV1468BSpCMO71tne/ltJGEu/qNWVG3OwIcs4WTN2KuDP1Hcve
+uiJGgMyD25RxNrgZ3SmllX7K
+-----END PRIVATE KEY-----
+',
+)  
+[2025-03-16 14:46:38] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-16 14:46:38] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-16 14:46:38] local.INFO: Request Method: POST  
+[2025-03-16 14:46:38] local.DEBUG: Request data: {
+    "data": {
+        "NAME": "JOHN",
+        "ID": 1
+    },
+    "timestamp": "2025-03-14T12:00:00Z",
+    "device": "BROWSER",
+    "platform": "WEB",
+    "app_version": "1.0",
+    "language": "en-US",
+    "payload": {
+        "NAME": "JOHN",
+        "ID": 1
+    }
+}  
+[2025-03-16 14:46:38] local.DEBUG: Response data:
 {
     "status": "Success",
     "error": 0,
@@ -157,443 +953,97 @@
     "gateway_version": "1.0",
     "backend_version": "1.0",
     "frontend_version": "1.0",
-    "cue": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2wyaVB4jQIZbp\npFIRXUwuPYHWMw\/pQzSoysY+n10jHnNFFwwoC3bLBZeUzF1gxcOcUmbse\/El5OVg\nu2FpKxFzZ0rbjz2BixAKH3r0w6BKLUq8a7JnVGec45WYyt90cJWo+oUqnvTjjR7h\nILo7TBoI6rDDJ95xE3l5e48qBbz+BoTwG\/n2\/V7u43+FC3087NT0A3f0AXLxAAL4\nG+bWxSB5xPl1MpkgTCQRsqcXA35pW\/RyfVHR5OPtHYGmhW\/IfABbZCsvfDPiTcPf\nS0sSSg+jbWSg+pyldmWXE0D0Ig\/r7uoYEp0O8Ywk4CqUF5Dltq+r+U+KJNyPUjda\nWNhnEAfBAgMBAAECggEACDROgRYrgBxh5+8md\/0WNGUydOkp57DKpmEj8R+6UJ9H\nUWytcQbCuG5x1Y4vCu8VzuisEiWmN6tE2MjQoKX8TI\/wfla5zhzuBWZQYLh\/c5UA\n6+Bxy82wMQzOZGOHEHUVYtaML9Oe7rAhGL4dXhgWexv9\/2TEyZK0O03eqWZEi6qv\nq8Rf0tgKsRw\/lvG1u\/SXE\/WP9DN+GzOkq5irCf\/KBzXs2q4wYnIMCtDVBsZwSdE2\nk+F8fdQMXLBnMrziOHnZIx+oTabn1hLVJMit+E8NgeSrFK0n9vnH4WkJqyYR6NoF\ne6AhwZCoFE7VnW0Q4vpcCpr1jtR9NrCu9Bd0niTFoQKBgQC+C2c3qhZxcBZI34We\nYt5wg+PNCgIJcFGzDkORtswVF9U9rDK\/pJ5xPNfnEDSzhbDXzgYe6mT8fPIyCq+o\nsnlzS1H63Qf0xpaSHfDSSekg3Er\/r0nuCQS1dRb0hR7q4Hjhso8+kqiQtolbHuwA\n+QsiLdoKmL6Tl9ilJKfa4ABFLQKBgQD2MMD6DvVpp0Ti1XFGmoGvZczWGCoF5XeA\n4eWteYbgqGxVk3slIaqylRU9A+VS9aMSdBRREkOsNA\/S5y746iXpvKQTqsG8Jsuf\nxsOFZqh5vx0Wr+K\/ToAO4Eu8qubcC6QfObDYVXCxNbMNvPxfXa6YuIJz8yLB0NlR\nwC9Ge0fRZQKBgBhnnnmnffpTSolRKveL+sS4KyjJgDl2EwfLbSHpN4v944Rn+Jxj\np3UjOxaRHjNvl6Ye7upJb259HR0QAj7HrJEBuyVb\/QmR9wQMlEBs\/WMa5waum+\/V\neKVUw\/3imnXPHbbeF0cRzlPHHRx2fBgj4yogeT+jHdYWSdvrOSMCYQaBAoGBAMSE\nomZ5blkKFqjjLGrphr\/WCS6VV2Yhh8UvjUFuksXea6vb8B7xwuqOqsdrxrD0N1nR\noy4b4D0jycXWmN5FOkJcPLUeR0vDxCMkbIqeKboVXkjv2ZZQOVSmoo5V9baM7FOo\nn4vwl+Y9MVK0GtidVXO\/RRL9cC86YV8qhBJE8k0pAoGBAJWb5UipJmiOJgJQr85M\n0A3ezXz7Qlvi+bGMkauJyZW9eWrB8rORvn2S47cejmp+Y4sQIScSeyQTOn5l7ODm\nh8YiqgoKWxXh9PPV1468BSpCMO71tne\/ltJGEu\/qNWVG3OwIcs4WTN2KuDP1Hcve\nuiJGgMyD25RxNrgZ3SmllX7K\n-----END PRIVATE KEY-----\n"
+    "cue": "DDlnJb6vM338a2Q6pBoQkPLjWwi+WebdKsDEPplbLesUX9yfypq2wp7SQ7u5WaC3\/IfFRaa3r\/w8MGX4Z8vaUGlH4eIv2aVpFuJ7tSHLzGK+doYnyy\/tFuNoEyYrZxhutCESa2WRycf1YBzmxONI\/pJhByKzvCwk6XJkMEpAJz8mhSTaDv5RkZeru9EVw6AkkMJ8JztyeJeH2K9Ts3KqMn4rLHlgrIaJmR4s8RYSYnDfnZx0smpzyWEnGXQaAMCRUcWUVYBfNZLNEHwZUNhbRUuiJwWLXRlzTCoxP2L3pO8lxSFWe+lvNtAyEXK+gf1VymVVrEf3n4eTen5EvExSqw=="
 }  
-[2025-03-15 08:11:20] local.INFO: Response Status: 200  
-[2025-03-15 08:11:20] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
-[2025-03-15 08:11:20] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-15 10:24:04] local.ERROR: could not find driver (Connection: sqlite, SQL: select * from "cache" where "key" in (laravel_cache_laravel:reverb:restart)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: sqlite, SQL: select * from \"cache\" where \"key\" in (laravel_cache_laravel:reverb:restart)) at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php:823)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#11 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#12 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#19 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#21 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#22 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#23 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#26 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#27 {main}
-
-[previous exception] [object] (PDOException(code: 0): could not find driver at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:66)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(66): PDO->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php(21): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(224): Illuminate\\Database\\Connectors\\SQLiteConnector->connect()
-#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1229): call_user_func()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1265): Illuminate\\Database\\Connection->getPdo()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(510): Illuminate\\Database\\Connection->getReadPdo()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(810): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#21 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#22 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#29 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#31 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#32 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#33 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#36 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#37 {main}
-"} 
-[2025-03-15 10:24:50] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:26:05] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:26:28] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:26:54] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:27:37] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:30:43] local.ERROR: Pusher\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #1 ($auth_key) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:31:03] local.ERROR: Pusher\Pusher::__construct(): Argument #2 ($secret) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 {"exception":"[object] (TypeError(code: 0): Pusher\\Pusher::__construct(): Argument #2 ($secret) must be of type string, null given, called in /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php on line 341 at /var/www/html/project_1/gateway/vendor/pusher/pusher-php-server/src/Pusher.php:63)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(341): Pusher\\Pusher->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(319): Illuminate\\Broadcasting\\BroadcastManager->pusher()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(286): Illuminate\\Broadcasting\\BroadcastManager->createPusherDriver()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(257): Illuminate\\Broadcasting\\BroadcastManager->resolve()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(246): Illuminate\\Broadcasting\\BroadcastManager->get()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php(523): Illuminate\\Broadcasting\\BroadcastManager->driver()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Broadcasting\\BroadcastManager->__call()
-#7 /var/www/html/project_1/gateway/routes/channels.php(5): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(132): require('...')
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1194): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1137): Illuminate\\Foundation\\Application->fireAppCallbacks()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(474): Illuminate\\Foundation\\Application->bootstrapWith()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#17 {main}
-"} 
-[2025-03-15 10:31:37] local.ERROR: could not find driver (Connection: sqlite, SQL: select * from "cache" where "key" in (laravel_cache_laravel:reverb:restart)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: sqlite, SQL: select * from \"cache\" where \"key\" in (laravel_cache_laravel:reverb:restart)) at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php:823)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#11 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#12 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#19 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#21 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#22 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#23 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#26 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#27 {main}
-
-[previous exception] [object] (PDOException(code: 0): could not find driver at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:66)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(66): PDO->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php(21): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(224): Illuminate\\Database\\Connectors\\SQLiteConnector->connect()
-#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1229): call_user_func()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1265): Illuminate\\Database\\Connection->getPdo()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(510): Illuminate\\Database\\Connection->getReadPdo()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(810): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#21 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#22 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#29 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#31 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#32 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#33 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#36 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#37 {main}
-"} 
-[2025-03-15 10:32:30] local.ERROR: could not find driver (Connection: sqlite, SQL: select * from "cache" where "key" in (laravel_cache_laravel:reverb:restart)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): could not find driver (Connection: sqlite, SQL: select * from \"cache\" where \"key\" in (laravel_cache_laravel:reverb:restart)) at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php:823)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#11 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#12 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#19 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#21 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#22 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#23 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#26 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#27 {main}
-
-[previous exception] [object] (PDOException(code: 0): could not find driver at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:66)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(66): PDO->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php(21): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(224): Illuminate\\Database\\Connectors\\SQLiteConnector->connect()
-#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1229): call_user_func()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1265): Illuminate\\Database\\Connection->getPdo()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(510): Illuminate\\Database\\Connection->getReadPdo()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(810): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#21 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#22 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#29 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#31 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#32 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#33 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#36 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#37 {main}
-"} 
-[2025-03-15 10:32:42] local.ERROR: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost' (Connection: mysql, SQL: select * from `cache` where `key` in (laravel_cache_laravel:reverb:restart)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1698): SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost' (Connection: mysql, SQL: select * from `cache` where `key` in (laravel_cache_laravel:reverb:restart)) at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php:823)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#11 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#12 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#19 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#21 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#22 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#23 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#26 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#27 {main}
-
-[previous exception] [object] (PDOException(code: 1698): SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost' at /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:66)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(66): PDO->__construct()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(185): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1229): call_user_func()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1265): Illuminate\\Database\\Connection->getPdo()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(510): Illuminate\\Database\\Connection->getReadPdo()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(810): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(777): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Connection.php(396): Illuminate\\Database\\Connection->run()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3107): Illuminate\\Database\\Connection->select()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3092): Illuminate\\Database\\Query\\Builder->runSelect()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3677): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate\\Database\\Query\\Builder->onceWithColumns()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(130): Illuminate\\Database\\Query\\Builder->get()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/DatabaseStore.php(105): Illuminate\\Cache\\DatabaseStore->many()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(117): Illuminate\\Cache\\DatabaseStore->get()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php(453): Illuminate\\Cache\\Repository->get()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Cache\\CacheManager->__call()
-#21 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(106): Illuminate\\Support\\Facades\\Facade::__callStatic()
-#22 /var/www/html/project_1/gateway/vendor/laravel/reverb/src/Servers/Reverb/Console/Commands/StartServer.php(70): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->ensureRestartCommandIsRespected()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Reverb\\Servers\\Reverb\\Console\\Commands\\StartServer->handle()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
-#29 /var/www/html/project_1/gateway/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
-#31 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run()
-#32 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand()
-#33 /var/www/html/project_1/gateway/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle()
-#36 /var/www/html/project_1/gateway/artisan(16): Illuminate\\Foundation\\Application->handleCommand()
-#37 {main}
-"} 
+[2025-03-16 14:46:38] local.INFO: Response Status: 200  
+[2025-03-16 14:46:38] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-16 14:46:38] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-16 14:46:38] local.DEBUG: XXXXX  
+[2025-03-16 14:46:38] local.DEBUG: array (
+  'status' => 'Success',
+  'error' => 0,
+  'message' => 'Startup Data',
+  'payload' => 
+  array (
+  ),
+  'gateway_version' => '1.0',
+  'backend_version' => '1.0',
+  'frontend_version' => '1.0',
+  'cue' => 'DDlnJb6vM338a2Q6pBoQkPLjWwi+WebdKsDEPplbLesUX9yfypq2wp7SQ7u5WaC3/IfFRaa3r/w8MGX4Z8vaUGlH4eIv2aVpFuJ7tSHLzGK+doYnyy/tFuNoEyYrZxhutCESa2WRycf1YBzmxONI/pJhByKzvCwk6XJkMEpAJz8mhSTaDv5RkZeru9EVw6AkkMJ8JztyeJeH2K9Ts3KqMn4rLHlgrIaJmR4s8RYSYnDfnZx0smpzyWEnGXQaAMCRUcWUVYBfNZLNEHwZUNhbRUuiJwWLXRlzTCoxP2L3pO8lxSFWe+lvNtAyEXK+gf1VymVVrEf3n4eTen5EvExSqw==',
+)  
+[2025-03-16 14:46:41] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-16 14:46:41] local.INFO: Request URL: http://gateway.local/api/web/login  
+[2025-03-16 14:46:41] local.INFO: Request Method: POST  
+[2025-03-16 14:46:41] local.DEBUG: Request data: {
+    "data": {
+        "username": "jjj-weed",
+        "password": "11231232fgw"
+    },
+    "timestamp": "2025-03-14T12:00:00Z",
+    "device": "BROWSER",
+    "platform": "WEB",
+    "app_version": "1.0",
+    "language": "en-US",
+    "payload": {
+        "username": "jjj-weed",
+        "password": "11231232fgw"
+    }
+}  
+[2025-03-16 14:46:41] local.INFO: [AuthController@webLogin] Logging in username jjj-weed  
+[2025-03-16 14:46:41] local.DEBUG: Response data:
+{
+    "status": "Failed",
+    "error": 1,
+    "message": "Incorrect credentials!",
+    "payload": []
+}  
+[2025-03-16 14:46:41] local.INFO: Response Status: 401  
+[2025-03-16 14:46:41] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
+[2025-03-16 14:46:41] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-16 14:46:41] local.DEBUG: XXXXX  
+[2025-03-16 14:46:41] local.DEBUG: array (
+  'status' => 'Failed',
+  'error' => 1,
+  'message' => 'Incorrect credentials!',
+  'payload' => 
+  array (
+  ),
+)  
+[2025-03-16 14:47:48] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-16 14:47:48] local.INFO: Request URL: http://gateway.local/api/web/login  
+[2025-03-16 14:47:48] local.INFO: Request Method: POST  
+[2025-03-16 14:47:48] local.DEBUG: Request data: {
+    "data": {
+        "username": "jjj-weed",
+        "password": "11231232fgw"
+    },
+    "timestamp": "2025-03-14T12:00:00Z",
+    "device": "BROWSER",
+    "platform": "WEB",
+    "app_version": "1.0",
+    "language": "en-US",
+    "payload": {
+        "username": "jjj-weed",
+        "password": "11231232fgw"
+    }
+}  
+[2025-03-16 14:47:48] local.INFO: [AuthController@webLogin] Logging in username jjj-weed  
+[2025-03-16 14:47:48] local.DEBUG: Response data:
+{
+    "status": "Failed",
+    "error": 1,
+    "message": "Incorrect credentials!",
+    "payload": []
+}  
+[2025-03-16 14:47:48] local.INFO: Response Status: 404  
+[2025-03-16 14:47:48] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
+[2025-03-16 14:47:48] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-16 14:47:48] local.DEBUG: XXXXX  
+[2025-03-16 14:47:48] local.DEBUG: array (
+  'status' => 'Failed',
+  'error' => 1,
+  'message' => 'Incorrect credentials!',
+  'payload' => 
+  array (
+  ),
+)  

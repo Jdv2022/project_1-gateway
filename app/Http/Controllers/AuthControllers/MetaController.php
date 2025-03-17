@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\ApiBaseController;
+use Illuminate\Http\JsonResponse;
 
 class MetaController extends ApiBaseController {
     
@@ -13,17 +14,17 @@ class MetaController extends ApiBaseController {
         
     }
 
-    public function metaData():array {
+    public function metaData():JsonResponse {
         $metaData = [
             'gateway_version' => '1.0',
             'backend_version' => '1.0',
             'frontend_version' => '1.0',
             'cue' => $this->encryptWithPublicKey()
         ];
-        return $this->returnSuccess([], "Startup Data", $metaData);
+        return $this->returnSuccess(data:[], message: "Startup Data", status: 200, customProperties: $metaData);
     }
 
-    public function cue() {
+    public function cue():JsonResponse {
         $privateKeyPath = storage_path('keys/private_key.pem');
         $privateKey = file_get_contents($privateKeyPath);
         $metaData = [
@@ -32,10 +33,10 @@ class MetaController extends ApiBaseController {
             'frontend_version' => '1.0',
             'cue' => $privateKey
         ];
-        return $this->returnSuccess([], "Follow up Data", $metaData);
+        return $this->returnSuccess(data: [], message: "Follow up Data", status: 200, customProperties: $metaData);
     }
 
-    private function encryptWithPublicKey() {
+    private function encryptWithPublicKey():string {
         $publicKeyPath = storage_path('keys/public_key.pem');
         $publicKey = file_get_contents($publicKeyPath);
     

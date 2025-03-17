@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Tymon\JWTAuth\Http\Middleware\Authenticate;
 use App\Http\Controllers\AuthControllers\MetaController;
+use App\Http\Controllers\AuthControllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ use App\Http\Controllers\AuthControllers\MetaController;
 /* Startup Data */
 Route::post('meta/data', [MetaController::class, 'metaData']);
 Route::post('cue', [MetaController::class, 'cue']);
+
+/* Authentication */
+Route::post('web/login', [AuthController::class, 'webLogin']);

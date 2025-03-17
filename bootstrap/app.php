@@ -7,6 +7,8 @@ use App\Http\Middleware\PreRequestLogs;
 use App\Http\Middleware\Decrypt;
 use App\Http\Middleware\PostRequestLogs;
 use App\Http\Middleware\Encrypt;
+use App\Http\Middleware\PreGeneralProcess;
+use App\Http\Middleware\AuthUserMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -20,6 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             Decrypt::class,
             PreRequestLogs::class,
+            AuthUserMiddleware::class,
+            PreGeneralProcess::class,
         ]);
         $middleware->api(append: [
             Encrypt::class,
@@ -28,6 +32,15 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->renderable(function (\Exception $e, $request) {
+            if($e instanceof ValidationException) {
+                return response()->json([
+                    'status' => 'Error',
+                    'error' => 1,
+                    'message' => 'Validation failed',
+                    'payload' => null,
+                ], 422);
+            }
+
             $status = method_exists($e, 'getStatusCode') 
                 ? $e->getStatusCode() 
                 : 500;
