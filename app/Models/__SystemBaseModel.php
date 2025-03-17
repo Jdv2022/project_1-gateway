@@ -14,7 +14,7 @@ class __SystemBaseModel extends Model {
     public function __construct(array $attributes = []) {
         parent::__construct($attributes);
     }
-
+    /* Set Default Attributes */
     protected static function boot() {
         parent::boot();
 

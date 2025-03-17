@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\User;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthUserMiddleware
 {
@@ -15,15 +16,22 @@ class AuthUserMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
-        $userId = $request->all();
-        if(!array_key_exists('id', $userId)) throw new Exception("ID of implementing user does not exist.");
+        $excludedRoutes = [
+            'api/web/login', 
+            'api/web/register'
+        ];
+        if(in_array($request->path(), $excludedRoutes)) {
+            return $next($request);
+        }
 
+        $JWTAuth = JWTAuth::parseToken()->authenticate();  
+        $userId = $JWTAuth->id;  
         $user = User::with([
                 'userDetail', 
                 'userUserType',
                 'userUserType.userType',
             ])
-            ->where('id', $userId['id'])
+            ->where('id', $userId)
             ->first();
 
         if(!$user) throw new Exception("ID of implementing user not found.");
@@ -51,7 +59,6 @@ class AuthUserMiddleware
             'positioned_assigned_at' => $user->userUserType->created_at,
             'positioned_modified_at' => $user->userUserType->updated_at,
         ];
-
 
         app()->instance(AuthUserService::class, new AuthUserService($userInstance));
 

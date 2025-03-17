@@ -11,6 +11,7 @@ use App\Http\Controllers\ApiBaseController;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class AuthController extends ApiBaseController {
     
@@ -39,7 +40,7 @@ class AuthController extends ApiBaseController {
         return $this->returnSuccess(data: $tokenDetails, message: "Login success!");
     }
 
-    public function webRegistration(Request $request) {
+    public function webRegistration(Request $request):JsonResponse {
         $validatedData = $request->validate([
             'username' => 'required|string|max:12',
             'password' => 'required|string|min:8',
@@ -56,23 +57,24 @@ class AuthController extends ApiBaseController {
             'profile_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'action_by_user_id' => 'required|numeric',
         ]);  
-        $superUser = User::with(['user_detail'])
-            ->where('id', $validatedData['action_by_user_id'])
-            ->first();
-        if(!$superUser) throw new Exception("Your account does not exist!");
+        $model = new UserDetail();
+        $superUser = $model->getAuthUser();
 
+        if(!$superUser) throw new Exception("Your account does not exist!");
+        $now = Carbon::now();
+        
         $user = User::create([
             'username' => $validatedData['username'],
             'password' => Hash::make($validatedData['password']),
             'is_active' => false,
             'created_at_timezone' => '+8:00',
-            'created_by_user_id' => $superUser->user_detail->id,
-            'created_by_username' => $superUser->user_detail->username,
-            'created_by_user_type' => $superUser->user_detail->user_type,
+            'created_by_user_id' => $now,
+            'created_by_username' => $superUser['username'],
+            'created_by_user_type' => $superUser['user_type'],
             'updated_at_timezone' => '+8:00',
-            'updated_by_user_id' => $superUser->user_detail->id,
-            'updated_by_username' => $superUser->user_detail->username,
-            'updated_by_user_type' => $superUser->user_detail->user_type,
+            'updated_by_user_id' => $now,
+            'updated_by_username' => $superUser['username'],
+            'updated_by_user_type' => $superUser['user_type'],
             'enabled' => false,
         ]);
 
@@ -93,7 +95,27 @@ class AuthController extends ApiBaseController {
         ]);        
 
         if(!$userDetail) throw new Exception("User_registration registration failed!");
+        Log::info('User Registered!');
         return $this->returnSuccess(data: [], message: "Registration success!");
+    }
+
+    public function refreshToken(Request $request):JsonResponse {
+        $validatedData = $request->validate([
+            'token' => 'required|string',
+        ]);  
+        $newToken = JWTAuth::refresh($validatedData['token']);
+        Log::info("Refresh Token Successfull!");
+        return $this->returnSuccess(data: $newToken, message: "Refresh success!");
+    }
+
+    public function webLogout(Request $reqeust):JsonResponse {
+        $model = new UserDetail();
+        $superUser = $model->getAuthUser();
+
+        JWTAuth::invalidate(JWTAuth::getToken());
+
+        Log::info("Logout Success!");
+        return $this->returnSuccess(data: $newToken, message: "Refresh success!");
     }
 
 }
