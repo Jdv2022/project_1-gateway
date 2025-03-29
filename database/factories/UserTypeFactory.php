@@ -5,9 +5,10 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserType>
  */
-class UserFactory extends Factory {
+class UserTypeFactory extends Factory
+{
     /**
      * Define the model's default state.
      *
@@ -16,9 +17,11 @@ class UserFactory extends Factory {
     public function definition(): array
     {
         return [
-			'username' => 'superuser',
-            'password' => bcrypt('123123aA'),
-            'is_active' => true,
+			'user_type_name' => 'admin',
+			'user_type_description' => 'Superuser, has all previledges.',
+			'user_type_icon' => 'mat:admin_panel_settings',
+			'user_type_color' => '#D32F2F',
+			'hierarchy_level' => 0,
 
             'created_at' => now(),
             'created_at_timezone' => '+08:00',

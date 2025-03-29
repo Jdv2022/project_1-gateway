@@ -15,6 +15,14 @@ class PreGeneralProcess
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
+        $excludedRoutes = [
+            'api/meta/data', 
+            'api/cue'
+        ];
+        if(in_array($request->path(), $excludedRoutes)) {
+            return $next($request);
+        }
+
         $decryptedPayload = is_array($request->payload) 
             ? $request->payload 
             : json_decode($request->payload, true);

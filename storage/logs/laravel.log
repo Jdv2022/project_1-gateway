@@ -1,1049 +1,578 @@
-[2025-03-16 14:45:44] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-16 14:45:44] local.INFO: Request URL: http://gateway.local/api/cue  
-[2025-03-16 14:45:44] local.INFO: Request Method: POST  
-[2025-03-16 14:45:44] local.DEBUG: Request data: {
-    "data": {
-        "NAME": "JOHN",
-        "ID": 1
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
-    "payload": {
-        "NAME": "JOHN",
-        "ID": 1
-    }
+[2025-03-29 07:13:28] local.DEBUG: XXXX  
+[2025-03-29 07:13:28] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:13:28] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:13:28] local.INFO: Request Method: POST  
+[2025-03-29 07:13:28] local.DEBUG: Request data: {
+    "payload": "OXFdKbHfhnN0CAL1euG7aO32LMgOmSMOn6lwmdEeW4gBYi+1qBeCl7sCMmnWLt6IfJV\/ALuzy1h6ACT7wgslPQ=="
 }  
-[2025-03-16 14:45:44] local.ERROR: App\Http\Controllers\ApiBaseController::returnSuccess(): Return value must be of type App\Http\Controllers\JsonResponse, Illuminate\Http\JsonResponse returned {"exception":"[object] (TypeError(code: 0): App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned at /var/www/html/project_1/gateway/app/Http/Controllers/ApiBaseController.php:22)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php(36): App\\Http\\Controllers\\ApiBaseController->returnSuccess()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(47): App\\Http\\Controllers\\AuthControllers\\MetaController->cue()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(266): Illuminate\\Routing\\ControllerDispatcher->dispatch()
-#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): Illuminate\\Routing\\Route->runController()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(808): Illuminate\\Routing\\Route->run()
-#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
-#6 /var/www/html/project_1/gateway/app/Http/Middleware/PostRequestLogs.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PostRequestLogs->handle()
-#8 /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
-#12 /var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreGeneralProcess->handle()
-#14 /var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreRequestLogs->handle()
-#16 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Decrypt->handle()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
-#21 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
-#22 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#29 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
-#31 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#32 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
-#33 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#36 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle()
-#37 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#38 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle()
-#39 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#40 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle()
-#41 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#42 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle()
-#43 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#44 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
-#45 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#46 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle()
-#47 /var/www/html/project_1/gateway/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest()
-#48 {main}
-"} 
-[2025-03-16 14:45:44] local.DEBUG: Response data:
-{
-    "message": "App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned",
-    "exception": "TypeError",
-    "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Controllers\/ApiBaseController.php",
-    "line": 22,
-    "trace": [
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Controllers\/AuthControllers\/MetaController.php",
-            "line": 36,
-            "function": "returnSuccess",
-            "class": "App\\Http\\Controllers\\ApiBaseController",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
-            "line": 47,
-            "function": "cue",
-            "class": "App\\Http\\Controllers\\AuthControllers\\MetaController",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-            "line": 266,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\ControllerDispatcher",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-            "line": 212,
-            "function": "runController",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 808,
-            "function": "run",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 170,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PostRequestLogs.php",
-            "line": 17,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\PostRequestLogs",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/Encrypt.php",
-            "line": 18,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\Encrypt",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 51,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PreGeneralProcess.php",
-            "line": 24,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\PreGeneralProcess",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/PreRequestLogs.php",
-            "line": 18,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\PreRequestLogs",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/app\/Http\/Middleware\/Decrypt.php",
-            "line": 25,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\Decrypt",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 807,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 786,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 750,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 739,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 201,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 170,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
-            "line": 31,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
-            "line": 51,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php",
-            "line": 110,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/HandleCors.php",
-            "line": 62,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Http\\Middleware\\HandleCors",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/TrustProxies.php",
-            "line": 58,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/InvokeDeferredCallbacks.php",
-            "line": 22,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/ValidatePathEncoding.php",
-            "line": 26,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 209,
-            "function": "handle",
-            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 176,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 145,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Application.php",
-            "line": 1220,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/html\/project_1\/gateway\/public\/index.php",
-            "line": 20,
-            "function": "handleRequest",
-            "class": "Illuminate\\Foundation\\Application",
-            "type": "->"
-        }
-    ]
-}  
-[2025-03-16 14:45:44] local.INFO: Response Status: 500  
-[2025-03-16 14:45:44] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
-[2025-03-16 14:45:44] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-16 14:45:44] local.DEBUG: XXXXX  
-[2025-03-16 14:45:44] local.DEBUG: array (
-  'message' => 'App\\Http\\Controllers\\ApiBaseController::returnSuccess(): Return value must be of type App\\Http\\Controllers\\JsonResponse, Illuminate\\Http\\JsonResponse returned',
-  'exception' => 'TypeError',
-  'file' => '/var/www/html/project_1/gateway/app/Http/Controllers/ApiBaseController.php',
-  'line' => 22,
-  'trace' => 
-  array (
-    0 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Controllers/AuthControllers/MetaController.php',
-      'line' => 36,
-      'function' => 'returnSuccess',
-      'class' => 'App\\Http\\Controllers\\ApiBaseController',
-      'type' => '->',
-    ),
-    1 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php',
-      'line' => 47,
-      'function' => 'cue',
-      'class' => 'App\\Http\\Controllers\\AuthControllers\\MetaController',
-      'type' => '->',
-    ),
-    2 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php',
-      'line' => 266,
-      'function' => 'dispatch',
-      'class' => 'Illuminate\\Routing\\ControllerDispatcher',
-      'type' => '->',
-    ),
-    3 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Route.php',
-      'line' => 212,
-      'function' => 'runController',
-      'class' => 'Illuminate\\Routing\\Route',
-      'type' => '->',
-    ),
-    4 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
-      'line' => 808,
-      'function' => 'run',
-      'class' => 'Illuminate\\Routing\\Route',
-      'type' => '->',
-    ),
-    5 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 170,
-      'function' => 'Illuminate\\Routing\\{closure}',
-      'class' => 'Illuminate\\Routing\\Router',
-      'type' => '->',
-    ),
-    6 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PostRequestLogs.php',
-      'line' => 17,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    7 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'App\\Http\\Middleware\\PostRequestLogs',
-      'type' => '->',
-    ),
-    8 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php',
-      'line' => 18,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    9 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'App\\Http\\Middleware\\Encrypt',
-      'type' => '->',
-    ),
-    10 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php',
-      'line' => 51,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    11 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Routing\\Middleware\\SubstituteBindings',
-      'type' => '->',
-    ),
-    12 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php',
-      'line' => 24,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    13 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'App\\Http\\Middleware\\PreGeneralProcess',
-      'type' => '->',
-    ),
-    14 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php',
-      'line' => 18,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    15 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'App\\Http\\Middleware\\PreRequestLogs',
-      'type' => '->',
-    ),
-    16 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php',
-      'line' => 25,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    17 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'App\\Http\\Middleware\\Decrypt',
-      'type' => '->',
-    ),
-    18 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 127,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    19 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
-      'line' => 807,
-      'function' => 'then',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    20 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
-      'line' => 786,
-      'function' => 'runRouteWithinStack',
-      'class' => 'Illuminate\\Routing\\Router',
-      'type' => '->',
-    ),
-    21 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
-      'line' => 750,
-      'function' => 'runRoute',
-      'class' => 'Illuminate\\Routing\\Router',
-      'type' => '->',
-    ),
-    22 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php',
-      'line' => 739,
-      'function' => 'dispatchToRoute',
-      'class' => 'Illuminate\\Routing\\Router',
-      'type' => '->',
-    ),
-    23 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
-      'line' => 201,
-      'function' => 'dispatch',
-      'class' => 'Illuminate\\Routing\\Router',
-      'type' => '->',
-    ),
-    24 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 170,
-      'function' => 'Illuminate\\Foundation\\Http\\{closure}',
-      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
-      'type' => '->',
-    ),
-    25 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php',
-      'line' => 21,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    26 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php',
-      'line' => 31,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest',
-      'type' => '->',
-    ),
-    27 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull',
-      'type' => '->',
-    ),
-    28 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php',
-      'line' => 21,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    29 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php',
-      'line' => 51,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest',
-      'type' => '->',
-    ),
-    30 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\TrimStrings',
-      'type' => '->',
-    ),
-    31 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php',
-      'line' => 27,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    32 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Http\\Middleware\\ValidatePostSize',
-      'type' => '->',
-    ),
-    33 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php',
-      'line' => 110,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    34 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance',
-      'type' => '->',
-    ),
-    35 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php',
-      'line' => 62,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    36 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Http\\Middleware\\HandleCors',
-      'type' => '->',
-    ),
-    37 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php',
-      'line' => 58,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    38 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Http\\Middleware\\TrustProxies',
-      'type' => '->',
-    ),
-    39 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php',
-      'line' => 22,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    40 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks',
-      'type' => '->',
-    ),
-    41 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php',
-      'line' => 26,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    42 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 209,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Http\\Middleware\\ValidatePathEncoding',
-      'type' => '->',
-    ),
-    43 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php',
-      'line' => 127,
-      'function' => 'Illuminate\\Pipeline\\{closure}',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    44 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
-      'line' => 176,
-      'function' => 'then',
-      'class' => 'Illuminate\\Pipeline\\Pipeline',
-      'type' => '->',
-    ),
-    45 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php',
-      'line' => 145,
-      'function' => 'sendRequestThroughRouter',
-      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
-      'type' => '->',
-    ),
-    46 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php',
-      'line' => 1220,
-      'function' => 'handle',
-      'class' => 'Illuminate\\Foundation\\Http\\Kernel',
-      'type' => '->',
-    ),
-    47 => 
-    array (
-      'file' => '/var/www/html/project_1/gateway/public/index.php',
-      'line' => 20,
-      'function' => 'handleRequest',
-      'class' => 'Illuminate\\Foundation\\Application',
-      'type' => '->',
-    ),
-  ),
-)  
-[2025-03-16 14:45:44] local.ERROR: Encrypt 'payload' property does not exist. {"exception":"[object] (Exception(code: 0): Encrypt 'payload' property does not exist. at /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php:23)
-[stacktrace]
-#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
-#1 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#2 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
-#3 /var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreGeneralProcess->handle()
-#5 /var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#6 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreRequestLogs->handle()
-#7 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#8 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Decrypt->handle()
-#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#10 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
-#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
-#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
-#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
-#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
-#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
-#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
-#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#21 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
-#22 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
-#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
-#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle()
-#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#29 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle()
-#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#31 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle()
-#32 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#33 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle()
-#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
-#36 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#37 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle()
-#38 /var/www/html/project_1/gateway/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest()
-#39 {main}
-"} 
-[2025-03-16 14:46:33] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-16 14:46:33] local.INFO: Request URL: http://gateway.local/api/cue  
-[2025-03-16 14:46:33] local.INFO: Request Method: POST  
-[2025-03-16 14:46:33] local.DEBUG: Request data: {
-    "data": {
-        "NAME": "JOHN",
-        "ID": 1
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
-    "payload": {
-        "NAME": "JOHN",
-        "ID": 1
-    }
-}  
-[2025-03-16 14:46:33] local.DEBUG: Response data:
-{
-    "status": "Success",
-    "error": 0,
-    "message": "Follow up Data",
-    "payload": [],
-    "gateway_version": "1.0",
-    "backend_version": "1.0",
-    "frontend_version": "1.0",
-    "cue": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2wyaVB4jQIZbp\npFIRXUwuPYHWMw\/pQzSoysY+n10jHnNFFwwoC3bLBZeUzF1gxcOcUmbse\/El5OVg\nu2FpKxFzZ0rbjz2BixAKH3r0w6BKLUq8a7JnVGec45WYyt90cJWo+oUqnvTjjR7h\nILo7TBoI6rDDJ95xE3l5e48qBbz+BoTwG\/n2\/V7u43+FC3087NT0A3f0AXLxAAL4\nG+bWxSB5xPl1MpkgTCQRsqcXA35pW\/RyfVHR5OPtHYGmhW\/IfABbZCsvfDPiTcPf\nS0sSSg+jbWSg+pyldmWXE0D0Ig\/r7uoYEp0O8Ywk4CqUF5Dltq+r+U+KJNyPUjda\nWNhnEAfBAgMBAAECggEACDROgRYrgBxh5+8md\/0WNGUydOkp57DKpmEj8R+6UJ9H\nUWytcQbCuG5x1Y4vCu8VzuisEiWmN6tE2MjQoKX8TI\/wfla5zhzuBWZQYLh\/c5UA\n6+Bxy82wMQzOZGOHEHUVYtaML9Oe7rAhGL4dXhgWexv9\/2TEyZK0O03eqWZEi6qv\nq8Rf0tgKsRw\/lvG1u\/SXE\/WP9DN+GzOkq5irCf\/KBzXs2q4wYnIMCtDVBsZwSdE2\nk+F8fdQMXLBnMrziOHnZIx+oTabn1hLVJMit+E8NgeSrFK0n9vnH4WkJqyYR6NoF\ne6AhwZCoFE7VnW0Q4vpcCpr1jtR9NrCu9Bd0niTFoQKBgQC+C2c3qhZxcBZI34We\nYt5wg+PNCgIJcFGzDkORtswVF9U9rDK\/pJ5xPNfnEDSzhbDXzgYe6mT8fPIyCq+o\nsnlzS1H63Qf0xpaSHfDSSekg3Er\/r0nuCQS1dRb0hR7q4Hjhso8+kqiQtolbHuwA\n+QsiLdoKmL6Tl9ilJKfa4ABFLQKBgQD2MMD6DvVpp0Ti1XFGmoGvZczWGCoF5XeA\n4eWteYbgqGxVk3slIaqylRU9A+VS9aMSdBRREkOsNA\/S5y746iXpvKQTqsG8Jsuf\nxsOFZqh5vx0Wr+K\/ToAO4Eu8qubcC6QfObDYVXCxNbMNvPxfXa6YuIJz8yLB0NlR\nwC9Ge0fRZQKBgBhnnnmnffpTSolRKveL+sS4KyjJgDl2EwfLbSHpN4v944Rn+Jxj\np3UjOxaRHjNvl6Ye7upJb259HR0QAj7HrJEBuyVb\/QmR9wQMlEBs\/WMa5waum+\/V\neKVUw\/3imnXPHbbeF0cRzlPHHRx2fBgj4yogeT+jHdYWSdvrOSMCYQaBAoGBAMSE\nomZ5blkKFqjjLGrphr\/WCS6VV2Yhh8UvjUFuksXea6vb8B7xwuqOqsdrxrD0N1nR\noy4b4D0jycXWmN5FOkJcPLUeR0vDxCMkbIqeKboVXkjv2ZZQOVSmoo5V9baM7FOo\nn4vwl+Y9MVK0GtidVXO\/RRL9cC86YV8qhBJE8k0pAoGBAJWb5UipJmiOJgJQr85M\n0A3ezXz7Qlvi+bGMkauJyZW9eWrB8rORvn2S47cejmp+Y4sQIScSeyQTOn5l7ODm\nh8YiqgoKWxXh9PPV1468BSpCMO71tne\/ltJGEu\/qNWVG3OwIcs4WTN2KuDP1Hcve\nuiJGgMyD25RxNrgZ3SmllX7K\n-----END PRIVATE KEY-----\n"
-}  
-[2025-03-16 14:46:33] local.INFO: Response Status: 200  
-[2025-03-16 14:46:33] local.INFO: URL ORIGIN: http://gateway.local/api/cue  
-[2025-03-16 14:46:33] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-16 14:46:33] local.DEBUG: XXXXX  
-[2025-03-16 14:46:33] local.DEBUG: array (
-  'status' => 'Success',
-  'error' => 0,
-  'message' => 'Follow up Data',
-  'payload' => 
-  array (
-  ),
-  'gateway_version' => '1.0',
-  'backend_version' => '1.0',
-  'frontend_version' => '1.0',
-  'cue' => '-----BEGIN PRIVATE KEY-----
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2wyaVB4jQIZbp
-pFIRXUwuPYHWMw/pQzSoysY+n10jHnNFFwwoC3bLBZeUzF1gxcOcUmbse/El5OVg
-u2FpKxFzZ0rbjz2BixAKH3r0w6BKLUq8a7JnVGec45WYyt90cJWo+oUqnvTjjR7h
-ILo7TBoI6rDDJ95xE3l5e48qBbz+BoTwG/n2/V7u43+FC3087NT0A3f0AXLxAAL4
-G+bWxSB5xPl1MpkgTCQRsqcXA35pW/RyfVHR5OPtHYGmhW/IfABbZCsvfDPiTcPf
-S0sSSg+jbWSg+pyldmWXE0D0Ig/r7uoYEp0O8Ywk4CqUF5Dltq+r+U+KJNyPUjda
-WNhnEAfBAgMBAAECggEACDROgRYrgBxh5+8md/0WNGUydOkp57DKpmEj8R+6UJ9H
-UWytcQbCuG5x1Y4vCu8VzuisEiWmN6tE2MjQoKX8TI/wfla5zhzuBWZQYLh/c5UA
-6+Bxy82wMQzOZGOHEHUVYtaML9Oe7rAhGL4dXhgWexv9/2TEyZK0O03eqWZEi6qv
-q8Rf0tgKsRw/lvG1u/SXE/WP9DN+GzOkq5irCf/KBzXs2q4wYnIMCtDVBsZwSdE2
-k+F8fdQMXLBnMrziOHnZIx+oTabn1hLVJMit+E8NgeSrFK0n9vnH4WkJqyYR6NoF
-e6AhwZCoFE7VnW0Q4vpcCpr1jtR9NrCu9Bd0niTFoQKBgQC+C2c3qhZxcBZI34We
-Yt5wg+PNCgIJcFGzDkORtswVF9U9rDK/pJ5xPNfnEDSzhbDXzgYe6mT8fPIyCq+o
-snlzS1H63Qf0xpaSHfDSSekg3Er/r0nuCQS1dRb0hR7q4Hjhso8+kqiQtolbHuwA
-+QsiLdoKmL6Tl9ilJKfa4ABFLQKBgQD2MMD6DvVpp0Ti1XFGmoGvZczWGCoF5XeA
-4eWteYbgqGxVk3slIaqylRU9A+VS9aMSdBRREkOsNA/S5y746iXpvKQTqsG8Jsuf
-xsOFZqh5vx0Wr+K/ToAO4Eu8qubcC6QfObDYVXCxNbMNvPxfXa6YuIJz8yLB0NlR
-wC9Ge0fRZQKBgBhnnnmnffpTSolRKveL+sS4KyjJgDl2EwfLbSHpN4v944Rn+Jxj
-p3UjOxaRHjNvl6Ye7upJb259HR0QAj7HrJEBuyVb/QmR9wQMlEBs/WMa5waum+/V
-eKVUw/3imnXPHbbeF0cRzlPHHRx2fBgj4yogeT+jHdYWSdvrOSMCYQaBAoGBAMSE
-omZ5blkKFqjjLGrphr/WCS6VV2Yhh8UvjUFuksXea6vb8B7xwuqOqsdrxrD0N1nR
-oy4b4D0jycXWmN5FOkJcPLUeR0vDxCMkbIqeKboVXkjv2ZZQOVSmoo5V9baM7FOo
-n4vwl+Y9MVK0GtidVXO/RRL9cC86YV8qhBJE8k0pAoGBAJWb5UipJmiOJgJQr85M
-0A3ezXz7Qlvi+bGMkauJyZW9eWrB8rORvn2S47cejmp+Y4sQIScSeyQTOn5l7ODm
-h8YiqgoKWxXh9PPV1468BSpCMO71tne/ltJGEu/qNWVG3OwIcs4WTN2KuDP1Hcve
-uiJGgMyD25RxNrgZ3SmllX7K
------END PRIVATE KEY-----
-',
-)  
-[2025-03-16 14:46:38] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-16 14:46:38] local.INFO: Request URL: http://gateway.local/api/meta/data  
-[2025-03-16 14:46:38] local.INFO: Request Method: POST  
-[2025-03-16 14:46:38] local.DEBUG: Request data: {
-    "data": {
-        "NAME": "JOHN",
-        "ID": 1
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
-    "payload": {
-        "NAME": "JOHN",
-        "ID": 1
-    }
-}  
-[2025-03-16 14:46:38] local.DEBUG: Response data:
+[2025-03-29 07:13:28] local.DEBUG: Response data:
 {
     "status": "Success",
     "error": 0,
     "message": "Startup Data",
-    "payload": [],
-    "gateway_version": "1.0",
-    "backend_version": "1.0",
-    "frontend_version": "1.0",
-    "cue": "DDlnJb6vM338a2Q6pBoQkPLjWwi+WebdKsDEPplbLesUX9yfypq2wp7SQ7u5WaC3\/IfFRaa3r\/w8MGX4Z8vaUGlH4eIv2aVpFuJ7tSHLzGK+doYnyy\/tFuNoEyYrZxhutCESa2WRycf1YBzmxONI\/pJhByKzvCwk6XJkMEpAJz8mhSTaDv5RkZeru9EVw6AkkMJ8JztyeJeH2K9Ts3KqMn4rLHlgrIaJmR4s8RYSYnDfnZx0smpzyWEnGXQaAMCRUcWUVYBfNZLNEHwZUNhbRUuiJwWLXRlzTCoxP2L3pO8lxSFWe+lvNtAyEXK+gf1VymVVrEf3n4eTen5EvExSqw=="
-}  
-[2025-03-16 14:46:38] local.INFO: Response Status: 200  
-[2025-03-16 14:46:38] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
-[2025-03-16 14:46:38] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-16 14:46:38] local.DEBUG: XXXXX  
-[2025-03-16 14:46:38] local.DEBUG: array (
-  'status' => 'Success',
-  'error' => 0,
-  'message' => 'Startup Data',
-  'payload' => 
-  array (
-  ),
-  'gateway_version' => '1.0',
-  'backend_version' => '1.0',
-  'frontend_version' => '1.0',
-  'cue' => 'DDlnJb6vM338a2Q6pBoQkPLjWwi+WebdKsDEPplbLesUX9yfypq2wp7SQ7u5WaC3/IfFRaa3r/w8MGX4Z8vaUGlH4eIv2aVpFuJ7tSHLzGK+doYnyy/tFuNoEyYrZxhutCESa2WRycf1YBzmxONI/pJhByKzvCwk6XJkMEpAJz8mhSTaDv5RkZeru9EVw6AkkMJ8JztyeJeH2K9Ts3KqMn4rLHlgrIaJmR4s8RYSYnDfnZx0smpzyWEnGXQaAMCRUcWUVYBfNZLNEHwZUNhbRUuiJwWLXRlzTCoxP2L3pO8lxSFWe+lvNtAyEXK+gf1VymVVrEf3n4eTen5EvExSqw==',
-)  
-[2025-03-16 14:46:41] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-16 14:46:41] local.INFO: Request URL: http://gateway.local/api/web/login  
-[2025-03-16 14:46:41] local.INFO: Request Method: POST  
-[2025-03-16 14:46:41] local.DEBUG: Request data: {
-    "data": {
-        "username": "jjj-weed",
-        "password": "11231232fgw"
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
     "payload": {
-        "username": "jjj-weed",
-        "password": "11231232fgw"
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
     }
 }  
-[2025-03-16 14:46:41] local.INFO: [AuthController@webLogin] Logging in username jjj-weed  
-[2025-03-16 14:46:41] local.DEBUG: Response data:
-{
-    "status": "Failed",
-    "error": 1,
-    "message": "Incorrect credentials!",
-    "payload": []
+[2025-03-29 07:13:28] local.INFO: Response Status: 200  
+[2025-03-29 07:13:28] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:13:28] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:14:09] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:14:09] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:14:09] local.INFO: Request Method: POST  
+[2025-03-29 07:14:09] local.DEBUG: Request data: {
+    "payload": "gTIatZaLWju6ccG+E50ShsxXWYrE6LyYTgqeEVqrf8moVuxaZXCqjkkA8JDD06SGxYRKKnfKeFOiBlp7Q0jDhQ=="
 }  
-[2025-03-16 14:46:41] local.INFO: Response Status: 401  
-[2025-03-16 14:46:41] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
-[2025-03-16 14:46:41] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-16 14:46:41] local.DEBUG: XXXXX  
-[2025-03-16 14:46:41] local.DEBUG: array (
-  'status' => 'Failed',
-  'error' => 1,
-  'message' => 'Incorrect credentials!',
-  'payload' => 
-  array (
-  ),
-)  
-[2025-03-16 14:47:48] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
-[2025-03-16 14:47:48] local.INFO: Request URL: http://gateway.local/api/web/login  
-[2025-03-16 14:47:48] local.INFO: Request Method: POST  
-[2025-03-16 14:47:48] local.DEBUG: Request data: {
-    "data": {
-        "username": "jjj-weed",
-        "password": "11231232fgw"
-    },
-    "timestamp": "2025-03-14T12:00:00Z",
-    "device": "BROWSER",
-    "platform": "WEB",
-    "app_version": "1.0",
-    "language": "en-US",
+[2025-03-29 07:14:09] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
     "payload": {
-        "username": "jjj-weed",
-        "password": "11231232fgw"
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
     }
 }  
-[2025-03-16 14:47:48] local.INFO: [AuthController@webLogin] Logging in username jjj-weed  
-[2025-03-16 14:47:48] local.DEBUG: Response data:
-{
-    "status": "Failed",
-    "error": 1,
-    "message": "Incorrect credentials!",
-    "payload": []
+[2025-03-29 07:14:09] local.INFO: Response Status: 200  
+[2025-03-29 07:14:09] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:14:09] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:14:09] local.ERROR: Undefined variable $request {"exception":"[object] (ErrorException(code: 0): Undefined variable $request at /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php:39)
+[stacktrace]
+#0 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php(39): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /var/www/html/project_1/gateway/app/Http/Middleware/Encrypt.php(28): App\\Http\\Middleware\\Encrypt->encryptData()
+#3 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Encrypt->handle()
+#4 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#5 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#6 /var/www/html/project_1/gateway/app/Http/Middleware/PreGeneralProcess.php(23): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreGeneralProcess->handle()
+#8 /var/www/html/project_1/gateway/app/Http/Middleware/PreRequestLogs.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\PreRequestLogs->handle()
+#10 /var/www/html/project_1/gateway/app/Http/Middleware/Decrypt.php(23): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): App\\Http\\Middleware\\Decrypt->handle()
+#12 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#14 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
+#15 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
+#16 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
+#17 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
+#18 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#19 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#21 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#22 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#24 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#25 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
+#27 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#29 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#31 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#33 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle()
+#35 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle()
+#37 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
+#39 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /var/www/html/project_1/gateway/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /var/www/html/project_1/gateway/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest()
+#42 {main}
+"} 
+[2025-03-29 07:14:52] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:14:52] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:14:52] local.INFO: Request Method: POST  
+[2025-03-29 07:14:52] local.DEBUG: Request data: {
+    "payload": "KmyhwfJG3WNULa6JMx55Ll\/iQApOTxgE9mjpj0qQAl3NHPo3hUKsJXOpfqw1VyipY25rJQd5x5+E\/VS5MYpx6w=="
 }  
-[2025-03-16 14:47:48] local.INFO: Response Status: 404  
-[2025-03-16 14:47:48] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
-[2025-03-16 14:47:48] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
-[2025-03-16 14:47:48] local.DEBUG: XXXXX  
-[2025-03-16 14:47:48] local.DEBUG: array (
-  'status' => 'Failed',
-  'error' => 1,
-  'message' => 'Incorrect credentials!',
-  'payload' => 
-  array (
-  ),
-)  
+[2025-03-29 07:14:52] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:14:52] local.INFO: Response Status: 200  
+[2025-03-29 07:14:52] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:14:52] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:14:54] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:14:54] local.INFO: Request URL: http://gateway.local/api/web/login  
+[2025-03-29 07:14:54] local.INFO: Request Method: POST  
+[2025-03-29 07:14:54] local.DEBUG: Request data: {
+    "payload": {
+        "username": "superuser",
+        "password": "123123aA"
+    }
+}  
+[2025-03-29 07:14:54] local.INFO: [AuthController@webLogin] Logging in username superuser  
+[2025-03-29 07:14:54] local.INFO: [AuthController@webLogin] superuser login success!  
+[2025-03-29 07:14:54] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Login success!",
+    "payload": {
+        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZ2F0ZXdheS5sb2NhbC9hcGkvd2ViL2xvZ2luIiwiaWF0IjoxNzQzMjMyNDk0LCJleHAiOjE3NDMyMzYwOTQsIm5iZiI6MTc0MzIzMjQ5NCwianRpIjoiUG1GUjk1MzFTU2d3QWhKYSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.S-cr6OKgGC8vx7e3KsKiPI86FoeLM-1biZxXA36Am14",
+        "token_expire": 3600
+    }
+}  
+[2025-03-29 07:14:54] local.INFO: Response Status: 200  
+[2025-03-29 07:14:54] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
+[2025-03-29 07:14:54] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:15:02] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:15:02] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:15:02] local.INFO: Request Method: POST  
+[2025-03-29 07:15:02] local.DEBUG: Request data: {
+    "payload": "TpohErLmAuUWfl4hhPTjtERkm9P3s3kJO5bwRNzonjCXPuphkQfFbVxhPNaAhfkWtgFAw+\/Y6eDcyNRM1oUwcw=="
+}  
+[2025-03-29 07:15:02] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:15:02] local.INFO: Response Status: 200  
+[2025-03-29 07:15:02] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:15:02] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:17:04] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:17:04] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:17:04] local.INFO: Request Method: POST  
+[2025-03-29 07:17:04] local.DEBUG: Request data: {
+    "payload": "rOfRS5Ec7NEYcJ\/pXiUrNqVVKGb4TuzjdaTqYa3oaE1qub6mHO+inCE8wjzON3wKVvHita2imEYkt+RzLAWx2w=="
+}  
+[2025-03-29 07:17:04] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:17:04] local.INFO: Response Status: 200  
+[2025-03-29 07:17:04] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:17:04] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:17:44] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:17:44] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:17:44] local.INFO: Request Method: POST  
+[2025-03-29 07:17:44] local.DEBUG: Request data: {
+    "payload": "u\/bdGiPWKuWp0hsz\/2+U7NiOAb2gH4Ac2vbTcPHi6TtP02uOJJdMChKHIXs2VnJboiSuZztAvDzFtUaxUUDKjA=="
+}  
+[2025-03-29 07:17:44] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:17:44] local.INFO: Response Status: 200  
+[2025-03-29 07:17:44] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:17:44] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:18:05] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:18:05] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:18:05] local.INFO: Request Method: POST  
+[2025-03-29 07:18:05] local.DEBUG: Request data: {
+    "payload": "7j247sP\/mw5DPUDMZhKMCGaoPlQUTUhscIIbhxHPhxlQXXPn2aSyob1jiBRowRr8Azhx69D1Ot6dyqDNHBA90Q=="
+}  
+[2025-03-29 07:18:05] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:18:05] local.INFO: Response Status: 200  
+[2025-03-29 07:18:05] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:18:05] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:18:46] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:18:46] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:18:46] local.INFO: Request Method: POST  
+[2025-03-29 07:18:46] local.DEBUG: Request data: {
+    "payload": "LZZ1bnE13hW6j\/tk0kK9QMzSlKvvJ0oQBBPWCP4ozNL+9oW72FiaCxtl\/z3ee2A6qcfssFVSrrHhgyvpgIX4+g=="
+}  
+[2025-03-29 07:18:46] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:18:46] local.INFO: Response Status: 200  
+[2025-03-29 07:18:46] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:18:46] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:19:12] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:19:12] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:19:12] local.INFO: Request Method: POST  
+[2025-03-29 07:19:12] local.DEBUG: Request data: {
+    "payload": "p22TiLAKyLA6JSUkxIv2Ny0x9\/NeNHY9nTjBCWpBdf3RgQHQcnsDz0B3Ymaqvx9LpKPS2khBm8GTDIaHZXYavg=="
+}  
+[2025-03-29 07:19:12] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:19:12] local.INFO: Response Status: 200  
+[2025-03-29 07:19:12] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:19:12] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:20:37] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:20:37] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:20:37] local.INFO: Request Method: POST  
+[2025-03-29 07:20:37] local.DEBUG: Request data: {
+    "payload": "Ag36hCM4IuCW2qX44ivzXoGoOCnONTUoE3XCcO8SGf\/XVYgm20GZtvTGD14JwYXwnqFFIs01b808Bt0TfPltkw=="
+}  
+[2025-03-29 07:20:37] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:20:37] local.INFO: Response Status: 200  
+[2025-03-29 07:20:37] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:20:37] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:21:13] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:21:13] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:13] local.INFO: Request Method: POST  
+[2025-03-29 07:21:13] local.DEBUG: Request data: {
+    "payload": "nb2qWRvdj3yUQtHppRecmvQle7fV5ke\/FyO8HkOejXL1KMZThzxYmFGAoemT\/uxBVgI1Tdfee7TiQnkMaf8TKg=="
+}  
+[2025-03-29 07:21:13] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:21:13] local.INFO: Response Status: 200  
+[2025-03-29 07:21:13] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:13] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:21:23] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:21:23] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:23] local.INFO: Request Method: POST  
+[2025-03-29 07:21:23] local.DEBUG: Request data: {
+    "payload": "r4lS\/rNS46sekpqx9XIwhqI1cDD1LFQbnL\/wouhyFAZ+dR5lpWW7trfRzO\/AI7JLpkeF5rIj1C3X8zfWa29b4A=="
+}  
+[2025-03-29 07:21:23] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:21:23] local.INFO: Response Status: 200  
+[2025-03-29 07:21:23] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:23] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:21:38] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:21:38] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:38] local.INFO: Request Method: POST  
+[2025-03-29 07:21:38] local.DEBUG: Request data: {
+    "payload": "OLO+ASfCKvFi2IagR0PMHKOw9af1BYtjtgztrOQNPHEqUJ+r4GkagIvyJ7xvgNP09vppV2m\/4cFklnkF884uoQ=="
+}  
+[2025-03-29 07:21:38] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:21:38] local.INFO: Response Status: 200  
+[2025-03-29 07:21:38] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:38] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:21:43] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:21:43] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:43] local.INFO: Request Method: POST  
+[2025-03-29 07:21:43] local.DEBUG: Request data: {
+    "payload": "Wf5px3WT2UcH01dIZ46ZqUz+7TYPjNeu9FwJYyk8aelklV1+qWVtL0GXv63RwKAsKhhF1FEFe4C0h7TenSzIQA=="
+}  
+[2025-03-29 07:21:43] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:21:43] local.INFO: Response Status: 200  
+[2025-03-29 07:21:43] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:43] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:21:59] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:21:59] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:59] local.INFO: Request Method: POST  
+[2025-03-29 07:21:59] local.DEBUG: Request data: {
+    "payload": "Na0RheazV1h7o5JIGMojMG4yIrWJKWL4pJMPwvDSX9\/F+FfTEW3SrsD+aBgtkugNkHlGO7OAdoA1DGPKaWrrWA=="
+}  
+[2025-03-29 07:21:59] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:21:59] local.INFO: Response Status: 200  
+[2025-03-29 07:21:59] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:21:59] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:22:11] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:22:11] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:11] local.INFO: Request Method: POST  
+[2025-03-29 07:22:11] local.DEBUG: Request data: {
+    "payload": "GshQlnZN0E3\/OFbP9D2JBQd0BqeWK20UEphJcd40RkLVxp19kSqIIA1q1RrGvNA75WI1BIssaxNGxcJ8Hpn3jA=="
+}  
+[2025-03-29 07:22:11] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:22:11] local.INFO: Response Status: 200  
+[2025-03-29 07:22:11] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:11] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:22:33] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:22:33] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:33] local.INFO: Request Method: POST  
+[2025-03-29 07:22:33] local.DEBUG: Request data: {
+    "payload": "6v4Vgs2h7X+fYC1zIujUiWMU9\/1rknTG+Jb7w1GOrPFYtJQNC4ZceW0F1W92rJwm8wADrrNe+Sc5XbyuranK\/w=="
+}  
+[2025-03-29 07:22:33] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:22:33] local.INFO: Response Status: 200  
+[2025-03-29 07:22:33] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:33] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:22:39] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:22:39] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:39] local.INFO: Request Method: POST  
+[2025-03-29 07:22:39] local.DEBUG: Request data: {
+    "payload": "P7Ax9R055KkOaq00vREFcGeDL\/gGfavgIotwIVb\/Z0ZxUy9ryFJjry2lRDbv8o+PrZQcFRtSS\/bHJz\/+8m5oDg=="
+}  
+[2025-03-29 07:22:39] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 07:22:39] local.INFO: Response Status: 200  
+[2025-03-29 07:22:39] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 07:22:39] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 07:22:41] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 07:22:41] local.INFO: Request URL: http://gateway.local/api/web/login  
+[2025-03-29 07:22:41] local.INFO: Request Method: POST  
+[2025-03-29 07:22:41] local.DEBUG: Request data: {
+    "payload": {
+        "username": "superuser",
+        "password": "123123aA"
+    }
+}  
+[2025-03-29 07:22:41] local.INFO: [AuthController@webLogin] Logging in username superuser  
+[2025-03-29 07:22:41] local.INFO: [AuthController@webLogin] superuser login success!  
+[2025-03-29 07:22:41] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Login success!",
+    "payload": {
+        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZ2F0ZXdheS5sb2NhbC9hcGkvd2ViL2xvZ2luIiwiaWF0IjoxNzQzMjMyOTYxLCJleHAiOjE3NDMyMzY1NjEsIm5iZiI6MTc0MzIzMjk2MSwianRpIjoic2pUTDhhN0ZSanBrTmZBSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.vcZamvBaiOVAs1-KoKUSR3PpaHcxcgwYu8qjcsBbugI",
+        "token_expire": 3600
+    }
+}  
+[2025-03-29 07:22:41] local.INFO: Response Status: 200  
+[2025-03-29 07:22:41] local.INFO: URL ORIGIN: http://gateway.local/api/web/login  
+[2025-03-29 07:22:41] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 08:28:01] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 08:28:01] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 08:28:01] local.INFO: Request Method: POST  
+[2025-03-29 08:28:01] local.DEBUG: Request data: {
+    "payload": "gfKNfgKExhBYnNj4ys6i9DPu1\/XMWFbaJi1AGkZL438qA2l9XLqj2KqU7FWL+WpOpK+CueLrgW2l9gTuCOiiyw=="
+}  
+[2025-03-29 08:28:01] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 08:28:01] local.INFO: Response Status: 200  
+[2025-03-29 08:28:01] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 08:28:01] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 08:41:24] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 08:41:24] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:24] local.INFO: Request Method: POST  
+[2025-03-29 08:41:24] local.DEBUG: Request data: {
+    "payload": "VXlxu3Ir2HoClnuyNw1mUqaHpz8pPB\/pZuamCQJ2M5G7C2vnToxu99W8s1ztBsxoUhvK5YLicVMSTQeU1oTbBg=="
+}  
+[2025-03-29 08:41:24] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 08:41:24] local.INFO: Response Status: 200  
+[2025-03-29 08:41:24] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:24] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 08:41:31] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 08:41:31] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:31] local.INFO: Request Method: POST  
+[2025-03-29 08:41:31] local.DEBUG: Request data: {
+    "payload": "oANUK4kCPtKS0mNW3p1yaEbTogusLDTEI3UxozFm\/NfaZYzq4i89kiIBrZ9oLzZPdMA2GHkVld\/r2jRLenNiCw=="
+}  
+[2025-03-29 08:41:31] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 08:41:31] local.INFO: Response Status: 200  
+[2025-03-29 08:41:31] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:31] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 08:41:32] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 08:41:32] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:32] local.INFO: Request Method: POST  
+[2025-03-29 08:41:32] local.DEBUG: Request data: {
+    "payload": "F9QY8VPl7cBg41IL4CYpM+CkrMxh+Ed0X36s2gRL9+57d9EbFqgLehnYLlsP2p7AouGRt4bjy6AiIse1e5gNmg=="
+}  
+[2025-03-29 08:41:32] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 08:41:32] local.INFO: Response Status: 200  
+[2025-03-29 08:41:32] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:32] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  
+[2025-03-29 08:41:33] local.INFO: <-----------------------------------[Pre Controller Process]----------------------------------->  
+[2025-03-29 08:41:33] local.INFO: Request URL: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:33] local.INFO: Request Method: POST  
+[2025-03-29 08:41:33] local.DEBUG: Request data: {
+    "payload": "nMTnZoU7dFy1Wtvq4lfqEct1Y4gFXgE\/Spj9ZzzImsEZ4VNGAb90DZnhMA6PYRX+2Dfs9xlkssaE05prYtPDDg=="
+}  
+[2025-03-29 08:41:33] local.DEBUG: Response data:
+{
+    "status": "Success",
+    "error": 0,
+    "message": "Startup Data",
+    "payload": {
+        "gateway_version": "1.0",
+        "database_version": "1.0",
+        "frontend_version": "1.0",
+        "cue": "base64:Q3cmrwFmKvW9yTLARzCYwXtUfEz1dUn0w8Hh5d+HqO0="
+    }
+}  
+[2025-03-29 08:41:33] local.INFO: Response Status: 200  
+[2025-03-29 08:41:33] local.INFO: URL ORIGIN: http://gateway.local/api/meta/data  
+[2025-03-29 08:41:33] local.INFO: <-----------------------------------[Post Controller Process]----------------------------------->  

@@ -5,9 +5,10 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserDetail>
  */
-class UserFactory extends Factory {
+class UserDetailFactory extends Factory
+{
     /**
      * Define the model's default state.
      *
@@ -16,9 +17,19 @@ class UserFactory extends Factory {
     public function definition(): array
     {
         return [
-			'username' => 'superuser',
-            'password' => bcrypt('123123aA'),
-            'is_active' => true,
+			'first_name' => 'super',
+            'middle_name' => "superuser",
+			'last_name' => "user",
+            'email' => "master@localhost",
+            'phone' => "0000000000",
+			'address' => "localhost",
+			'country' => "localhost",
+			'date_of_birth' => "2000-01-01",
+			'age' => 25,
+			'gender' => true,
+			'profile_image' => "localhost",
+			'department' => "localhost",
+			'position' => "localhost",
 
             'created_at' => now(),
             'created_at_timezone' => '+08:00',
@@ -30,6 +41,8 @@ class UserFactory extends Factory {
             'updated_by_user_id' => 0,
             'updated_by_username' => 'factory',
             'updated_by_user_type' => 'dev',
+
+			'user_id' => 1,
         ];
     }
 }

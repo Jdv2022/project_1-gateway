@@ -23,6 +23,8 @@ return new class extends Migration
             $table->integer('age');
             $table->boolean('gender')->default(true);
             $table->string('profile_image', 45)->nullable();
+            $table->string('department', 45)->nullable();
+            $table->string('position', 45)->nullable();
 
             $table->datetime('created_at');
             $table->string('created_at_timezone', 10)->nullable();

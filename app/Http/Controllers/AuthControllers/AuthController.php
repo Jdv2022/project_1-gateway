@@ -21,8 +21,8 @@ class AuthController extends ApiBaseController {
 
     public function webLogin(Request $request):JsonResponse {
         $validatedData = $request->validate([
-            'username' => 'required|string|max:12',
-            'password' => 'required|min:8'
+            'username' => 'required|string|max:12|regex:/^[a-zA-Z0-9_]+$/',
+            'password' => 'required|min:8|regex:/^[a-zA-Z0-9_]+$/'
         ]);  
 
         Log::info("[AuthController@webLogin] Logging in username ". $validatedData['username']);
@@ -31,31 +31,31 @@ class AuthController extends ApiBaseController {
             return $this->returnFail(data: [], message: "Incorrect credentials!", status: 404);
         }
         Log::info("[AuthController@webLogin] " . $validatedData['username'] . ' login success!');
+
+		$payload = [
+			'access_token' => $token,
+			'token_expire' => JWTAuth::factory()->getTTL() * 60,
+		];
         
-        $tokenDetails = [
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
-        ];
-        return $this->returnSuccess(data: $tokenDetails, message: "Login success!");
+        return $this->returnSuccess(data: $payload, message: "Login success!");
     }
 
     public function webRegistration(Request $request):JsonResponse {
         $validatedData = $request->validate([
-            'username' => 'required|string|max:12',
-            'password' => 'required|string|min:8',
-            'first_name' => 'required|string',
-            'middle_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email|unique:user_details',
-            'phone' => 'required|numeric|digits_between:10,15',
-            'address' => 'required|string',
-            'country' => 'required|string',
-            'date_of_birth' => 'required|date',
-            'age' => 'required|integer|min:0',
-            'gender' => 'required|in:0,1',
-            'profile_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'action_by_user_id' => 'required|numeric',
+            'username' => 'required|string|max:12|regex:/^[a-zA-Z0-9_]+$/',
+            'password' => 'required|string|min:8|regex:/^[a-zA-Z0-9_]+$/',
+            'first_name' => 'required|string|regex:/^[a-zA-Z0-9_]+$/',
+            'middle_name' => 'required|string|regex:/^[a-zA-Z0-9_]+$/',
+            'last_name' => 'required|string|regex:/^[a-zA-Z0-9_]+$/',
+            'email' => 'required|email|unique:user_details|regex:/^[a-zA-Z0-9_]+$/',
+            'phone' => 'required|numeric|digits_between:10,15|regex:/^[a-zA-Z0-9_]+$/',
+            'address' => 'required|string|regex:/^[a-zA-Z0-9_]+$/',
+            'country' => 'required|string|regex:/^[a-zA-Z0-9_]+$/',
+            'date_of_birth' => 'required|date|regex:/^[a-zA-Z0-9_]+$/',
+            'age' => 'required|integer|min:0|regex:/^[a-zA-Z0-9_]+$/',
+            'gender' => 'required|in:0,1|regex:/^[a-zA-Z0-9_]+$/',
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg|max:2048|regex:/^[a-zA-Z0-9_]+$/',
+            'action_by_user_id' => 'required|numeric|regex:/^[a-zA-Z0-9_]+$/',
         ]);  
         $model = new UserDetail();
         $superUser = $model->getAuthUser();

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Tymon\JWTAuth\Http\Middleware\Authenticate;
 use App\Http\Controllers\AuthControllers\MetaController;
 use App\Http\Controllers\AuthControllers\AuthController;
+use App\Http\Middleware\AuthUserMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,15 @@ use App\Http\Controllers\AuthControllers\AuthController;
 */
 
 /* Startup Data */
-Route::post('meta/data', [MetaController::class, 'metaData']);
-Route::post('cue', [MetaController::class, 'cue']);
+Route::POST('meta/data', [MetaController::class, 'metaData']);
+Route::POST('cue', [MetaController::class, 'cue']);
 
 /* Authentication */
-Route::post('web/login', [AuthController::class, 'webLogin']);
+Route::POST('web/login', [AuthController::class, 'webLogin']);
+
+/* Standard API */
+Route::middleware([AuthUserMiddleware::class])->group(function () {
+	Route::POST('web/private/users', [AuthController::class, 'webLogin']);
+	// Route::POST('meta/data', [MetaController::class, 'metaData']);
+
+});

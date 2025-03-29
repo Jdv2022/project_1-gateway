@@ -16,6 +16,12 @@ class Decrypt {
      */
     public function handle(Request $request, Closure $next): Response {
         $encryptedData = $request->all();
+        $excludedRoutes = [
+            'api/meta/data', 
+        ];
+		if($request->is($excludedRoutes)) {
+			return $next($request);
+		}
 
         if(!array_key_exists('payload', $encryptedData)) {
             throw new Exception("Decrypt 'payload' property does not exist.");
@@ -27,16 +33,16 @@ class Decrypt {
 
     function decryptData($encryptedData):array {
         $appKey = config('app.key');
-    
-        if (!$appKey || strpos($appKey, 'base64:') !== 0) {
+
+        if(!$appKey || strpos($appKey, 'base64:') !== 0) {
             throw new Exception("Invalid APP_KEY format.");
         }
-    
-        $key = base64_decode(substr($appKey, 7)); // Convert to binary
+		
+        $key = base64_decode(substr($appKey, 7)); 
     
         $decoded = base64_decode($encryptedData);
         
-        if (strlen($decoded) < 48) { // IV (16) + HMAC (32) + Ciphertext (>= 0)
+        if(strlen($decoded) < 48) { 
             throw new Exception("Invalid encrypted data.");
         }
     

@@ -18,13 +18,13 @@ class __SystemBaseModel extends Model {
     protected static function boot() {
         parent::boot();
 
-        static::creating(function ($model) {
-            $model->setCreatedAttributes();
-        });
+        // static::creating(function ($model) {
+        //     $model->setCreatedAttributes();
+        // });
 
-        static::updating(function ($model) {
-            $model->setUpdatedAttributes();
-        });
+        // static::updating(function ($model) {
+        //     $model->setUpdatedAttributes();
+        // });
     }
 
     private function getAuthUser():array {

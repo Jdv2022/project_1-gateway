@@ -24,8 +24,16 @@ class AuthUserMiddleware
             return $next($request);
         }
 
-        $JWTAuth = JWTAuth::parseToken()->authenticate();  
-        $userId = $JWTAuth->id;  
+		$token = $request->cookie('auth_token'); 
+		if (!$token) {
+			throw new \Exception("Unauthorized: No token found");
+		}
+
+		JWTAuth::setToken($token);
+		$authenticatedUser = JWTAuth::authenticate();
+		$JWTAuth = JWTAuth::parseToken()->authenticate();  
+        $userId = $JWTAuth->id; 
+
         $user = User::with([
                 'userDetail', 
                 'userUserType',
@@ -34,7 +42,7 @@ class AuthUserMiddleware
             ->where('id', $userId)
             ->first();
 
-        if(!$user) throw new Exception("ID of implementing user not found.");
+        if(!$user) throw new \Exception("ID of implementing user not found.");
 
         $userInstance = [
             'id' => $user->id,

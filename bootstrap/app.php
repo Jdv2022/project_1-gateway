@@ -8,7 +8,6 @@ use App\Http\Middleware\Decrypt;
 use App\Http\Middleware\PostRequestLogs;
 use App\Http\Middleware\Encrypt;
 use App\Http\Middleware\PreGeneralProcess;
-use App\Http\Middleware\AuthUserMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -22,7 +21,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             Decrypt::class,
             PreRequestLogs::class,
-            AuthUserMiddleware::class,
             PreGeneralProcess::class,
         ]);
         $middleware->api(append: [
