@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\AuthControllers;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\ApiBaseController;
 use Illuminate\Http\JsonResponse;
 
-class MetaController extends ApiBaseController {
+class MetaController extends __ApiBaseController {
     
     public function __construct() {
         

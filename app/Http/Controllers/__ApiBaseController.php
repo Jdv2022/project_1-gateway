@@ -33,5 +33,6 @@ class ApiBaseController extends Controller {
         ];
         return response()->json($responseFormat, $status);
 	}
+	
 
 }

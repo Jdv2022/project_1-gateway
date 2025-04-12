@@ -3,8 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Tymon\JWTAuth\Http\Middleware\Authenticate;
-use App\Http\Controllers\AuthControllers\MetaController;
-use App\Http\Controllers\AuthControllers\AuthController;
+use App\Http\Controllers\MetaController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\User;
 use App\Http\Middleware\AuthUserMiddleware;
 
 /*
@@ -27,7 +28,6 @@ Route::POST('web/private/refresh/token', [AuthController::class, 'refreshToken']
 
 /* Standard API */
 Route::middleware([AuthUserMiddleware::class,])->group(function () {
-		
 	Route::POST('web/private/users', [AuthController::class, 'webLogin']);
 	Route::POST('web/private/user/register', [AuthController::class, 'gatewayRegistration']);
 	Route::POST('web/private/validate/token', [AuthController::class, 'validateToken']);
