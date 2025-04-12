@@ -21,7 +21,7 @@ class MetaController extends ApiBaseController {
             'frontend_version' => '1.0',
             'cue' => config('app.key')
         ];
-        return $this->returnSuccess(data: $metaData, message: "Startup Data", status: 200);
+        return $this->returnSuccess(data: $metaData, message: "Startup Data", status: 200, isEnc: false);
     }
     
 }

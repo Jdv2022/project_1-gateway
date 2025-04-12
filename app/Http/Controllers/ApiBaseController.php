@@ -12,27 +12,26 @@ class ApiBaseController extends Controller {
 
     }
 
-    protected function returnSuccess(mixed $data, string $message = "", $status = 200, array $customProperties = []):JsonResponse {
+    protected function returnSuccess(mixed $data, string $message = "", $status = 200, bool $isEnc = true):JsonResponse {
         $responseFormat = [
             'status' => 'Success',
             'error' => 0,
             'message' => $message,
+			'isEncrypted' => $isEnc,
             'payload' => $data,
         ];
-        $responseFormat = array_merge($responseFormat, $customProperties);
         return response()->json($responseFormat, $status);
     }
 
-    protected function returnFail(mixed $data, string $message = "", $status = 500, array $customProperties = []):JsonResponse {
+    protected function returnFail(mixed $data, string $message = "", $status = 500, bool $isEnc = true):JsonResponse {
         $responseFormat = [
             'status' => 'Failed',
             'error' => 1,
             'message' => $message,
+			'isEncrypted' => $isEnc,
             'payload' => $data,
         ];
-        $responseFormat = array_merge($responseFormat, $customProperties);
         return response()->json($responseFormat, $status);
-
-    }
+	}
 
 }

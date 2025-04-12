@@ -19,13 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->api(prepend: [
-            Decrypt::class,
-            PreRequestLogs::class,
-            PreGeneralProcess::class,
+			Decrypt::class,
+			PreRequestLogs::class,
+			PreGeneralProcess::class,
         ]);
         $middleware->api(append: [
-            Encrypt::class,
-            PostRequestLogs::class,
+			PostRequestLogs::class,
+			Encrypt::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
@@ -38,7 +38,30 @@ return Application::configure(basePath: dirname(__DIR__))
                     'payload' => null,
                 ], 422);
             }
-
+			if($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException) {
+				return response()->json([
+					'status' => 'Error',
+					'error' => 1,
+					'message' => 'Token has expired',
+					'payload' => null,
+				], 401);
+			}
+			if ($e instanceof \Tymon\JWTAuth\Exceptions\JWTException) {
+				return response()->json([
+					'status' => 'Error',
+					'error' => 1,
+					'message' => 'Token is missing or invalid',
+					'payload' => null,
+				], 401);
+			}
+			if($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException) {
+				return response()->json([
+					'status' => 'Error',
+					'error' => 1,
+					'message' => 'Invalid token',
+					'payload' => null,
+				], 401);
+			}
             $status = method_exists($e, 'getStatusCode') 
                 ? $e->getStatusCode() 
                 : 500;

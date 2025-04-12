@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Exception;
 use Log;
+use App\Http\Contracts\RequestModel;
 
 class Decrypt {
     /**
@@ -15,17 +16,18 @@ class Decrypt {
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
-        $encryptedData = $request->all();
-        $excludedRoutes = [
-            'api/meta/data', 
-        ];
-		if($request->is($excludedRoutes)) {
+		$encryptedData = $request->all();
+
+		if(!isset($encryptedData['isEncrypt'])) {
+			throw new Exception("Decrypt 'payload' property does not exist.");
+		}
+		if(!$encryptedData['isEncrypt']) {
 			return $next($request);
 		}
+		if(!array_key_exists('payload', $encryptedData)) {
+			throw new Exception("Decrypt 'payload' property does not exist.");
+		}
 
-        if(!array_key_exists('payload', $encryptedData)) {
-            throw new Exception("Decrypt 'payload' property does not exist.");
-        }
         $request['payload'] = $this->decryptData($encryptedData['payload']);
 
         return $next($request);
@@ -39,7 +41,6 @@ class Decrypt {
         }
 		
         $key = base64_decode(substr($appKey, 7)); 
-    
         $decoded = base64_decode($encryptedData);
         
         if(strlen($decoded) < 48) { 
@@ -64,6 +65,5 @@ class Decrypt {
     
         return json_decode($decrypted, true);
     }
-    
     
 }

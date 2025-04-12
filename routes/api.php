@@ -20,14 +20,15 @@ use App\Http\Middleware\AuthUserMiddleware;
 
 /* Startup Data */
 Route::POST('meta/data', [MetaController::class, 'metaData']);
-Route::POST('cue', [MetaController::class, 'cue']);
 
 /* Authentication */
 Route::POST('web/login', [AuthController::class, 'webLogin']);
+Route::POST('web/private/refresh/token', [AuthController::class, 'refreshToken']);
 
 /* Standard API */
-Route::middleware([AuthUserMiddleware::class])->group(function () {
+Route::middleware([AuthUserMiddleware::class,])->group(function () {
+		
 	Route::POST('web/private/users', [AuthController::class, 'webLogin']);
-	// Route::POST('meta/data', [MetaController::class, 'metaData']);
-
+	Route::POST('web/private/user/register', [AuthController::class, 'gatewayRegistration']);
+	Route::POST('web/private/validate/token', [AuthController::class, 'validateToken']);
 });

@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Database\Factories\UserDetailFactory;
 use Database\Factories\UserTypeFactory;
 use Database\Factories\UserUserTypeFactory;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,17 +19,12 @@ class DatabaseSeeder extends Seeder
     }
 
 	private function UserSeeder() {
-		$user = (new UserFactory())->create();
-
-		(new UserDetailFactory())->create([
-			'user_id' => $user->id, 
-		]);
-
-		$userType = (new UserTypeFactory())->create();
-
-		(new UserUserTypeFactory())->create([
-			'user_id' => $user->id,
-			'user_type_id' => $userType->id,
-		]);
+		if(!User::exists()) {
+			(new UserFactory())->create();
+			$this->command->info("Initial user populated!");
+		}
+		else{
+			$this->command->info("Initial user already exist!");
+		}
 	}
 }

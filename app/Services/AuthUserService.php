@@ -4,18 +4,18 @@ namespace App\Services;
 
 class AuthUserService {
 
-    protected array $user = [];
+    protected int $id;
 
-    public function __construct(array $user) {
-        $this->user = $user;
+    public function __construct(int $id) {
+        $this->id = $id;
     }
 
     public function authUser():array {
         return $this->user;
     }
 
-    public function getUserHierarchyLevel():int {
-        return $this->user['user_hierarchy_level']; 
+    public function getUserHierarchyLevel() {
+        // return $this->user['user_hierarchy_level']; 
     }
 
 }

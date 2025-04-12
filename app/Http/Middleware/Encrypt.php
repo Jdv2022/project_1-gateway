@@ -15,15 +15,12 @@ class Encrypt {
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
-		$excludedRoutes = [
-            'api/meta/data', 
-        ];
-		if($request->is($excludedRoutes)) {
-			return $next($request);
-		}
-
         $response = $next($request);
         $originalData = $response->getData(true);
+
+		if(!isset($originalData['isEncrypted']) || !$originalData['isEncrypted']) {
+			return $response;
+		}
 
         if(!array_key_exists('payload', $originalData)) {   
             throw new Exception("Encrypt 'payload' property does not exist.");
