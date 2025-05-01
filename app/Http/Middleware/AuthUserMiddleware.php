@@ -23,6 +23,8 @@ class AuthUserMiddleware
 			return response()->json(['error' => 'User not found'], 404);
 		}
 
+		Log::info("Authenticated user ID [$user->id]");
+
         $user = User::find($user->id);
 
         if(!$user) throw new \Exception("ID of implementing user not found.");

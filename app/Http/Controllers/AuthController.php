@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Log;
 use App\Models\User;
 use App\Models\UserDetail;
-use App\Http\Controllers\ApiBaseController;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;

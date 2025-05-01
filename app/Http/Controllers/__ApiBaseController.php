@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Log;
 use Illuminate\Http\JsonResponse; 
 
-class ApiBaseController extends Controller {
+class __ApiBaseController extends Controller {
 
     public function __construct() {
 
