@@ -1,11 +1,11 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Users;
+namespace grpc\Register;
 
 /**
  */
-class UserServiceClient extends \Grpc\BaseStub {
+class RegisterServiceClient extends \Grpc\BaseStub {
 
     /**
      * @param string $hostname hostname
@@ -17,16 +17,16 @@ class UserServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Users\RegisterUserDetailsRequest $argument input argument
+     * @param \grpc\Register\RegisterUserDetailsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function RegisterUserDetails(\Users\RegisterUserDetailsRequest $argument,
+    public function RegisterUserDetails(\grpc\Register\RegisterUserDetailsRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/users.UserService/RegisterUserDetails',
+        return $this->_simpleRequest('/register.RegisterService/RegisterUserDetails',
         $argument,
-        ['\Users\RegisterUserDetailsResponse', 'decode'],
+        ['\grpc\Register\RegisterUserDetailsResponse', 'decode'],
         $metadata, $options);
     }
 

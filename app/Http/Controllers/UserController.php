@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Users\RegisterUserDetailsRequest;
-use Users\RegisterUserDetailsResponse;
+use grpc\Register\RegisterUserDetailsRequest;
+use grpc\Register\RegisterUserDetailsResponse;
 use App\Models\User;
 use App\Services\AuthUserService;
 use Log;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
-use Protos_project_1\proto_client\ClientService;
+use protos_project_1\protos_client\ClientService;
 
 class UserController extends __ApiBaseController {
 
@@ -23,14 +23,25 @@ class UserController extends __ApiBaseController {
 		$validatedData = $request->validate([
             'username' => 'required|string|max:12|unique:users|regex:/^[a-zA-Z0-9_]+$/',
             'password' => 'required|string|min:8|regex:/^[a-zA-Z0-9_]+$/',
+			'firstname' => 'required|string|max:255',
+			'middlename' => 'required|string|max:255',
+			'lastname' => 'required|string|max:255',
+			'email' => 'required|email|max:255',
+			'phone' => 'required|string|max:20',
+			'address' => 'required|string|max:255',
+			'birthdate' => 'required|date',
+			'gender' => 'required|string|max:10',
+			'department' => 'required',
+			'position' => 'required',
+			// 'profile_image' => 'nullable|string|max:255',
         ]);  
 
 		Log::info("[User@gatewayRegistration]: request data validated");
 
 		$superUser = $this->authService->authUser();
+		log::debug($superUser);
         if(!$superUser) throw new Exception("Your account does not exist!");
         $now = Carbon::now();
-        Log::debug($superUser);
 		$user = new User();
 		$user->fill([
 			'username' => $validatedData['username'],
@@ -48,7 +59,6 @@ class UserController extends __ApiBaseController {
 		]);
 		
 		if($user->save()) {
-			Log::debug("SAVED!");
 			$userClient = $this->clientService->userServiceClient();
 			$gprcRequest = new RegisterUserDetailsRequest();
 			$gprcRequest->setFirstName($validatedData['first_name']);
@@ -57,14 +67,14 @@ class UserController extends __ApiBaseController {
 			$gprcRequest->setEmail($validatedData['email']);
 			$gprcRequest->setPhone($validatedData['phone']);
 			$gprcRequest->setAddress($validatedData['address']);
-			$gprcRequest->setCountry($validatedData['country']);
-			$gprcRequest->setDateOfBirth($validatedData['date_of_birth']);
-			$gprcRequest->setAge($validatedData['age']);
+			$gprcRequest->setDateOfBirth($validatedData['birthdate']);
+			$gprcRequest->setDepartment($validatedData['department']);
 			$gprcRequest->setGender($validatedData['gender']);
-			$gprcRequest->setProfileImage($validatedData['profile_image']);
-			$gprcRequest->setActionByUserId($validatedData['action_by_user_id']);
+			$gprcRequest->setFK($user->id);
+			// $gprcRequest->setProfileImage($validatedData['profile_image']);
+			// $gprcRequest->setActionByUserId($validatedData['action_by_user_id']);
 
-			list($response, $status) = $client->RegisterUserDetails($request)->wait();
+			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
 
 			if($status->code === \Grpc\STATUS_OK) {
 				Log::debug("Response: " . $response->getSaved() . PHP_EOL);
