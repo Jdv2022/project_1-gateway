@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\User;
+use Illuminate\Support\Facades\Redis;
+use Log;
 
 class AuthUserService {
 
@@ -11,7 +12,8 @@ class AuthUserService {
 
     public function __construct(int $id) {
         $this->id = $id;
-		$this->user = User::find($this->id)->toArray();
+		$key = 'user_' . $id;
+		$this->user = json_decode(Redis::get($key), true);
     }
 
     public function authUser():array {

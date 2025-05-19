@@ -11,6 +11,8 @@ use Log;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use protos_project_1\protos_client\ClientService;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends __ApiBaseController {
 
@@ -39,31 +41,32 @@ class UserController extends __ApiBaseController {
 		Log::info("[User@gatewayRegistration]: request data validated");
 
 		$superUser = $this->authService->authUser();
-		log::debug($superUser);
+
         if(!$superUser) throw new Exception("Your account does not exist!");
-        $now = Carbon::now();
 		$user = new User();
 		$user->fill([
 			'username' => $validatedData['username'],
 			'password' => Hash::make($validatedData['password']),
 			'is_active' => false,
 			'created_at_timezone' => '+8:00',
-			'created_by_user_id' => $now,
+			'created_by_user_id' => $superUser['id'],
 			'created_by_username' => $superUser['username'],
-			'created_by_user_type' => $superUser['user_type'],
+			'created_by_user_type' => $superUser['getUserRolesType1'],
 			'updated_at_timezone' => '+8:00',
-			'updated_by_user_id' => $now,
+			'updated_by_user_id' => $superUser['id'],
 			'updated_by_username' => $superUser['username'],
-			'updated_by_user_type' => $superUser['user_type'],
+			'updated_by_user_type' => $superUser['getUserRolesType1'],
 			'enabled' => false,
 		]);
-		
+
 		if($user->save()) {
-			$userClient = $this->clientService->userServiceClient();
+			Log::info("Saving user...");
+			$userClient = $this->clientService->getRegisterServiceClient();
 			$gprcRequest = new RegisterUserDetailsRequest();
-			$gprcRequest->setFirstName($validatedData['first_name']);
-			$gprcRequest->setMiddleName($validatedData['middle_name']);
-			$gprcRequest->setLastName($validatedData['last_name']);
+
+			$gprcRequest->setFirstName($validatedData['firstname']);
+			$gprcRequest->setMiddleName($validatedData['middlename']);
+			$gprcRequest->setLastName($validatedData['lastname']);
 			$gprcRequest->setEmail($validatedData['email']);
 			$gprcRequest->setPhone($validatedData['phone']);
 			$gprcRequest->setAddress($validatedData['address']);
@@ -71,14 +74,14 @@ class UserController extends __ApiBaseController {
 			$gprcRequest->setDepartment($validatedData['department']);
 			$gprcRequest->setGender($validatedData['gender']);
 			$gprcRequest->setFK($user->id);
-			// $gprcRequest->setProfileImage($validatedData['profile_image']);
-			// $gprcRequest->setActionByUserId($validatedData['action_by_user_id']);
+			$gprcRequest->setProfileImage("HARD CODED");
+			$gprcRequest->setActionByUserId($superUser['id']);
 
 			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
 
 			if($status->code === \Grpc\STATUS_OK) {
-				Log::debug("Response: " . $response->getSaved() . PHP_EOL);
-				if($response->getSaved()) {
+				Log::debug("Response: " . $response->getUserDetailsId() . PHP_EOL);
+				if($response->getUserDetailsId()) {
 					return $this->returnSuccess(data: [], message: "Registration success!");
 				}
 				else {
@@ -99,5 +102,31 @@ class UserController extends __ApiBaseController {
         Log::info('User Registered!');
         return $this->returnFail(data: [], message: "Registration Fail!");
     }
+
+	public function gatewayRegistrationAttachment(Request $request) {
+		$request->validate([
+			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		]);
+		
+		$disk = Storage::disk('public');  
+		$directory = 'profile_pictures';
+		
+		if (!$disk->exists($directory)) {
+			Log::info("DIR does not exist, creating...");
+			$disk->makeDirectory($directory);
+		}
+		Log::debug("Checking directory: " . $disk->path($directory));
+		
+		$image = $request->file('image');
+		$imageName = time() . '_' . $image->getClientOriginalName();
+		
+		$path = $image->storeAs($directory, $imageName, 'public');
+		
+		$url = Storage::url($directory . '/' . $imageName);
+		
+		Log::debug("File stored at: " . $path);
+		Log::debug("Public URL: " . $url);
+		Log::debug("PASSED!");
+	}
 
 }

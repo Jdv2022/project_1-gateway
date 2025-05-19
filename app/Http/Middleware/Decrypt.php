@@ -17,7 +17,10 @@ class Decrypt {
      */
     public function handle(Request $request, Closure $next): Response {
 		$encryptedData = $request->all();
-
+		
+		if($request->files->all()) {
+			return $next($request);
+		}
 		if(!isset($encryptedData['isEncrypt'])) {
 			throw new Exception("Decrypt 'payload' property does not exist.");
 		}

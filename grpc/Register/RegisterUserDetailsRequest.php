@@ -38,6 +38,10 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $address = '';
     /**
+     * Generated from protobuf field <code>string department = 7;</code>
+     */
+    protected $department = '';
+    /**
      * Generated from protobuf field <code>string date_of_birth = 8;</code>
      */
     protected $date_of_birth = '';
@@ -70,6 +74,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type string $phone
      *     @type string $address
+     *     @type string $department
      *     @type string $date_of_birth
      *     @type string $gender
      *     @type string $profile_image
@@ -210,6 +215,28 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string department = 7;</code>
+     * @return string
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * Generated from protobuf field <code>string department = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDepartment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->department = $var;
 
         return $this;
     }

@@ -38,21 +38,17 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $user_details_phone = '';
     /**
-     * Generated from protobuf field <code>string user_details_address = 7;</code>
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
+     */
+    protected $user_details_department = '';
+    /**
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
      */
     protected $user_details_address = '';
-    /**
-     * Generated from protobuf field <code>string user_details_country = 8;</code>
-     */
-    protected $user_details_country = '';
     /**
      * Generated from protobuf field <code>string user_details_date_of_birth = 9;</code>
      */
     protected $user_details_date_of_birth = '';
-    /**
-     * Generated from protobuf field <code>int32 user_details_age = 10;</code>
-     */
-    protected $user_details_age = 0;
     /**
      * Generated from protobuf field <code>string user_details_gender = 11;</code>
      */
@@ -114,9 +110,9 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $user_roles_id = 0;
     /**
-     * Generated from protobuf field <code>string user_roles_name = 26;</code>
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
      */
-    protected $user_roles_name = '';
+    protected $user_roles_type_1 = '';
     /**
      * Generated from protobuf field <code>string user_roles_description = 27;</code>
      */
@@ -242,10 +238,9 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      *     @type string $user_details_last_name
      *     @type string $user_details_email
      *     @type string $user_details_phone
+     *     @type string $user_details_department
      *     @type string $user_details_address
-     *     @type string $user_details_country
      *     @type string $user_details_date_of_birth
-     *     @type int $user_details_age
      *     @type string $user_details_gender
      *     @type string $user_details_profile_image
      *     @type string $user_details_created_at
@@ -261,7 +256,7 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      *     @type bool $user_details_enabled
      *     @type int|string $user_details_user_id
      *     @type int|string $user_roles_id
-     *     @type string $user_roles_name
+     *     @type string $user_roles_type_1
      *     @type string $user_roles_description
      *     @type string $user_roles_level
      *     @type bool $user_roles_status
@@ -430,7 +425,29 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_address = 7;</code>
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
+     * @return string
+     */
+    public function getUserDetailsDepartment()
+    {
+        return $this->user_details_department;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsDepartment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_department = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
      * @return string
      */
     public function getUserDetailsAddress()
@@ -439,7 +456,7 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_address = 7;</code>
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -447,28 +464,6 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_details_address = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_details_country = 8;</code>
-     * @return string
-     */
-    public function getUserDetailsCountry()
-    {
-        return $this->user_details_country;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_details_country = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserDetailsCountry($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_details_country = $var;
 
         return $this;
     }
@@ -491,28 +486,6 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_details_date_of_birth = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 user_details_age = 10;</code>
-     * @return int
-     */
-    public function getUserDetailsAge()
-    {
-        return $this->user_details_age;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 user_details_age = 10;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUserDetailsAge($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->user_details_age = $var;
 
         return $this;
     }
@@ -848,23 +821,23 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_roles_name = 26;</code>
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
      * @return string
      */
-    public function getUserRolesName()
+    public function getUserRolesType1()
     {
-        return $this->user_roles_name;
+        return $this->user_roles_type_1;
     }
 
     /**
-     * Generated from protobuf field <code>string user_roles_name = 26;</code>
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserRolesName($var)
+    public function setUserRolesType1($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_roles_name = $var;
+        $this->user_roles_type_1 = $var;
 
         return $this;
     }

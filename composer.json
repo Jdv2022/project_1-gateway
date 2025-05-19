@@ -9,6 +9,7 @@
         "php": "^8.4",
         "google/protobuf": "^4.30",
         "grpc/grpc": "^1.57",
+        "illuminate/redis": "*",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "predis/predis": "^2.4",

@@ -14,49 +14,217 @@ use Google\Protobuf\Internal\GPBUtil;
 class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string first_name = 1;</code>
+     * Generated from protobuf field <code>uint64 user_details_id = 1;</code>
      */
-    protected $first_name = '';
+    protected $user_details_id = 0;
     /**
-     * Generated from protobuf field <code>string middle_name = 2;</code>
+     * Generated from protobuf field <code>string user_details_first_name = 2;</code>
      */
-    protected $middle_name = '';
+    protected $user_details_first_name = '';
     /**
-     * Generated from protobuf field <code>string last_name = 3;</code>
+     * Generated from protobuf field <code>string user_details_middle_name = 3;</code>
      */
-    protected $last_name = '';
+    protected $user_details_middle_name = '';
     /**
-     * Generated from protobuf field <code>string email = 4;</code>
+     * Generated from protobuf field <code>string user_details_last_name = 4;</code>
      */
-    protected $email = '';
+    protected $user_details_last_name = '';
     /**
-     * Generated from protobuf field <code>string phone = 5;</code>
+     * Generated from protobuf field <code>string user_details_email = 5;</code>
      */
-    protected $phone = '';
+    protected $user_details_email = '';
     /**
-     * Generated from protobuf field <code>string address = 6;</code>
+     * Generated from protobuf field <code>string user_details_phone = 6;</code>
      */
-    protected $address = '';
+    protected $user_details_phone = '';
     /**
-     * Generated from protobuf field <code>string date_of_birth = 8;</code>
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
      */
-    protected $date_of_birth = '';
+    protected $user_details_department = '';
     /**
-     * Generated from protobuf field <code>string gender = 9;</code>
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
      */
-    protected $gender = '';
+    protected $user_details_address = '';
     /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
+     * Generated from protobuf field <code>string user_details_date_of_birth = 9;</code>
      */
-    protected $profile_image = '';
+    protected $user_details_date_of_birth = '';
     /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
+     * Generated from protobuf field <code>string user_details_gender = 11;</code>
      */
-    protected $action_by_user_id = '';
+    protected $user_details_gender = '';
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
      */
-    protected $fk = 0;
+    protected $user_details_profile_image = '';
+    /**
+     * Generated from protobuf field <code>string user_details_created_at = 13;</code>
+     */
+    protected $user_details_created_at = '';
+    /**
+     * Generated from protobuf field <code>string user_details_created_at_timezone = 14;</code>
+     */
+    protected $user_details_created_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_details_created_by_user_id = 15;</code>
+     */
+    protected $user_details_created_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_username = 16;</code>
+     */
+    protected $user_details_created_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_user_type = 17;</code>
+     */
+    protected $user_details_created_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at = 18;</code>
+     */
+    protected $user_details_updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at_timezone = 19;</code>
+     */
+    protected $user_details_updated_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_details_updated_by_user_id = 20;</code>
+     */
+    protected $user_details_updated_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_username = 21;</code>
+     */
+    protected $user_details_updated_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_user_type = 22;</code>
+     */
+    protected $user_details_updated_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>bool user_details_enabled = 23;</code>
+     */
+    protected $user_details_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint64 user_details_user_id = 24;</code>
+     */
+    protected $user_details_user_id = 0;
+    /**
+     * Generated from protobuf field <code>uint64 user_roles_id = 25;</code>
+     */
+    protected $user_roles_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
+     */
+    protected $user_roles_type_1 = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_description = 27;</code>
+     */
+    protected $user_roles_description = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_level = 28;</code>
+     */
+    protected $user_roles_level = '';
+    /**
+     * Generated from protobuf field <code>bool user_roles_status = 29;</code>
+     */
+    protected $user_roles_status = false;
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at = 30;</code>
+     */
+    protected $user_roles_created_at = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at_timezone = 31;</code>
+     */
+    protected $user_roles_created_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_roles_created_by_user_id = 32;</code>
+     */
+    protected $user_roles_created_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_username = 33;</code>
+     */
+    protected $user_roles_created_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_user_type = 34;</code>
+     */
+    protected $user_roles_created_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at = 35;</code>
+     */
+    protected $user_roles_updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at_timezone = 36;</code>
+     */
+    protected $user_roles_updated_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_roles_updated_by_user_id = 37;</code>
+     */
+    protected $user_roles_updated_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_username = 38;</code>
+     */
+    protected $user_roles_updated_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_user_type = 39;</code>
+     */
+    protected $user_roles_updated_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>bool user_roles_enabled = 40;</code>
+     */
+    protected $user_roles_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_id = 41;</code>
+     */
+    protected $user_detail_user_roles_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at = 42;</code>
+     */
+    protected $user_detail_user_roles_created_at = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at_timezone = 43;</code>
+     */
+    protected $user_detail_user_roles_created_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_created_by_user_id = 44;</code>
+     */
+    protected $user_detail_user_roles_created_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_username = 45;</code>
+     */
+    protected $user_detail_user_roles_created_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_user_type = 46;</code>
+     */
+    protected $user_detail_user_roles_created_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at = 47;</code>
+     */
+    protected $user_detail_user_roles_updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at_timezone = 48;</code>
+     */
+    protected $user_detail_user_roles_updated_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_updated_by_user_id = 49;</code>
+     */
+    protected $user_detail_user_roles_updated_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_username = 50;</code>
+     */
+    protected $user_detail_user_roles_updated_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_user_type = 51;</code>
+     */
+    protected $user_detail_user_roles_updated_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_roles_enabled = 52;</code>
+     */
+    protected $user_detail_user_roles_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_detail_id = 53;</code>
+     */
+    protected $user_detail_user_roles_user_detail_id = 0;
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_role_id = 54;</code>
+     */
+    protected $user_detail_user_roles_user_role_id = 0;
 
     /**
      * Constructor.
@@ -64,17 +232,59 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $first_name
-     *     @type string $middle_name
-     *     @type string $last_name
-     *     @type string $email
-     *     @type string $phone
-     *     @type string $address
-     *     @type string $date_of_birth
-     *     @type string $gender
-     *     @type string $profile_image
-     *     @type string $action_by_user_id
-     *     @type int|string $fk
+     *     @type int|string $user_details_id
+     *     @type string $user_details_first_name
+     *     @type string $user_details_middle_name
+     *     @type string $user_details_last_name
+     *     @type string $user_details_email
+     *     @type string $user_details_phone
+     *     @type string $user_details_department
+     *     @type string $user_details_address
+     *     @type string $user_details_date_of_birth
+     *     @type string $user_details_gender
+     *     @type string $user_details_profile_image
+     *     @type string $user_details_created_at
+     *     @type string $user_details_created_at_timezone
+     *     @type int $user_details_created_by_user_id
+     *     @type string $user_details_created_by_username
+     *     @type string $user_details_created_by_user_type
+     *     @type string $user_details_updated_at
+     *     @type string $user_details_updated_at_timezone
+     *     @type int $user_details_updated_by_user_id
+     *     @type string $user_details_updated_by_username
+     *     @type string $user_details_updated_by_user_type
+     *     @type bool $user_details_enabled
+     *     @type int|string $user_details_user_id
+     *     @type int|string $user_roles_id
+     *     @type string $user_roles_type_1
+     *     @type string $user_roles_description
+     *     @type string $user_roles_level
+     *     @type bool $user_roles_status
+     *     @type string $user_roles_created_at
+     *     @type string $user_roles_created_at_timezone
+     *     @type int $user_roles_created_by_user_id
+     *     @type string $user_roles_created_by_username
+     *     @type string $user_roles_created_by_user_type
+     *     @type string $user_roles_updated_at
+     *     @type string $user_roles_updated_at_timezone
+     *     @type int $user_roles_updated_by_user_id
+     *     @type string $user_roles_updated_by_username
+     *     @type string $user_roles_updated_by_user_type
+     *     @type bool $user_roles_enabled
+     *     @type int|string $user_detail_user_roles_id
+     *     @type string $user_detail_user_roles_created_at
+     *     @type string $user_detail_user_roles_created_at_timezone
+     *     @type int $user_detail_user_roles_created_by_user_id
+     *     @type string $user_detail_user_roles_created_by_username
+     *     @type string $user_detail_user_roles_created_by_user_type
+     *     @type string $user_detail_user_roles_updated_at
+     *     @type string $user_detail_user_roles_updated_at_timezone
+     *     @type int $user_detail_user_roles_updated_by_user_id
+     *     @type string $user_detail_user_roles_updated_by_username
+     *     @type string $user_detail_user_roles_updated_by_user_type
+     *     @type bool $user_detail_user_roles_enabled
+     *     @type int|string $user_detail_user_roles_user_detail_id
+     *     @type int|string $user_detail_user_roles_user_role_id
      * }
      */
     public function __construct($data = NULL) {
@@ -83,243 +293,1167 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string first_name = 1;</code>
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->first_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string first_name = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFirstName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->first_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string middle_name = 2;</code>
-     * @return string
-     */
-    public function getMiddleName()
-    {
-        return $this->middle_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string middle_name = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMiddleName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->middle_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string last_name = 3;</code>
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->last_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string last_name = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLastName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->last_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 4;</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string phone = 5;</code>
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * Generated from protobuf field <code>string phone = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPhone($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->phone = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address = 6;</code>
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAddress($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->address = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string date_of_birth = 8;</code>
-     * @return string
-     */
-    public function getDateOfBirth()
-    {
-        return $this->date_of_birth;
-    }
-
-    /**
-     * Generated from protobuf field <code>string date_of_birth = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setDateOfBirth($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->date_of_birth = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string gender = 9;</code>
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
-     * Generated from protobuf field <code>string gender = 9;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setGender($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->gender = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
-     * @return string
-     */
-    public function getProfileImage()
-    {
-        return $this->profile_image;
-    }
-
-    /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProfileImage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->profile_image = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
-     * @return string
-     */
-    public function getActionByUserId()
-    {
-        return $this->action_by_user_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setActionByUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->action_by_user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>uint64 user_details_id = 1;</code>
      * @return int|string
      */
-    public function getFk()
+    public function getUserDetailsId()
     {
-        return $this->fk;
+        return $this->user_details_id;
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>uint64 user_details_id = 1;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setFk($var)
+    public function setUserDetailsId($var)
     {
-        GPBUtil::checkInt64($var);
-        $this->fk = $var;
+        GPBUtil::checkUint64($var);
+        $this->user_details_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_first_name = 2;</code>
+     * @return string
+     */
+    public function getUserDetailsFirstName()
+    {
+        return $this->user_details_first_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_first_name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsFirstName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_first_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_middle_name = 3;</code>
+     * @return string
+     */
+    public function getUserDetailsMiddleName()
+    {
+        return $this->user_details_middle_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_middle_name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsMiddleName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_middle_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_last_name = 4;</code>
+     * @return string
+     */
+    public function getUserDetailsLastName()
+    {
+        return $this->user_details_last_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_last_name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsLastName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_last_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_email = 5;</code>
+     * @return string
+     */
+    public function getUserDetailsEmail()
+    {
+        return $this->user_details_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_email = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_phone = 6;</code>
+     * @return string
+     */
+    public function getUserDetailsPhone()
+    {
+        return $this->user_details_phone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_phone = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsPhone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_phone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
+     * @return string
+     */
+    public function getUserDetailsDepartment()
+    {
+        return $this->user_details_department;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_department = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsDepartment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_department = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
+     * @return string
+     */
+    public function getUserDetailsAddress()
+    {
+        return $this->user_details_address;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_address = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_date_of_birth = 9;</code>
+     * @return string
+     */
+    public function getUserDetailsDateOfBirth()
+    {
+        return $this->user_details_date_of_birth;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_date_of_birth = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsDateOfBirth($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_date_of_birth = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_gender = 11;</code>
+     * @return string
+     */
+    public function getUserDetailsGender()
+    {
+        return $this->user_details_gender;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_gender = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsGender($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_gender = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
+     * @return string
+     */
+    public function getUserDetailsProfileImage()
+    {
+        return $this->user_details_profile_image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsProfileImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_profile_image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_at = 13;</code>
+     * @return string
+     */
+    public function getUserDetailsCreatedAt()
+    {
+        return $this->user_details_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_at = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_at_timezone = 14;</code>
+     * @return string
+     */
+    public function getUserDetailsCreatedAtTimezone()
+    {
+        return $this->user_details_created_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_at_timezone = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsCreatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_created_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_details_created_by_user_id = 15;</code>
+     * @return int
+     */
+    public function getUserDetailsCreatedByUserId()
+    {
+        return $this->user_details_created_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_details_created_by_user_id = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailsCreatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_details_created_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_username = 16;</code>
+     * @return string
+     */
+    public function getUserDetailsCreatedByUsername()
+    {
+        return $this->user_details_created_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_username = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsCreatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_created_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_user_type = 17;</code>
+     * @return string
+     */
+    public function getUserDetailsCreatedByUserType()
+    {
+        return $this->user_details_created_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_created_by_user_type = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsCreatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_created_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at = 18;</code>
+     * @return string
+     */
+    public function getUserDetailsUpdatedAt()
+    {
+        return $this->user_details_updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at_timezone = 19;</code>
+     * @return string
+     */
+    public function getUserDetailsUpdatedAtTimezone()
+    {
+        return $this->user_details_updated_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_at_timezone = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsUpdatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_updated_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_details_updated_by_user_id = 20;</code>
+     * @return int
+     */
+    public function getUserDetailsUpdatedByUserId()
+    {
+        return $this->user_details_updated_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_details_updated_by_user_id = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailsUpdatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_details_updated_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_username = 21;</code>
+     * @return string
+     */
+    public function getUserDetailsUpdatedByUsername()
+    {
+        return $this->user_details_updated_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_username = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsUpdatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_updated_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_user_type = 22;</code>
+     * @return string
+     */
+    public function getUserDetailsUpdatedByUserType()
+    {
+        return $this->user_details_updated_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_updated_by_user_type = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsUpdatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_updated_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_details_enabled = 23;</code>
+     * @return bool
+     */
+    public function getUserDetailsEnabled()
+    {
+        return $this->user_details_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_details_enabled = 23;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserDetailsEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_details_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_details_user_id = 24;</code>
+     * @return int|string
+     */
+    public function getUserDetailsUserId()
+    {
+        return $this->user_details_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_details_user_id = 24;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailsUserId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_details_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_roles_id = 25;</code>
+     * @return int|string
+     */
+    public function getUserRolesId()
+    {
+        return $this->user_roles_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_roles_id = 25;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserRolesId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_roles_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
+     * @return string
+     */
+    public function getUserRolesType1()
+    {
+        return $this->user_roles_type_1;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_type_1 = 26;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesType1($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_type_1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_description = 27;</code>
+     * @return string
+     */
+    public function getUserRolesDescription()
+    {
+        return $this->user_roles_description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_description = 27;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_level = 28;</code>
+     * @return string
+     */
+    public function getUserRolesLevel()
+    {
+        return $this->user_roles_level;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_level = 28;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesLevel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_level = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_roles_status = 29;</code>
+     * @return bool
+     */
+    public function getUserRolesStatus()
+    {
+        return $this->user_roles_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_roles_status = 29;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserRolesStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_roles_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at = 30;</code>
+     * @return string
+     */
+    public function getUserRolesCreatedAt()
+    {
+        return $this->user_roles_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at_timezone = 31;</code>
+     * @return string
+     */
+    public function getUserRolesCreatedAtTimezone()
+    {
+        return $this->user_roles_created_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_at_timezone = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesCreatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_created_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_roles_created_by_user_id = 32;</code>
+     * @return int
+     */
+    public function getUserRolesCreatedByUserId()
+    {
+        return $this->user_roles_created_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_roles_created_by_user_id = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserRolesCreatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_roles_created_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_username = 33;</code>
+     * @return string
+     */
+    public function getUserRolesCreatedByUsername()
+    {
+        return $this->user_roles_created_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_username = 33;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesCreatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_created_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_user_type = 34;</code>
+     * @return string
+     */
+    public function getUserRolesCreatedByUserType()
+    {
+        return $this->user_roles_created_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_created_by_user_type = 34;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesCreatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_created_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at = 35;</code>
+     * @return string
+     */
+    public function getUserRolesUpdatedAt()
+    {
+        return $this->user_roles_updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at = 35;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at_timezone = 36;</code>
+     * @return string
+     */
+    public function getUserRolesUpdatedAtTimezone()
+    {
+        return $this->user_roles_updated_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_at_timezone = 36;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesUpdatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_updated_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_roles_updated_by_user_id = 37;</code>
+     * @return int
+     */
+    public function getUserRolesUpdatedByUserId()
+    {
+        return $this->user_roles_updated_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_roles_updated_by_user_id = 37;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserRolesUpdatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_roles_updated_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_username = 38;</code>
+     * @return string
+     */
+    public function getUserRolesUpdatedByUsername()
+    {
+        return $this->user_roles_updated_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_username = 38;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesUpdatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_updated_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_user_type = 39;</code>
+     * @return string
+     */
+    public function getUserRolesUpdatedByUserType()
+    {
+        return $this->user_roles_updated_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_roles_updated_by_user_type = 39;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserRolesUpdatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_roles_updated_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_roles_enabled = 40;</code>
+     * @return bool
+     */
+    public function getUserRolesEnabled()
+    {
+        return $this->user_roles_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_roles_enabled = 40;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserRolesEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_roles_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_id = 41;</code>
+     * @return int|string
+     */
+    public function getUserDetailUserRolesId()
+    {
+        return $this->user_detail_user_roles_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_id = 41;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_detail_user_roles_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at = 42;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesCreatedAt()
+    {
+        return $this->user_detail_user_roles_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at = 42;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at_timezone = 43;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesCreatedAtTimezone()
+    {
+        return $this->user_detail_user_roles_created_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_at_timezone = 43;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesCreatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_created_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_created_by_user_id = 44;</code>
+     * @return int
+     */
+    public function getUserDetailUserRolesCreatedByUserId()
+    {
+        return $this->user_detail_user_roles_created_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_created_by_user_id = 44;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesCreatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_detail_user_roles_created_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_username = 45;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesCreatedByUsername()
+    {
+        return $this->user_detail_user_roles_created_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_username = 45;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesCreatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_created_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_user_type = 46;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesCreatedByUserType()
+    {
+        return $this->user_detail_user_roles_created_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_created_by_user_type = 46;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesCreatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_created_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at = 47;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesUpdatedAt()
+    {
+        return $this->user_detail_user_roles_updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at = 47;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at_timezone = 48;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesUpdatedAtTimezone()
+    {
+        return $this->user_detail_user_roles_updated_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_at_timezone = 48;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUpdatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_updated_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_updated_by_user_id = 49;</code>
+     * @return int
+     */
+    public function getUserDetailUserRolesUpdatedByUserId()
+    {
+        return $this->user_detail_user_roles_updated_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_roles_updated_by_user_id = 49;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUpdatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_detail_user_roles_updated_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_username = 50;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesUpdatedByUsername()
+    {
+        return $this->user_detail_user_roles_updated_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_username = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUpdatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_updated_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_user_type = 51;</code>
+     * @return string
+     */
+    public function getUserDetailUserRolesUpdatedByUserType()
+    {
+        return $this->user_detail_user_roles_updated_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_roles_updated_by_user_type = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUpdatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_roles_updated_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_roles_enabled = 52;</code>
+     * @return bool
+     */
+    public function getUserDetailUserRolesEnabled()
+    {
+        return $this->user_detail_user_roles_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_roles_enabled = 52;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_detail_user_roles_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_detail_id = 53;</code>
+     * @return int|string
+     */
+    public function getUserDetailUserRolesUserDetailId()
+    {
+        return $this->user_detail_user_roles_user_detail_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_detail_id = 53;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUserDetailId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_detail_user_roles_user_detail_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_role_id = 54;</code>
+     * @return int|string
+     */
+    public function getUserDetailUserRolesUserRoleId()
+    {
+        return $this->user_detail_user_roles_user_role_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_roles_user_role_id = 54;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailUserRolesUserRoleId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_detail_user_roles_user_role_id = $var;
 
         return $this;
     }

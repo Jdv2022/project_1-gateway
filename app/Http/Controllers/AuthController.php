@@ -41,12 +41,15 @@ class AuthController extends __ApiBaseController {
 			if($status->code === \Grpc\STATUS_OK) {
 				Log::debug("Response: Success");
 				$responseArray = $this->clientService->grpcMessageToArray($response);
-				$value = [...$responseArray, ...$user->toArray()];
+				$value = [...$user->toArray(), ...$responseArray];
 				$key = 'user_' . $user->id;
-				Redis::set($key, $value);
+				Redis::set($key, json_encode($value));
+				Log::info("User Logged In Successfully...");
+				Log::info("User data CACHED!");
 			} 
 			else {
 				Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+				return $this->returnFail(data: null, message: "Account Incomplete!", status: 400);
 			}
         }
 		else {
