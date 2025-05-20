@@ -50,13 +50,17 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $user_details_date_of_birth = '';
     /**
-     * Generated from protobuf field <code>string user_details_gender = 11;</code>
+     * Generated from protobuf field <code>string user_details_gender = 10;</code>
      */
     protected $user_details_gender = '';
     /**
-     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
+     * Generated from protobuf field <code>string user_details_profile_image_URL = 11;</code>
      */
-    protected $user_details_profile_image = '';
+    protected $user_details_profile_image_URL = '';
+    /**
+     * Generated from protobuf field <code>string user_details_profile_image_name = 12;</code>
+     */
+    protected $user_details_profile_image_name = '';
     /**
      * Generated from protobuf field <code>string user_details_created_at = 13;</code>
      */
@@ -242,7 +246,8 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
      *     @type string $user_details_address
      *     @type string $user_details_date_of_birth
      *     @type string $user_details_gender
-     *     @type string $user_details_profile_image
+     *     @type string $user_details_profile_image_URL
+     *     @type string $user_details_profile_image_name
      *     @type string $user_details_created_at
      *     @type string $user_details_created_at_timezone
      *     @type int $user_details_created_by_user_id
@@ -491,7 +496,7 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_gender = 11;</code>
+     * Generated from protobuf field <code>string user_details_gender = 10;</code>
      * @return string
      */
     public function getUserDetailsGender()
@@ -500,7 +505,7 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_gender = 11;</code>
+     * Generated from protobuf field <code>string user_details_gender = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -513,23 +518,45 @@ class RegisterUserDetailsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
+     * Generated from protobuf field <code>string user_details_profile_image_URL = 11;</code>
      * @return string
      */
-    public function getUserDetailsProfileImage()
+    public function getUserDetailsProfileImageURL()
     {
-        return $this->user_details_profile_image;
+        return $this->user_details_profile_image_URL;
     }
 
     /**
-     * Generated from protobuf field <code>string user_details_profile_image = 12;</code>
+     * Generated from protobuf field <code>string user_details_profile_image_URL = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserDetailsProfileImage($var)
+    public function setUserDetailsProfileImageURL($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_details_profile_image = $var;
+        $this->user_details_profile_image_URL = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_profile_image_name = 12;</code>
+     * @return string
+     */
+    public function getUserDetailsProfileImageName()
+    {
+        return $this->user_details_profile_image_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_details_profile_image_name = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailsProfileImageName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_details_profile_image_name = $var;
 
         return $this;
     }

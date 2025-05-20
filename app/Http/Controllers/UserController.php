@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use grpc\Register\RegisterUserDetailsRequest;
 use grpc\Register\RegisterUserDetailsResponse;
+use grpc\ProfileImage\ProfileImageRequest;
+use grpc\ProfileImage\ProfileImageResponse;
 use App\Models\User;
 use App\Services\AuthUserService;
 use Log;
@@ -35,7 +37,7 @@ class UserController extends __ApiBaseController {
 			'gender' => 'required|string|max:10',
 			'department' => 'required',
 			'position' => 'required',
-			// 'profile_image' => 'nullable|string|max:255',
+			'file' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);  
 
 		Log::info("[User@gatewayRegistration]: request data validated");
@@ -61,6 +63,27 @@ class UserController extends __ApiBaseController {
 
 		if($user->save()) {
 			Log::info("Saving user...");
+
+			$disk = Storage::disk('public');  
+			$directory = 'profile_pictures';
+			
+			if (!$disk->exists($directory)) {
+				Log::info("DIR does not exist, creating...");
+				$disk->makeDirectory($directory);
+			}
+			Log::debug("Checking directory: " . $disk->path($directory));
+			
+			$image = $request->file('file');
+			if($image) {
+				$imageName = date('Ymd_His') . '_' . time();
+				$originalImageName = $image->getClientOriginalName();
+				$path = $image->storeAs($directory, $imageName, 'public');
+				$url = Storage::url($directory . '/' . $imageName);
+			}
+			else {
+				$originalImageName = 'null';
+				$url = 'null';
+			}
 			$userClient = $this->clientService->getRegisterServiceClient();
 			$gprcRequest = new RegisterUserDetailsRequest();
 
@@ -74,7 +97,8 @@ class UserController extends __ApiBaseController {
 			$gprcRequest->setDepartment($validatedData['department']);
 			$gprcRequest->setGender($validatedData['gender']);
 			$gprcRequest->setFK($user->id);
-			$gprcRequest->setProfileImage("HARD CODED");
+			$gprcRequest->setSetProfileImageURL($url);
+			$gprcRequest->setSetProfileImageName($originalImageName);
 			$gprcRequest->setActionByUserId($superUser['id']);
 
 			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
@@ -82,7 +106,7 @@ class UserController extends __ApiBaseController {
 			if($status->code === \Grpc\STATUS_OK) {
 				Log::debug("Response: " . $response->getUserDetailsId() . PHP_EOL);
 				if($response->getUserDetailsId()) {
-					return $this->returnSuccess(data: [], message: "Registration success!");
+					return $this->returnSuccess(data: json_decode($response->serializeToJsonString()), message: "Registration success!");
 				}
 				else {
 					$isDelete = User::find($user->id);
@@ -105,7 +129,7 @@ class UserController extends __ApiBaseController {
 
 	public function gatewayRegistrationAttachment(Request $request) {
 		$request->validate([
-			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 		]);
 		
 		$disk = Storage::disk('public');  
@@ -123,7 +147,12 @@ class UserController extends __ApiBaseController {
 		$path = $image->storeAs($directory, $imageName, 'public');
 		
 		$url = Storage::url($directory . '/' . $imageName);
-		
+
+		$userClient = $this->clientService->getRegisterServiceClient();
+		$gprcRequest = new ProfileImageRequest();
+
+		$gprcRequest->setFK($validatedData['firstname']);
+
 		Log::debug("File stored at: " . $path);
 		Log::debug("Public URL: " . $url);
 		Log::debug("PASSED!");

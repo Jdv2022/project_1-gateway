@@ -58,7 +58,15 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $action_by_user_id = '';
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     */
+    protected $set_profile_image_u_r_l = '';
+    /**
+     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     */
+    protected $set_profile_image_Name = '';
+    /**
+     * Generated from protobuf field <code>int64 fk = 14;</code>
      */
     protected $fk = 0;
 
@@ -79,6 +87,8 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $gender
      *     @type string $profile_image
      *     @type string $action_by_user_id
+     *     @type string $set_profile_image_u_r_l
+     *     @type string $set_profile_image_Name
      *     @type int|string $fk
      * }
      */
@@ -330,7 +340,51 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     * @return string
+     */
+    public function getSetProfileImageURL()
+    {
+        return $this->set_profile_image_u_r_l;
+    }
+
+    /**
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSetProfileImageURL($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->set_profile_image_u_r_l = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     * @return string
+     */
+    public function getSetProfileImageName()
+    {
+        return $this->set_profile_image_Name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSetProfileImageName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->set_profile_image_Name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 fk = 14;</code>
      * @return int|string
      */
     public function getFk()
@@ -339,7 +393,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>int64 fk = 14;</code>
      * @param int|string $var
      * @return $this
      */
