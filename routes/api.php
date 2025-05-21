@@ -29,7 +29,9 @@ Route::POST('web/private/refresh/token', [AuthController::class, 'refreshToken']
 /* Standard API */
 Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/users', [AuthController::class, 'webLogin']);
-	Route::POST('web/private/user/register', [UserController::class, 'gatewayRegistration']);
-	Route::POST('web/private/user/register/attachment', [UserController::class, 'gatewayRegistrationAttachment']);
 	Route::POST('web/private/validate/token', [AuthController::class, 'validateToken']);
+
+	Route::POST('web/private/user/register', [UserController::class, 'gatewayRegistration']);
+	Route::POST('web/private/user/registration/form/data', [UserController::class, 'registrationFormData']);
+	Route::POST('web/private/user/register/attachment', [UserController::class, 'gatewayRegistrationAttachment']);
 });

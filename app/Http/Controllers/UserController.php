@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use grpc\Register\RegisterUserDetailsRequest;
 use grpc\Register\RegisterUserDetailsResponse;
-use grpc\ProfileImage\ProfileImageRequest;
-use grpc\ProfileImage\ProfileImageResponse;
+use grpc\userRegistrationFormData\UserRegistrationFormDataRequest;
 use App\Models\User;
 use App\Services\AuthUserService;
 use Log;
@@ -75,7 +74,7 @@ class UserController extends __ApiBaseController {
 			
 			$image = $request->file('file');
 			if($image) {
-				$imageName = date('Ymd_His') . '_' . time();
+				$imageName = date('Ymd_His') . '_' . time() . '.' . $image->getClientOriginalExtension();
 				$originalImageName = $image->getClientOriginalName();
 				$path = $image->storeAs($directory, $imageName, 'public');
 				$url = Storage::url($directory . '/' . $imageName);
@@ -104,7 +103,7 @@ class UserController extends __ApiBaseController {
 			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
 
 			if($status->code === \Grpc\STATUS_OK) {
-				Log::debug("Response: " . $response->getUserDetailsId() . PHP_EOL);
+				Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
 				if($response->getUserDetailsId()) {
 					return $this->returnSuccess(data: json_decode($response->serializeToJsonString()), message: "Registration success!");
 				}
@@ -127,35 +126,26 @@ class UserController extends __ApiBaseController {
         return $this->returnFail(data: [], message: "Registration Fail!");
     }
 
-	public function gatewayRegistrationAttachment(Request $request) {
-		$request->validate([
-			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-		]);
-		
-		$disk = Storage::disk('public');  
-		$directory = 'profile_pictures';
-		
-		if (!$disk->exists($directory)) {
-			Log::info("DIR does not exist, creating...");
-			$disk->makeDirectory($directory);
+	public function registrationFormData(Request $request) {
+		Log::info("Getting registration form data...");
+
+		$userClient = $this->clientService->getRegistrationFormDataClient();
+		$gprcRequest = new UserRegistrationFormDataRequest();
+
+		$superUser = $this->authService->authUser();
+
+		$gprcRequest->setActionByUserId($superUser['id']);
+
+		list($response, $status) = $userClient->UserRegistrationFormData($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			return $this->returnSuccess(data: json_decode($response->serializeToJsonString()), message: "Registration form data success!");
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 		}
-		Log::debug("Checking directory: " . $disk->path($directory));
-		
-		$image = $request->file('image');
-		$imageName = time() . '_' . $image->getClientOriginalName();
-		
-		$path = $image->storeAs($directory, $imageName, 'public');
-		
-		$url = Storage::url($directory . '/' . $imageName);
-
-		$userClient = $this->clientService->getRegisterServiceClient();
-		$gprcRequest = new ProfileImageRequest();
-
-		$gprcRequest->setFK($validatedData['firstname']);
-
-		Log::debug("File stored at: " . $path);
-		Log::debug("Public URL: " . $url);
-		Log::debug("PASSED!");
+        return $this->returnFail(data: [], message: "Failed to Fetch!");
 	}
 
 }
