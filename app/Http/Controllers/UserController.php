@@ -208,7 +208,7 @@ class UserController extends __ApiBaseController {
 			}
 
 			$mergedData = array_merge($userData, $responseData);
-
+			
 			$returnList = [
 				'userDetailsPhone',
 				'userDetailsEmail',
@@ -225,7 +225,8 @@ class UserController extends __ApiBaseController {
 				'userDetailsFirstName',
 				'userDetailsMiddleName',
 				'userDetailsLastName',
-				'userDetailsProfileImageURL'
+				'userDetailsProfileImageURL',
+				'userDepartmentsDepartmentName'
 			];
 			$finalData = collect($mergedData)->filter(function ($value, $key) use($returnList) {
 				return in_array($key, $returnList) && !is_null($value);
