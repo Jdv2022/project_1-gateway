@@ -53,11 +53,11 @@ class UserController extends __ApiBaseController {
 			'created_at_timezone' => '+8:00',
 			'created_by_user_id' => $superUser['id'],
 			'created_by_username' => $superUser['username'],
-			'created_by_user_type' => $superUser['getUserRolesType1'],
+			'created_by_user_type' => $superUser['userRolesType1'],
 			'updated_at_timezone' => '+8:00',
 			'updated_by_user_id' => $superUser['id'],
 			'updated_by_username' => $superUser['username'],
-			'updated_by_user_type' => $superUser['getUserRolesType1'],
+			'updated_by_user_type' => $superUser['userRolesType1'],
 			'enabled' => false,
 		]);
 		$message = "";
@@ -149,6 +149,7 @@ class UserController extends __ApiBaseController {
 		} 
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: "Fetch Error");
 		}
 	}
 
@@ -188,7 +189,7 @@ class UserController extends __ApiBaseController {
 			}
 			else {
 				$gprcRequest = new GetUserDetailsRequest();
-				$gprcRequest->setFK($validatedData['created_by_user_id']);
+				$gprcRequest->setFK($userData['created_by_user_id']);
 				list($response2, $status) = $userClient->GetUserDetails($gprcRequest)->wait();
 				$responseData = json_decode($response2->serializeToJsonString(), true);
 				$userData['created_by'] = $responseData['userDetailsFirstName'] . ' ' . $responseData['userDetailsLastName'];
@@ -201,7 +202,7 @@ class UserController extends __ApiBaseController {
 			}
 			else {
 				$gprcRequest = new GetUserDetailsRequest();
-				$gprcRequest->setFK($validatedData['created_by_user_id']);
+				$gprcRequest->setFK($userData['created_by_user_id']);
 				list($response2, $status) = $userClient->GetUserDetails($gprcRequest)->wait();
 				$responseData = json_decode($response2->serializeToJsonString(), true);
 				$userData['updated_by'] = $responseData['userDetailsFirstName'] . ' ' . $responseData['userDetailsLastName'];
@@ -209,29 +210,7 @@ class UserController extends __ApiBaseController {
 
 			$mergedData = array_merge($userData, $responseData);
 			
-			$returnList = [
-				'userDetailsPhone',
-				'userDetailsEmail',
-				'userRolesType1',
-				'userDetailsDateOfBirth',
-				'daysTillBirthday',
-				'userRolesDescription',
-				'userDetailsAddress',
-				'userDetailsGender',
-				'created_at',
-				'updated_at',
-				'created_by',
-				'updated_by',
-				'userDetailsFirstName',
-				'userDetailsMiddleName',
-				'userDetailsLastName',
-				'userDetailsProfileImageURL',
-				'userDepartmentsDepartmentName'
-			];
-			$finalData = collect($mergedData)->filter(function ($value, $key) use($returnList) {
-				return in_array($key, $returnList) && !is_null($value);
-			});
-			return $this->returnSuccess(data: $finalData, message: "User profile success!");		
+			return $this->returnSuccess(data: $mergedData, message: "User profile success!");		
 		} 
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);

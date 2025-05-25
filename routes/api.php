@@ -6,6 +6,7 @@ use Tymon\JWTAuth\Http\Middleware\Authenticate;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 use App\Http\Middleware\AuthUserMiddleware;
 
 /*
@@ -34,5 +35,6 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/registration/form/data', [UserController::class, 'registrationFormData']);
 	Route::POST('web/private/user/register/attachment', [UserController::class, 'gatewayRegistrationAttachment']);
 	Route::POST('web/private/user/profile/{id}', [UserController::class, 'getUserProfile']);
-	Route::POST('web/private/user/list', [UserController::class, 'getUserProfile']);
+	
+	Route::POST('web/private/user/list', [UsersController::class, 'getUserLists']);
 });
