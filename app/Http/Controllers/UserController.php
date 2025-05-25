@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use grpc\Register\RegisterUserDetailsRequest;
-use grpc\Register\RegisterUserDetailsResponse;
 use grpc\userRegistrationFormData\UserRegistrationFormDataRequest;
+use grpc\GetUserDetails\GetUserDetailsRequest;
 use App\Models\User;
 use App\Services\AuthUserService;
 use Log;
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use protos_project_1\protos_client\ClientService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redis;
 
 class UserController extends __ApiBaseController {
 
@@ -59,7 +60,7 @@ class UserController extends __ApiBaseController {
 			'updated_by_user_type' => $superUser['getUserRolesType1'],
 			'enabled' => false,
 		]);
-
+		$message = "";
 		if($user->save()) {
 			Log::info("Saving user...");
 
@@ -95,17 +96,18 @@ class UserController extends __ApiBaseController {
 			$gprcRequest->setDateOfBirth($validatedData['birthdate']);
 			$gprcRequest->setDepartment($validatedData['department']);
 			$gprcRequest->setGender($validatedData['gender']);
+			$gprcRequest->setPosition($validatedData['position']);
 			$gprcRequest->setFK($user->id);
 			$gprcRequest->setSetProfileImageURL($url);
 			$gprcRequest->setSetProfileImageName($originalImageName);
 			$gprcRequest->setActionByUserId($superUser['id']);
 
 			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
-
+			$message = $status->details;
 			if($status->code === \Grpc\STATUS_OK) {
 				Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
-				if($response->getUserDetailsId()) {
-					return $this->returnSuccess(data: json_decode($response->serializeToJsonString()), message: "Registration success!");
+				if($response->getResult()) {
+					return $this->returnSuccess(data: ['user_id' => $user->id], message: "Registration success!");
 				}
 				else {
 					$isDelete = User::find($user->id);
@@ -116,17 +118,20 @@ class UserController extends __ApiBaseController {
 				$isDelete = User::find($user->id);
 				if($isDelete) $isDelete->delete();
 				Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+				return $this->returnFail(data: [], message: 'Save Unsuccessfull!');
 			}
 		}
 		else {
 			throw new Exception("User registration failed!");
 		}
 
-        Log::info('User Registered!');
-        return $this->returnFail(data: [], message: "Registration Fail!");
+		$parts = explode(':', $message);
+		$cleanMessage = trim(end($parts));
+        Log::info('User not fully Registered!');
+        return $this->returnFail(data: [], message: $cleanMessage);
     }
 
-	public function registrationFormData(Request $request) {
+	public function registrationFormData(Request $request):JsonResponse {
 		Log::info("Getting registration form data...");
 
 		$userClient = $this->clientService->getRegistrationFormDataClient();
@@ -145,7 +150,103 @@ class UserController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 		}
-        return $this->returnFail(data: [], message: "Failed to Fetch!");
+	}
+
+	public function getUserProfile(Request $request):JsonResponse {
+		Log::info("Getting user profile...");
+		$validatedData = $request->validate([
+            'user_id' => 'required|integer',
+        ]);  
+		
+		$gprcRequest = new GetUserDetailsRequest();
+		$gprcRequest->setFK($validatedData['user_id']);
+
+		$userClient = $this->clientService->getUserServiceClient();
+		list($response, $status) = $userClient->GetUserDetails($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			$user = User::find($validatedData['user_id']);
+			$responseData = json_decode($response->serializeToJsonString(), true);
+			$userData = $user->toArray();
+			$userData['created_at'] = Carbon::parse($userData['created_at'])->format('F j, Y \a\t g:i A');
+			$userData['updated_at'] = Carbon::parse($userData['updated_at'])->format('F j, Y \a\t g:i A');
+			if(isset($responseData['userDetailsDateOfBirth'])) {
+				$date = Carbon::parse($responseData['userDetailsDateOfBirth']);
+				$responseData['userDetailsDateOfBirth'] = $date->translatedFormat('F j, Y');
+				$userData['daysTillBirthday'] = $this->daysbefore($responseData); 
+			}
+			else {
+				$responseData['userDetailsDateOfBirth'] = '-';
+				$userData['daysTillBirthday'] = '-'; 
+			}
+			$modifiedByUser = User::whereIn('id', [$userData['created_by_user_id'], $userData['updated_by_user_id']]);
+			if(Redis::exists('user_' . $userData['created_by_user_id'])) {
+				Log::info("Created by record found on cached!");
+				$promotedBy = json_decode(Redis::get('user_' . $userData['created_by_user_id']), true);
+				$userData['created_by'] = $promotedBy['userDetailsFirstName'] . ' ' . $promotedBy['userDetailsLastName'];
+			}
+			else {
+				$gprcRequest = new GetUserDetailsRequest();
+				$gprcRequest->setFK($validatedData['created_by_user_id']);
+				list($response2, $status) = $userClient->GetUserDetails($gprcRequest)->wait();
+				$responseData = json_decode($response2->serializeToJsonString(), true);
+				$userData['created_by'] = $responseData['userDetailsFirstName'] . ' ' . $responseData['userDetailsLastName'];
+			}
+
+			if(Redis::exists('user_' . $userData['updated_by_user_id'])) {
+				Log::info("Created by record found on cached!");
+				$promotedBy = json_decode(Redis::get('user_' . $userData['updated_by_user_id']), true);
+				$userData['updated_by'] = $promotedBy['userDetailsFirstName'] . ' ' . $promotedBy['userDetailsLastName'];
+			}
+			else {
+				$gprcRequest = new GetUserDetailsRequest();
+				$gprcRequest->setFK($validatedData['created_by_user_id']);
+				list($response2, $status) = $userClient->GetUserDetails($gprcRequest)->wait();
+				$responseData = json_decode($response2->serializeToJsonString(), true);
+				$userData['updated_by'] = $responseData['userDetailsFirstName'] . ' ' . $responseData['userDetailsLastName'];
+			}
+
+			$mergedData = array_merge($userData, $responseData);
+
+			$returnList = [
+				'userDetailsPhone',
+				'userDetailsEmail',
+				'userRolesType1',
+				'userDetailsDateOfBirth',
+				'daysTillBirthday',
+				'userRolesDescription',
+				'userDetailsAddress',
+				'userDetailsGender',
+				'created_at',
+				'updated_at',
+				'created_by',
+				'updated_by',
+				'userDetailsFirstName',
+				'userDetailsMiddleName',
+				'userDetailsLastName',
+				'userDetailsProfileImageURL'
+			];
+			$finalData = collect($mergedData)->filter(function ($value, $key) use($returnList) {
+				return in_array($key, $returnList) && !is_null($value);
+			});
+			return $this->returnSuccess(data: $finalData, message: "User profile success!");		
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: "Server Error");
+		}
+	}
+
+	private function daysbefore(array $responseData): Int {
+		$dob = Carbon::parse($responseData['userDetailsDateOfBirth']);
+		$today = Carbon::now();
+		$next = $dob->copy()->year($today->year);
+		if($next->isPast()) {
+			$next->addYear();
+		}
+		$daysTill = $today->diffInDays($next);
+		return (int) ceil($daysTill);
 	}
 
 }

@@ -229,6 +229,122 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 user_detail_user_roles_user_role_id = 54;</code>
      */
     protected $user_detail_user_roles_user_role_id = 0;
+    /**
+     * Generated from protobuf field <code>uint64 user_departments_id = 55;</code>
+     */
+    protected $user_departments_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_departments_department_name = 56;</code>
+     */
+    protected $user_departments_department_name = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_description = 57;</code>
+     */
+    protected $user_departments_description = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_level = 58;</code>
+     */
+    protected $user_departments_level = '';
+    /**
+     * Generated from protobuf field <code>bool user_departments_status = 59;</code>
+     */
+    protected $user_departments_status = false;
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at = 60;</code>
+     */
+    protected $user_departments_created_at = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at_timezone = 61;</code>
+     */
+    protected $user_departments_created_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_departments_created_by_user_id = 62;</code>
+     */
+    protected $user_departments_created_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_username = 63;</code>
+     */
+    protected $user_departments_created_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_user_type = 64;</code>
+     */
+    protected $user_departments_created_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at = 65;</code>
+     */
+    protected $user_departments_updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at_timezone = 66;</code>
+     */
+    protected $user_departments_updated_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_departments_updated_by_user_id = 67;</code>
+     */
+    protected $user_departments_updated_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_username = 68;</code>
+     */
+    protected $user_departments_updated_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_user_type = 69;</code>
+     */
+    protected $user_departments_updated_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>bool user_departments_enabled = 70;</code>
+     */
+    protected $user_departments_enabled = false;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at = 72;</code>
+     */
+    protected $user_detail_user_departments_created_at = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at_timezone = 73;</code>
+     */
+    protected $user_detail_user_departments_created_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_created_by_user_id = 74;</code>
+     */
+    protected $user_detail_user_departments_created_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_username = 75;</code>
+     */
+    protected $user_detail_user_departments_created_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_user_type = 76;</code>
+     */
+    protected $user_detail_user_departments_created_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at = 77;</code>
+     */
+    protected $user_detail_user_departments_updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at_timezone = 78;</code>
+     */
+    protected $user_detail_user_departments_updated_at_timezone = '';
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_updated_by_user_id = 79;</code>
+     */
+    protected $user_detail_user_departments_updated_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_username = 80;</code>
+     */
+    protected $user_detail_user_departments_updated_by_username = '';
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_user_type = 81;</code>
+     */
+    protected $user_detail_user_departments_updated_by_user_type = '';
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_departments_enabled = 82;</code>
+     */
+    protected $user_detail_user_departments_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_detail_id = 83;</code>
+     */
+    protected $user_detail_user_departments_user_detail_id = 0;
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_department_id = 84;</code>
+     */
+    protected $user_detail_user_departments_user_department_id = 0;
 
     /**
      * Constructor.
@@ -290,6 +406,35 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
      *     @type bool $user_detail_user_roles_enabled
      *     @type int|string $user_detail_user_roles_user_detail_id
      *     @type int|string $user_detail_user_roles_user_role_id
+     *     @type int|string $user_departments_id
+     *     @type string $user_departments_department_name
+     *     @type string $user_departments_description
+     *     @type string $user_departments_level
+     *     @type bool $user_departments_status
+     *     @type string $user_departments_created_at
+     *     @type string $user_departments_created_at_timezone
+     *     @type int $user_departments_created_by_user_id
+     *     @type string $user_departments_created_by_username
+     *     @type string $user_departments_created_by_user_type
+     *     @type string $user_departments_updated_at
+     *     @type string $user_departments_updated_at_timezone
+     *     @type int $user_departments_updated_by_user_id
+     *     @type string $user_departments_updated_by_username
+     *     @type string $user_departments_updated_by_user_type
+     *     @type bool $user_departments_enabled
+     *     @type string $user_detail_user_departments_created_at
+     *     @type string $user_detail_user_departments_created_at_timezone
+     *     @type int $user_detail_user_departments_created_by_user_id
+     *     @type string $user_detail_user_departments_created_by_username
+     *     @type string $user_detail_user_departments_created_by_user_type
+     *     @type string $user_detail_user_departments_updated_at
+     *     @type string $user_detail_user_departments_updated_at_timezone
+     *     @type int $user_detail_user_departments_updated_by_user_id
+     *     @type string $user_detail_user_departments_updated_by_username
+     *     @type string $user_detail_user_departments_updated_by_user_type
+     *     @type bool $user_detail_user_departments_enabled
+     *     @type int|string $user_detail_user_departments_user_detail_id
+     *     @type int|string $user_detail_user_departments_user_department_id
      * }
      */
     public function __construct($data = NULL) {
@@ -1481,6 +1626,644 @@ class GetUserDetailsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->user_detail_user_roles_user_role_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_departments_id = 55;</code>
+     * @return int|string
+     */
+    public function getUserDepartmentsId()
+    {
+        return $this->user_departments_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_departments_id = 55;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDepartmentsId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_departments_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_department_name = 56;</code>
+     * @return string
+     */
+    public function getUserDepartmentsDepartmentName()
+    {
+        return $this->user_departments_department_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_department_name = 56;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsDepartmentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_department_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_description = 57;</code>
+     * @return string
+     */
+    public function getUserDepartmentsDescription()
+    {
+        return $this->user_departments_description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_description = 57;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_level = 58;</code>
+     * @return string
+     */
+    public function getUserDepartmentsLevel()
+    {
+        return $this->user_departments_level;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_level = 58;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsLevel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_level = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_departments_status = 59;</code>
+     * @return bool
+     */
+    public function getUserDepartmentsStatus()
+    {
+        return $this->user_departments_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_departments_status = 59;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserDepartmentsStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_departments_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at = 60;</code>
+     * @return string
+     */
+    public function getUserDepartmentsCreatedAt()
+    {
+        return $this->user_departments_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at = 60;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at_timezone = 61;</code>
+     * @return string
+     */
+    public function getUserDepartmentsCreatedAtTimezone()
+    {
+        return $this->user_departments_created_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_at_timezone = 61;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsCreatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_created_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_departments_created_by_user_id = 62;</code>
+     * @return int
+     */
+    public function getUserDepartmentsCreatedByUserId()
+    {
+        return $this->user_departments_created_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_departments_created_by_user_id = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDepartmentsCreatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_departments_created_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_username = 63;</code>
+     * @return string
+     */
+    public function getUserDepartmentsCreatedByUsername()
+    {
+        return $this->user_departments_created_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_username = 63;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsCreatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_created_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_user_type = 64;</code>
+     * @return string
+     */
+    public function getUserDepartmentsCreatedByUserType()
+    {
+        return $this->user_departments_created_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_created_by_user_type = 64;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsCreatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_created_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at = 65;</code>
+     * @return string
+     */
+    public function getUserDepartmentsUpdatedAt()
+    {
+        return $this->user_departments_updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at = 65;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at_timezone = 66;</code>
+     * @return string
+     */
+    public function getUserDepartmentsUpdatedAtTimezone()
+    {
+        return $this->user_departments_updated_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_at_timezone = 66;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsUpdatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_updated_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_departments_updated_by_user_id = 67;</code>
+     * @return int
+     */
+    public function getUserDepartmentsUpdatedByUserId()
+    {
+        return $this->user_departments_updated_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_departments_updated_by_user_id = 67;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDepartmentsUpdatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_departments_updated_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_username = 68;</code>
+     * @return string
+     */
+    public function getUserDepartmentsUpdatedByUsername()
+    {
+        return $this->user_departments_updated_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_username = 68;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsUpdatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_updated_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_user_type = 69;</code>
+     * @return string
+     */
+    public function getUserDepartmentsUpdatedByUserType()
+    {
+        return $this->user_departments_updated_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_departments_updated_by_user_type = 69;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDepartmentsUpdatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_departments_updated_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_departments_enabled = 70;</code>
+     * @return bool
+     */
+    public function getUserDepartmentsEnabled()
+    {
+        return $this->user_departments_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_departments_enabled = 70;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserDepartmentsEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_departments_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at = 72;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsCreatedAt()
+    {
+        return $this->user_detail_user_departments_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at = 72;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at_timezone = 73;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsCreatedAtTimezone()
+    {
+        return $this->user_detail_user_departments_created_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_at_timezone = 73;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsCreatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_created_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_created_by_user_id = 74;</code>
+     * @return int
+     */
+    public function getUserDetailUserDepartmentsCreatedByUserId()
+    {
+        return $this->user_detail_user_departments_created_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_created_by_user_id = 74;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsCreatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_detail_user_departments_created_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_username = 75;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsCreatedByUsername()
+    {
+        return $this->user_detail_user_departments_created_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_username = 75;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsCreatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_created_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_user_type = 76;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsCreatedByUserType()
+    {
+        return $this->user_detail_user_departments_created_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_created_by_user_type = 76;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsCreatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_created_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at = 77;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsUpdatedAt()
+    {
+        return $this->user_detail_user_departments_updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at = 77;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at_timezone = 78;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsUpdatedAtTimezone()
+    {
+        return $this->user_detail_user_departments_updated_at_timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_at_timezone = 78;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUpdatedAtTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_updated_at_timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_updated_by_user_id = 79;</code>
+     * @return int
+     */
+    public function getUserDetailUserDepartmentsUpdatedByUserId()
+    {
+        return $this->user_detail_user_departments_updated_by_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 user_detail_user_departments_updated_by_user_id = 79;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUpdatedByUserId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->user_detail_user_departments_updated_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_username = 80;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsUpdatedByUsername()
+    {
+        return $this->user_detail_user_departments_updated_by_username;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_username = 80;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUpdatedByUsername($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_updated_by_username = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_user_type = 81;</code>
+     * @return string
+     */
+    public function getUserDetailUserDepartmentsUpdatedByUserType()
+    {
+        return $this->user_detail_user_departments_updated_by_user_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_detail_user_departments_updated_by_user_type = 81;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUpdatedByUserType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_detail_user_departments_updated_by_user_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_departments_enabled = 82;</code>
+     * @return bool
+     */
+    public function getUserDetailUserDepartmentsEnabled()
+    {
+        return $this->user_detail_user_departments_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool user_detail_user_departments_enabled = 82;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->user_detail_user_departments_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_detail_id = 83;</code>
+     * @return int|string
+     */
+    public function getUserDetailUserDepartmentsUserDetailId()
+    {
+        return $this->user_detail_user_departments_user_detail_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_detail_id = 83;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUserDetailId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_detail_user_departments_user_detail_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_department_id = 84;</code>
+     * @return int|string
+     */
+    public function getUserDetailUserDepartmentsUserDepartmentId()
+    {
+        return $this->user_detail_user_departments_user_department_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_detail_user_departments_user_department_id = 84;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserDetailUserDepartmentsUserDepartmentId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_detail_user_departments_user_department_id = $var;
 
         return $this;
     }

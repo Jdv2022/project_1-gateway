@@ -34,4 +34,5 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/register', [UserController::class, 'gatewayRegistration']);
 	Route::POST('web/private/user/registration/form/data', [UserController::class, 'registrationFormData']);
 	Route::POST('web/private/user/register/attachment', [UserController::class, 'gatewayRegistrationAttachment']);
+	Route::POST('web/private/user/profile/{id}', [UserController::class, 'getUserProfile']);
 });

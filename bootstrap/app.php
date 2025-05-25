@@ -24,8 +24,8 @@ return Application::configure(basePath: dirname(__DIR__))
 			PreGeneralProcess::class,
         ]);
         $middleware->api(append: [
-			PostRequestLogs::class,
 			Encrypt::class,
+			PostRequestLogs::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

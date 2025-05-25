@@ -40,7 +40,7 @@ class AuthController extends __ApiBaseController {
 
 			if($status->code === \Grpc\STATUS_OK) {
 				Log::debug("Response: Success");
-				$responseArray = $this->clientService->grpcMessageToArray($response);
+				$responseArray = json_decode($response->serializeToJsonString(), true);
 				$value = [...$user->toArray(), ...$responseArray];
 				$key = 'user_' . $user->id;
 				Redis::set($key, json_encode($value));

@@ -27,8 +27,6 @@ class Decrypt {
 		if(!array_key_exists('payload', $encryptedData)) {
 			throw new Exception("Decrypt 'payload' property does not exist.");
 		}
-		log::debug($encryptedData);
-		log::debug($encryptedData['payload']);
 
         $request['payload'] = $this->decryptData($encryptedData['payload']);
 

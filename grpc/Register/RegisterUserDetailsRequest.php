@@ -50,23 +50,27 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $gender = '';
     /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
+     * Generated from protobuf field <code>string position = 10;</code>
+     */
+    protected $position = '';
+    /**
+     * Generated from protobuf field <code>string profile_image = 11;</code>
      */
     protected $profile_image = '';
     /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
+     * Generated from protobuf field <code>string action_by_user_id = 12;</code>
      */
     protected $action_by_user_id = '';
     /**
-     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 13;</code>
      */
     protected $set_profile_image_u_r_l = '';
     /**
-     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     * Generated from protobuf field <code>string set_profile_image_Name = 14;</code>
      */
     protected $set_profile_image_Name = '';
     /**
-     * Generated from protobuf field <code>int64 fk = 14;</code>
+     * Generated from protobuf field <code>int64 fk = 15;</code>
      */
     protected $fk = 0;
 
@@ -85,6 +89,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $department
      *     @type string $date_of_birth
      *     @type string $gender
+     *     @type string $position
      *     @type string $profile_image
      *     @type string $action_by_user_id
      *     @type string $set_profile_image_u_r_l
@@ -296,7 +301,29 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
+     * Generated from protobuf field <code>string position = 10;</code>
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Generated from protobuf field <code>string position = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPosition($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->position = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile_image = 11;</code>
      * @return string
      */
     public function getProfileImage()
@@ -305,7 +332,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile_image = 10;</code>
+     * Generated from protobuf field <code>string profile_image = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -318,7 +345,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
+     * Generated from protobuf field <code>string action_by_user_id = 12;</code>
      * @return string
      */
     public function getActionByUserId()
@@ -327,7 +354,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string action_by_user_id = 11;</code>
+     * Generated from protobuf field <code>string action_by_user_id = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -340,7 +367,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 13;</code>
      * @return string
      */
     public function getSetProfileImageURL()
@@ -349,7 +376,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string set_profile_image_u_r_l = 12;</code>
+     * Generated from protobuf field <code>string set_profile_image_u_r_l = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -362,7 +389,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     * Generated from protobuf field <code>string set_profile_image_Name = 14;</code>
      * @return string
      */
     public function getSetProfileImageName()
@@ -371,7 +398,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string set_profile_image_Name = 13;</code>
+     * Generated from protobuf field <code>string set_profile_image_Name = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -384,7 +411,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 14;</code>
+     * Generated from protobuf field <code>int64 fk = 15;</code>
      * @return int|string
      */
     public function getFk()
@@ -393,7 +420,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 14;</code>
+     * Generated from protobuf field <code>int64 fk = 15;</code>
      * @param int|string $var
      * @return $this
      */
