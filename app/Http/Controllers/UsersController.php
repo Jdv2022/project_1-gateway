@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use grpc\getUsers\GetUsersRequest;
-use grpc\getUsers\GetUsersResponse;
-use grpc\getUsers\GetUsersServiceClient;
+use grpc\userClockIn\UserClockInRequest;
 use App\Models\User;
 use App\Services\AuthUserService;
 use Log;
@@ -45,6 +44,42 @@ class UsersController extends __ApiBaseController {
 				return $userArray;
 			});
 			return $this->returnSuccess(data: $users, message: "Success");
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			$message = $status->details;
+			$parts = explode(':', $message);
+			$cleanMessage = trim(end($parts));
+			return $this->returnFail(data: [], message: $message);
+		}
+	}
+
+	public function setClockIn(Request $request): JsonResponse {
+		Log::info('[UsersController][setClockIn] Clocking In...');
+		$validated = $request->validate([
+			'timezone' => 'required'
+		]);
+
+		$superUser = $this->authService->authUser();
+		$userClient = $this->clientService->clockIn();
+
+		$gprcRequest = new UserClockInRequest();
+		$gprcRequest->setFK($superUser['id']);
+		$gprcRequest->setTimezone($validated['timezone']);
+
+		list($response, $status) = $userClient->UserClockInService($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			$res = collect(json_decode($response->serializeToJsonString(), true)); 
+			$res = $res['result'] ?? null;
+
+			if($res) {
+				return $this->returnSuccess(data: null, message: "TIME IN SUCCESS!");
+			}
+			else {
+				return $this->returnFail(data: null, message: "TIME IN FAIL!");
+			}
 		} 
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
