@@ -21,6 +21,10 @@ class UserRegistrationFormDataResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string roles = 2;</code>
      */
     protected $roles = '';
+    /**
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     */
+    protected $timezone = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class UserRegistrationFormDataResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $departments
      *     @type string $roles
+     *     @type string $timezone
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class UserRegistrationFormDataResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->roles = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
 
         return $this;
     }

@@ -15,6 +15,7 @@ class PreGeneralProcess
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
+		log::debug("PreGeneralProcess Middleware");
 		if(!isset($request->payload)) {
 			return $next($request);
 		}
@@ -24,7 +25,7 @@ class PreGeneralProcess
             : json_decode($request->payload, true);
 
         // Replace the entire request input with the decrypted payload
-        $request->replace($decryptedPayload);
+        $request->replace($decryptedPayload ?? []);
         return $next($request);
     }
 }

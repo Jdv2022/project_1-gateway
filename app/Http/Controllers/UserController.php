@@ -43,6 +43,7 @@ class UserController extends __ApiBaseController {
 		Log::info("[User@gatewayRegistration]: request data validated");
 
 		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
 
         if(!$superUser) throw new Exception("Your account does not exist!");
 		$user = new User();
@@ -50,11 +51,11 @@ class UserController extends __ApiBaseController {
 			'username' => $validatedData['username'],
 			'password' => Hash::make($validatedData['password']),
 			'is_active' => false,
-			'created_at_timezone' => '+8:00',
+			'created_at_timezone' => $tz,
 			'created_by_user_id' => $superUser['id'],
 			'created_by_username' => $superUser['username'],
 			'created_by_user_type' => $superUser['userRolesType1'],
-			'updated_at_timezone' => '+8:00',
+			'updated_at_timezone' => $tz,
 			'updated_by_user_id' => $superUser['id'],
 			'updated_by_username' => $superUser['username'],
 			'updated_by_user_type' => $superUser['userRolesType1'],
@@ -101,6 +102,7 @@ class UserController extends __ApiBaseController {
 			$gprcRequest->setSetProfileImageURL($url);
 			$gprcRequest->setSetProfileImageName($originalImageName);
 			$gprcRequest->setActionByUserId($superUser['id']);
+			$gprcRequest->setTimeZone($tz);
 
 			list($response, $status) = $userClient->RegisterUserDetails($gprcRequest)->wait();
 			$message = $status->details;

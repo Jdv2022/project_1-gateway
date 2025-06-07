@@ -66,13 +66,13 @@ class AuthController extends __ApiBaseController {
     }
 
 	public function validateToken(Request $request):JsonResponse {
-        return $this->returnSuccess(data: null, message: "Token Valid");
+        return $this->returnSuccess(data: [], message: "Token Valid");
     }
 
 	public function refreshToken(Request $request): JsonResponse {
 		$token = $request->bearerToken(); 
 		if (!$token) {
-			return $this->returnFail(data: null, message: "Token not provided", status: 400);
+			return $this->returnFail(data: [], message: "Token not provided", status: 400);
 		}
 	
 		$newToken = JWTAuth::setToken($token)->refresh();

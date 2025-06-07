@@ -73,6 +73,10 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 fk = 15;</code>
      */
     protected $fk = 0;
+    /**
+     * Generated from protobuf field <code>string timezone = 16;</code>
+     */
+    protected $timezone = '';
 
     /**
      * Constructor.
@@ -95,6 +99,7 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $set_profile_image_u_r_l
      *     @type string $set_profile_image_Name
      *     @type int|string $fk
+     *     @type string $timezone
      * }
      */
     public function __construct($data = NULL) {
@@ -428,6 +433,28 @@ class RegisterUserDetailsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->fk = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 16;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
 
         return $this;
     }

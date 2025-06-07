@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetUserDetailsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>int64 fk = 1;</code>
      */
     protected $fk = 0;
+    /**
+     * Generated from protobuf field <code>string timezone = 2;</code>
+     */
+    protected $timezone = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetUserDetailsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $fk
+     *     @type string $timezone
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +38,7 @@ class GetUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>int64 fk = 1;</code>
      * @return int|string
      */
     public function getFk()
@@ -42,7 +47,7 @@ class GetUserDetailsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 fk = 12;</code>
+     * Generated from protobuf field <code>int64 fk = 1;</code>
      * @param int|string $var
      * @return $this
      */
@@ -50,6 +55,28 @@ class GetUserDetailsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->fk = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 2;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
 
         return $this;
     }

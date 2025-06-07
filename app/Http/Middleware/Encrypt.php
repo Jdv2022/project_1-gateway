@@ -15,12 +15,19 @@ class Encrypt {
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
+		Log::debug("Encrypt Middleware");
+
+		$endPointToIgnore = [
+			'api/meta/data',
+			'api/web/private/validate/token',
+		];
+
+		if(in_array($request->path(), $endPointToIgnore)) {
+			return $next($request);
+		}
+
         $response = $next($request);
         $originalData = $response->getData(true);
-
-		if(!isset($originalData['isEncrypted']) || !$originalData['isEncrypted']) {
-			return $response;
-		}
 
         if(!array_key_exists('payload', $originalData)) {   
             throw new Exception("Encrypt 'payload' property does not exist.");
@@ -45,8 +52,8 @@ class Encrypt {
 		$iv = random_bytes(16); 
 	
 		$ciphertext = openssl_encrypt($data, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
-	
-		$hmac = hash_hmac('sha256', $ciphertext, $key, true); 
+		
+		$hmac = hash_hmac('sha256', $iv . $ciphertext, $key, true);
 	
 		return base64_encode($iv . $ciphertext . $hmac);
 	}

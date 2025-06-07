@@ -17,12 +17,12 @@ return new class extends Migration
             $table->boolean('is_active')->default(false);
             
             $table->datetime('created_at');
-            $table->string('created_at_timezone', 10)->nullable();
+            $table->string('created_at_timezone', 200)->nullable();
             $table->integer('created_by_user_id')->nullable();
             $table->string('created_by_username', 45)->nullable();
             $table->string('created_by_user_type', 45)->nullable();
             $table->datetime('updated_at');
-            $table->string('updated_at_timezone', 10)->nullable();
+            $table->string('updated_at_timezone', 200)->nullable();
             $table->integer('updated_by_user_id')->nullable();
             $table->string('updated_by_username', 45)->nullable();
             $table->string('updated_by_user_type', 45)->nullable();
