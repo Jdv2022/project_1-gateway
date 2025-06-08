@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>userClockIn.UserClockOutResponse</code>
+ * Generated from protobuf message <code>userClockIn.UserClockInResponse</code>
  */
-class UserClockOutResponse extends \Google\Protobuf\Internal\Message
+class UserClockInResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>bool result = 1;</code>

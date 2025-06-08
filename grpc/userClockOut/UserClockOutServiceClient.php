@@ -1,11 +1,11 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace grpc\userClockIn;
+namespace grpc\userClockOut;
 
 /**
  */
-class UserClockInServiceClient extends \Grpc\BaseStub {
+class UserClockOutServiceClient extends \Grpc\BaseStub {
 
     /**
      * @param string $hostname hostname
@@ -17,16 +17,16 @@ class UserClockInServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \grpc\userClockIn\UserClockInRequest $argument input argument
+     * @param \grpc\userClockOut\UserClockOutRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UserClockInService(\grpc\userClockIn\UserClockInRequest $argument,
+    public function SetUserClockOut(\grpc\userClockOut\UserClockOutRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/userClockIn.UserClockInService/UserClockInService',
+        return $this->_simpleRequest('/userClockOut.UserClockOutService/SetUserClockOut',
         $argument,
-        ['\grpc\userClockIn\UserClockInResponse', 'decode'],
+        ['\grpc\userClockOut\UserClockOutResponse', 'decode'],
         $metadata, $options);
     }
 

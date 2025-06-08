@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Redis;
 use grpc\getAttendance\GetAttendanceRequest;
 use App\Services\AuthUserService;
 use grpc\userClockIn\UserClockInRequest;
+use grpc\userClockOut\UserClockOutRequest;
 
 class AttendanceController extends __ApiBaseController {
     
@@ -81,6 +82,43 @@ class AttendanceController extends __ApiBaseController {
 			}
 			else {
 				return $this->returnFail(data: null, message: "TIME IN FAIL!", status: 500, isEnc: false);
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			$message = $status->details;
+			$parts = explode(':', $message);
+			$cleanMessage = trim(end($parts));
+			return $this->returnFail(data: [], message: $message, status: 500, isEnc: false);
+		}
+	}
+
+	public function setClockOut(Request $request): JsonResponse {
+		Log::info('[UsersController][setClockOut] Clocking Out...');
+		$validated = $request->validate([
+			'timezone' => 'required'
+		]);
+
+		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
+		$userClient = $this->clientService->clockOut();
+
+		$gprcRequest = new UserClockOutRequest();
+		$gprcRequest->setFK($superUser['id']);
+		$gprcRequest->setTimeZone($tz);
+
+		list($response, $status) = $userClient->SetUserClockOut($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			$res = collect(json_decode($response->serializeToJsonString(), true)); 
+			$res = $res['result'] ?? null;
+
+			if($res) {
+				return $this->returnSuccess(data: null, message: "TIME OUT SUCCESS!", status: 200, isEnc: false);
+			}
+			else {
+				return $this->returnFail(data: null, message: "TIME OUT FAIL!", status: 500, isEnc: false);
 			}
 		} 
 		else {

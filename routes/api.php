@@ -43,4 +43,5 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 
 	Route::POST('web/private/user/attendance', [AttendanceController::class, 'getAttandance']);
 	Route::POST('web/private/user/attendance/clock/in', [AttendanceController::class, 'setClockIn']);
+	Route::POST('web/private/user/attendance/clock/out', [AttendanceController::class, 'setClockOut']);
 });
