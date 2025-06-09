@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\FEUtilityController;
+use App\Http\Controllers\TeamsController;
 use App\Http\Middleware\AuthUserMiddleware;
 
 /*
@@ -44,4 +45,6 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/attendance', [AttendanceController::class, 'getAttandance']);
 	Route::POST('web/private/user/attendance/clock/in', [AttendanceController::class, 'setClockIn']);
 	Route::POST('web/private/user/attendance/clock/out', [AttendanceController::class, 'setClockOut']);
+
+	Route::POST('web/private/user/teams/create', [TeamsController::class, 'createTeam']);
 });
