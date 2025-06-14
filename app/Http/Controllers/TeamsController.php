@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use protos_project_1\protos_client\ClientService;
 use App\Services\AuthUserService;
 use Illuminate\Http\JsonResponse;
-use grpc\CreateTeam\CreateTeamResponse;
 use grpc\CreateTeam\CreateTeamRequest;
+use grpc\AssignUserToTeam\AssignUserToTeamRequest;
+use grpc\AssignUserToTeam\fK;
 use Log;
 
 class TeamsController extends __ApiBaseController {
@@ -25,7 +26,10 @@ class TeamsController extends __ApiBaseController {
             'description' => 'required|string',
         ]);  
 
+		$superUser = $this->authService->authUser();
+
 		$requestModel = new CreateTeamRequest();
+		$requestModel->setActionByUserId($superUser['id']);
 		$requestModel->setTeamName($validatedData['team_name']);
 		$requestModel->setDescription($validatedData['description']);
 
@@ -44,6 +48,45 @@ class TeamsController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 			return $this->returnFail(data: [], message: 'Save new team Unsuccessfull!');
+		}
+	}
+
+	public function assignUsersToTeam(Request $request): JsonResponse {
+		Log::info("Assigning user to team...");
+		$validatedData = $request->validate([
+			'team_id' => 'required',
+			'user_id' => 'required|array',
+		]);
+
+		$superUser = $this->authService->authUser();
+
+		$requestModel = new AssignUserToTeamRequest();
+		$requestModel->setActionByUserId($superUser['id']);
+		$requestModel->setTeamId($validatedData['team_id']);
+
+		$fkList = [];
+		foreach ($validatedData['user_id'] as $value) {
+			$fk = new fK();
+			$fk->setFk($value);
+			$fkList[] = $fk;
+		}
+		$requestModel->setFk($fkList);
+
+		$userClient = $this->clientService->AssignUserToTeam();
+		list($response, $status) = $userClient->AssignUser($requestModel)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if($response->getResult()) {
+				return $this->returnSuccess(data: $response, message: "Successfully assigned to team.");
+			}
+			else {
+				return $this->returnFail(data: [], message: 'Assign to team Unsuccessfull!');
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Save new user to team Unsuccessfull!');
 		}
 	}
 

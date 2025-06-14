@@ -47,4 +47,5 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/attendance/clock/out', [AttendanceController::class, 'setClockOut']);
 
 	Route::POST('web/private/user/teams/create', [TeamsController::class, 'createTeam']);
+	Route::POST('web/private/assign/user/to/teams', [TeamsController::class, 'assignUsersToTeam']);
 });
