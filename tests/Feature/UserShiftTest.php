@@ -4,28 +4,33 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
-use Log;
-use App\Models\User;
-use Mockery;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Redis;
 use App\Services\AuthUserService;
-use Carbon\Carbon;
-use grpc\getUsers\GetUsersServiceClient;
+use grpc\CreateShift\CreateShiftServiceClient;
 use protos_project_1\protos_client\ClientService;
+use App\Controllers\UserShiftController;
+use Tests\TestCase;
+use Carbon\Carbon;
+use Mockery;
+use Log;
 
-class UsersControllerTest extends FeatureBaseClassTest {
+class UserShiftTest extends FeatureBaseClassTest {
 
-    public function test_get_user_lists(): void {
-		$mockGrpcClient = Mockery::mock(GetUsersServiceClient::class);
-		$mockGrpcClient->shouldReceive('GetUsers')
+    public function test_create_user_shift(): void {
+		Log::info("test_create_user_shift");
+
+		$mockGrpcClient = Mockery::mock(CreateShiftServiceClient::class);
+		$mockGrpcClient->shouldReceive('CreateShift')
 			->andReturn(new class {
 				public function wait() {
 					$mockResponse = Mockery::mock();
 					$mockResponse->shouldReceive('serializeToJsonString')
 								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+						
+					$mockResponse->shouldReceive('getResult')
+								->andReturn(true);
 
 					$mockStatus = new \stdClass();
 					$mockStatus->code = \Grpc\STATUS_OK;
@@ -36,15 +41,19 @@ class UsersControllerTest extends FeatureBaseClassTest {
 			});
 
 		$mockClientService = Mockery::mock(ClientService::class);
-		$mockClientService->shouldReceive('getUsers')->andReturn($mockGrpcClient);
-		
+		$mockClientService->shouldReceive('CreateUserShiftServiceClient')->andReturn($mockGrpcClient);
+
 		$this->app->instance(ClientService::class, $mockClientService);
 
-		$response = $this->postRequest('/api/web/private/user/list', []);
+		$response = $this->postRequest('/api/web/private/user/shift/create', [
+			'shift_name' => 'Test Shift',
+			'description' => 'Test Shift'
+		]);
 
 		$testObjectResponse = $response['testObjectResponse'];
 		$payload = $response['payload'];
-
+		Log::debug($payload);
 		$testObjectResponse->assertStatus(200);
     }
+
 }

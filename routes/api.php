@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\FEUtilityController;
+use App\Http\Controllers\UserShiftController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Middleware\AuthUserMiddleware;
 
@@ -49,4 +50,6 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/teams/create', [TeamsController::class, 'createTeam']);
 	Route::POST('web/private/assign/user/to/teams', [TeamsController::class, 'assignUsersToTeam']);
 	Route::POST('web/private/user/teams/lists', [TeamsController::class, 'getTeamLists']);
+
+	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
 });
