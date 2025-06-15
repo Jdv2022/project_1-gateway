@@ -48,4 +48,5 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 
 	Route::POST('web/private/user/teams/create', [TeamsController::class, 'createTeam']);
 	Route::POST('web/private/assign/user/to/teams', [TeamsController::class, 'assignUsersToTeam']);
+	Route::POST('web/private/user/teams/lists', [TeamsController::class, 'getTeamLists']);
 });

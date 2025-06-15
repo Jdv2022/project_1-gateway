@@ -9,6 +9,7 @@ use Illuminate\Http\JsonResponse;
 use grpc\CreateTeam\CreateTeamRequest;
 use grpc\AssignUserToTeam\AssignUserToTeamRequest;
 use grpc\AssignUserToTeam\fK;
+use grpc\TeamLists\TeamListsRequest;
 use Log;
 
 class TeamsController extends __ApiBaseController {
@@ -90,4 +91,26 @@ class TeamsController extends __ApiBaseController {
 		}
 	}
 
+	public function getTeamLists(Request $request): JsonResponse {
+		Log::info("Getting team lists...");
+
+		$gprcRequest = new TeamListsRequest();
+
+		$userClient = $this->clientService->TeamListsServiceClient();
+		list($response, $status) = $userClient->TeamLists($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if($response->getTeamLists()) {
+				return $this->returnSuccess(data: $response->getTeamLists(), message: "Successfully fetched team lists.");
+			}
+			else {
+				return $this->returnFail(data: [], message: 'Fetch team lists Unsuccessfull!');
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Connection error to User Service!');
+		}
+	}
 }
