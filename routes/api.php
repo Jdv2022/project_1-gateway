@@ -52,4 +52,5 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/teams/lists', [TeamsController::class, 'getTeamLists']);
 
 	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
+	Route::POST('web/private/user/shift/assign', [UserShiftController::class, 'assignShift']);
 });

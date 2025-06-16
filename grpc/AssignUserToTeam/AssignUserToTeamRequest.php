@@ -22,7 +22,11 @@ class AssignUserToTeamRequest extends \Google\Protobuf\Internal\Message
      */
     protected $team_id = 0;
     /**
-     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 3;</code>
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     */
+    protected $timezone = '';
+    /**
+     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 4;</code>
      */
     private $fk;
 
@@ -34,6 +38,7 @@ class AssignUserToTeamRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $action_by_user_id
      *     @type int|string $team_id
+     *     @type string $timezone
      *     @type \grpc\AssignUserToTeam\fK[]|\Google\Protobuf\Internal\RepeatedField $fk
      * }
      */
@@ -87,7 +92,29 @@ class AssignUserToTeamRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 3;</code>
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFk()
@@ -96,7 +123,7 @@ class AssignUserToTeamRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 3;</code>
+     * Generated from protobuf field <code>repeated .AssignUserToTeam.fK fk = 4;</code>
      * @param \grpc\AssignUserToTeam\fK[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

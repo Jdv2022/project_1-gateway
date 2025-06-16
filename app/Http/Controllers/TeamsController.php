@@ -28,11 +28,13 @@ class TeamsController extends __ApiBaseController {
         ]);  
 
 		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
 
 		$requestModel = new CreateTeamRequest();
 		$requestModel->setActionByUserId($superUser['id']);
 		$requestModel->setTeamName($validatedData['team_name']);
 		$requestModel->setDescription($validatedData['description']);
+		$requestModel->setTimeZone($tz);
 
 		$userClient = $this->clientService->CreateTeamClient();
 		list($response, $status) = $userClient->CreateTeam($requestModel)->wait();
@@ -60,10 +62,12 @@ class TeamsController extends __ApiBaseController {
 		]);
 
 		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
 
 		$requestModel = new AssignUserToTeamRequest();
 		$requestModel->setActionByUserId($superUser['id']);
 		$requestModel->setTeamId($validatedData['team_id']);
+		$requestModel->setTimezone($tz);
 
 		$fkList = [];
 		foreach ($validatedData['user_id'] as $value) {

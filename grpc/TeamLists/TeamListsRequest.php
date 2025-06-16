@@ -17,6 +17,10 @@ class TeamListsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 action_by_user_id = 1;</code>
      */
     protected $action_by_user_id = 0;
+    /**
+     * Generated from protobuf field <code>string time_zone = 3;</code>
+     */
+    protected $time_zone = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class TeamListsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $action_by_user_id
+     *     @type string $time_zone
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class TeamListsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->action_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string time_zone = 3;</code>
+     * @return string
+     */
+    public function getTimeZone()
+    {
+        return $this->time_zone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string time_zone = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimeZone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->time_zone = $var;
 
         return $this;
     }
