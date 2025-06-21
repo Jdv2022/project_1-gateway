@@ -6,17 +6,6 @@ DB_USER=$(grep DB_USERNAME .env | cut -d '=' -f2 | tr -d '"')
 DB_PASS=$(grep DB_PASSWORD .env | cut -d '=' -f2 | tr -d '"')
 DB_HOST=$(grep DB_HOST .env | cut -d '=' -f2 | tr -d '"')
 
-echo "Creating database if it doesn't exist..."
-
-mysql -u"$DB_USER" -p"$DB_PASS" -h "$DB_HOST" -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`;"
-
-if [ $? -ne 0 ]; then
-    echo "❌ Failed to create database."
-    exit 1
-else
-    echo "✅ Database '$DB_NAME' is ready."
-fi
-
 echo "Running migrations and seeders..."
 
 php artisan migrate --force
