@@ -16,26 +16,32 @@ class Decrypt {
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
-		$encryptedData = $request->all();
+		Log::debug("Decrypt Middleware");
 
-		if(!isset($encryptedData['isEncrypt'])) {
-			throw new Exception("Decrypt 'payload' property does not exist.");
-		}
-		if(!$encryptedData['isEncrypt']) {
+		$endPointToIgnore = [
+			'api/meta/data',
+			'api/web/private/validate/token',
+		];
+
+		if(in_array($request->path(), $endPointToIgnore)) {
 			return $next($request);
 		}
+
+		$encryptedData = $request->all();
+
 		if(!array_key_exists('payload', $encryptedData)) {
 			throw new Exception("Decrypt 'payload' property does not exist.");
 		}
 
-        $request['payload'] = $this->decryptData($encryptedData['payload']);
+		$request->merge([
+			'payload' => $this->decryptData($encryptedData['payload'])
+		]);
 
         return $next($request);
     }
 
-    function decryptData($encryptedData):array {
+    function decryptData(string $encryptedData):array {
         $appKey = config('app.key');
-
         if(!$appKey || strpos($appKey, 'base64:') !== 0) {
             throw new Exception("Invalid APP_KEY format.");
         }
@@ -63,7 +69,7 @@ class Decrypt {
             throw new Exception("Decryption failed.");
         }
     
-        return json_decode($decrypted, true);
+        return json_decode($decrypted, true) ?? [];
     }
     
 }

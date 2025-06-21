@@ -18,6 +18,7 @@ class AuthUserMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response {
+		Log::debug("AuthUser Middleware");
 		$user = JWTAuth::parseToken()->authenticate();
 		if(!$user) {
 			return response()->json(['error' => 'User not found'], 404);
@@ -26,10 +27,13 @@ class AuthUserMiddleware
 		Log::info("Authenticated user ID [$user->id]");
 
         $user = User::find($user->id);
+		$timezone = $request->header('Timezone');
+
+		Log::info("User timezone [$timezone]");
 
         if(!$user) throw new \Exception("ID of implementing user not found.");
 
-        app()->instance(AuthUserService::class, new AuthUserService($user->id));
+        app()->instance(AuthUserService::class, new AuthUserService($user->id, $timezone));
 
         return $next($request);
     }

@@ -24,8 +24,8 @@ return Application::configure(basePath: dirname(__DIR__))
 			PreGeneralProcess::class,
         ]);
         $middleware->api(append: [
-			PostRequestLogs::class,
 			Encrypt::class,
+			PostRequestLogs::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
@@ -35,6 +35,7 @@ return Application::configure(basePath: dirname(__DIR__))
                     'status' => 'Error',
                     'error' => 1,
                     'message' => 'Validation failed',
+					'isEncrypted' => false,
                     'payload' => null,
                 ], 422);
             }
@@ -43,6 +44,7 @@ return Application::configure(basePath: dirname(__DIR__))
 					'status' => 'Error',
 					'error' => 1,
 					'message' => 'Token has expired',
+					'isEncrypted' => false,
 					'payload' => null,
 				], 401);
 			}
@@ -51,6 +53,7 @@ return Application::configure(basePath: dirname(__DIR__))
 					'status' => 'Error',
 					'error' => 1,
 					'message' => 'Token is missing or invalid',
+					'isEncrypted' => false,
 					'payload' => null,
 				], 401);
 			}
@@ -59,6 +62,7 @@ return Application::configure(basePath: dirname(__DIR__))
 					'status' => 'Error',
 					'error' => 1,
 					'message' => 'Invalid token',
+					'isEncrypted' => false,
 					'payload' => null,
 				], 401);
 			}
@@ -70,7 +74,8 @@ return Application::configure(basePath: dirname(__DIR__))
                 'status' => 'Error',
                 'error' => 1,
                 'message' => $e->getMessage(),
-                'payload' => null,
+				'isEncrypted' => false,
+				'payload' => null,
             ];
 
             if(env('APP_DEBUG')) {

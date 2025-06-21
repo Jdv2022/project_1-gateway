@@ -20,9 +20,21 @@ fi
 read -p "Are you sure you want to alter the database? (yes/no): " confirm
 if [ "$confirm" == "yes" ]; then
     echo "Running migrations and seeders..."
+	
     php artisan migrate --force
+    if [ $? -ne 0 ]; then
+        echo "Migration failed. Dropping database '$DB_NAME'..."
+        mysql -u"$DB_USER" -p"$DB_PASS" -h "$DB_HOST" -e "DROP DATABASE IF EXISTS \`$DB_NAME\`;"
+        exit 1
+    fi
+
     php artisan db:seed --force
-    php artisan app:setup-environment 
+    if [ $? -ne 0 ]; then
+        echo "Seeding failed. Dropping database '$DB_NAME'..."
+        mysql -u"$DB_USER" -p"$DB_PASS" -h "$DB_HOST" -e "DROP DATABASE IF EXISTS \`$DB_NAME\`;"
+        exit 1
+    fi
+	
     echo "Migrations and seed completed."
 else
     echo "Operation aborted."
