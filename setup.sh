@@ -10,7 +10,7 @@ echo "Running migrations and seeders..."
 
 php artisan migrate --force
 php artisan db:seed --force
-
+composer require predis/predis
 
 echo "✅ Migrations and seeders completed successfully."
 echo "✅ Setup completed!"
