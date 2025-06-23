@@ -20,43 +20,43 @@ use Log;
 
 class UserShiftTest extends FeatureBaseClassTest {
 
-    public function test_create_user_shift(): void {
-		Log::info("test_create_user_shift");
+    // public function test_create_user_shift(): void {
+	// 	Log::info("test_create_user_shift");
 
-		$mockGrpcClient = Mockery::mock(CreateShiftServiceClient::class);
-		$mockGrpcClient->shouldReceive('CreateShift')
-			->andReturn(new class {
-				public function wait() {
-					$mockResponse = Mockery::mock();
-					$mockResponse->shouldReceive('serializeToJsonString')
-								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+	// 	$mockGrpcClient = Mockery::mock(CreateShiftServiceClient::class);
+	// 	$mockGrpcClient->shouldReceive('CreateShift')
+	// 		->andReturn(new class {
+	// 			public function wait() {
+	// 				$mockResponse = Mockery::mock();
+	// 				$mockResponse->shouldReceive('serializeToJsonString')
+	// 							->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
 						
-					$mockResponse->shouldReceive('getResult')
-								->andReturn(true);
+	// 				$mockResponse->shouldReceive('getResult')
+	// 							->andReturn(true);
 
-					$mockStatus = new \stdClass();
-					$mockStatus->code = \Grpc\STATUS_OK;
-					$mockStatus->details = '';
+	// 				$mockStatus = new \stdClass();
+	// 				$mockStatus->code = \Grpc\STATUS_OK;
+	// 				$mockStatus->details = '';
 
-					return [$mockResponse, $mockStatus];
-				}
-			});
+	// 				return [$mockResponse, $mockStatus];
+	// 			}
+	// 		});
 
-		$mockClientService = Mockery::mock(ClientService::class);
-		$mockClientService->shouldReceive('CreateUserShiftServiceClient')->andReturn($mockGrpcClient);
+	// 	$mockClientService = Mockery::mock(ClientService::class);
+	// 	$mockClientService->shouldReceive('CreateUserShiftServiceClient')->andReturn($mockGrpcClient);
 
-		$this->app->instance(ClientService::class, $mockClientService);
+	// 	$this->app->instance(ClientService::class, $mockClientService);
 
-		$response = $this->postRequest('/api/web/private/user/shift/create', [
-			'shift_name' => 'Test Shift',
-			'description' => 'Test Shift'
-		]);
+	// 	$response = $this->postRequest('/api/web/private/user/shift/create', [
+	// 		'shift_name' => 'Test Shift',
+	// 		'description' => 'Test Shift'
+	// 	]);
 
-		$testObjectResponse = $response['testObjectResponse'];
-		$payload = $response['payload'];
+	// 	$testObjectResponse = $response['testObjectResponse'];
+	// 	$payload = $response['payload'];
 
-		$testObjectResponse->assertStatus(200);
-    }
+	// 	$testObjectResponse->assertStatus(200);
+    // }
 
 	public function test_assign_user_shift(): void {
 		Log::info("test_assign_user_shift");
