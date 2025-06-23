@@ -9,8 +9,23 @@ use grpc\userClockOut\UserClockOutServiceClient;
 use Tests\TestCase;
 use Mockery;
 use protos_project_1\protos_client\ClientService;
+use Illuminate\Support\Facades\Redis;
 
 class AttendanceControllerTest extends FeatureBaseClassTest {
+
+	public function setUp(): void {
+		parent::setUp();
+		$userId = 1;
+		$redisKey = 'user_' . $userId;
+
+        $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
+        $userJson = json_encode($userDataArray);
+
+        Redis::shouldReceive('get')
+            ->once()
+            ->with($redisKey)
+            ->andReturn($userJson);
+	}
 
 	public function test_set_clock_in(): void {
 		$mockGrpcClient = Mockery::mock(UserClockInServiceClient::class);

@@ -12,7 +12,7 @@
         "illuminate/redis": "*",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "predis/predis": "^2.4",
+        "predis/predis": "^3.0",
         "pusher/pusher-php-server": "^7.2",
         "tymon/jwt-auth": "^2.2"
     },

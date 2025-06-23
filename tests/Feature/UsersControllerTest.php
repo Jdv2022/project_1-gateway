@@ -18,6 +18,20 @@ use protos_project_1\protos_client\ClientService;
 
 class UsersControllerTest extends FeatureBaseClassTest {
 
+	public function setUp(): void {
+		parent::setUp();
+		$userId = 1;
+		$redisKey = 'user_' . $userId;
+
+        $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
+        $userJson = json_encode($userDataArray);
+
+        Redis::shouldReceive('get')
+            ->once()
+            ->with($redisKey)
+            ->andReturn($userJson);
+	}
+
     public function test_get_user_lists(): void {
 		$mockGrpcClient = Mockery::mock(GetUsersServiceClient::class);
 		$mockGrpcClient->shouldReceive('GetUsers')
