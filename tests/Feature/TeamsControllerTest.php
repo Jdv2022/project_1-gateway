@@ -14,8 +14,23 @@ use grpc\TeamLists\TeamListsServiceClient;
 use Tests\TestCase;
 use Mockery;
 use Log;
+use Illuminate\Support\Facades\Redis;
 
 class TeamsControllerTest extends FeatureBaseClassTest {
+
+	public function setUp(): void {
+		parent::setUp();
+		$userId = 1;
+		$redisKey = 'user_' . $userId;
+
+        $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
+        $userJson = json_encode($userDataArray);
+
+        Redis::shouldReceive('get')
+            ->once()
+            ->with($redisKey)
+            ->andReturn($userJson);
+	}
 
 	public function test_create_team() {
 		Log::info("test_create_team");

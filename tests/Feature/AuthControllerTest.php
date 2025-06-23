@@ -53,6 +53,8 @@ class AuthControllerTest extends FeatureBaseClassTest {
 
 	}
 	public function test_auth_web_login() {
+		// Redis::shouldReceive('set')->andReturn([]);
+		// Redis::shouldReceive('get')->andReturn([]);
 		$mockGrpcClient = Mockery::mock(GetUserDetailsServiceClient::class);
 		$mockGrpcClient->shouldReceive('GetUserDetails')
 			->andReturn(new class {

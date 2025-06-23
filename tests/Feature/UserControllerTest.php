@@ -23,7 +23,6 @@ class UserControllerTest extends FeatureBaseClassTest {
      */
 	use RefreshDatabase;
 
-
     public function test_gateway_registration_success() {
 		$userId = 1;
         $redisKey = 'user_' . $userId;
