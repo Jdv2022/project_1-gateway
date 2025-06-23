@@ -81,6 +81,17 @@ class UserControllerTest extends FeatureBaseClassTest {
     }
 
 	public function test_registration_form_data() {
+		$userId = 1;
+		$redisKey = 'user_' . $userId;
+
+        $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
+        $userJson = json_encode($userDataArray);
+
+        Redis::shouldReceive('get')
+            ->once()
+            ->with($redisKey)
+            ->andReturn($userJson);
+			
 		$mockGrpcClient = Mockery::mock(UserRegistrationFormDataServiceClient::class);
 		$mockGrpcClient->shouldReceive('UserRegistrationFormData')
 			->andReturn(new class {
