@@ -24,6 +24,10 @@ use App\Http\Middleware\AuthUserMiddleware;
 |
 */
 
+// Route::options('{any}', function() {
+//     return response()->json([], 200);
+// })->where('any', '.*');
+
 /* Startup Data */
 Route::POST('meta/data', [MetaController::class, 'metaData']);
 

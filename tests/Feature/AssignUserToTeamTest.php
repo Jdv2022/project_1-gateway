@@ -10,6 +10,7 @@ use Tests\TestCase;
 use Mockery;
 use protos_project_1\protos_client\ClientService;
 use grpc\AssignUserToTeam\AssignUserToTeamServiceClient;
+use Illuminate\Support\Facades\Redis;
 use Log;
 
 class AssignUserToTeamTest extends FeatureBaseClassTest {

@@ -1,0 +1,63 @@
+services:
+  mysql:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - network
+
+  app:
+    build:
+      context: .
+    image: ${APP_NAME}
+    restart: unless-stopped
+    working_dir: /var/www/sunrise/gateway
+    volumes:
+      - .:/var/www/sunrise/gateway
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
+    networks:
+      - network
+      - grpc_network
+
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    # ports:
+    #   - "6380:6379"
+    networks:
+      - network
+
+  apache:
+    image: httpd:2.4
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/sunrise/gateway
+      - ./apache-config/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    depends_on:
+      - app
+    networks:
+      - network
+
+volumes:
+  dbdata:
+
+networks:
+  network:
+  grpc_network:
+    name: grpc_network
+    driver: bridge
