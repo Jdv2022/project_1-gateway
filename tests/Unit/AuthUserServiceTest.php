@@ -18,7 +18,7 @@ class AuthUserServiceTest extends TestCase {
 
     public function test_authUser_returns_user_data_from_redis() {
         $userId = 1;
-        $redisKey = 'userS_' . $userId;
+        $redisKey = 'user_' . $userId;
 
         $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
         $userJson = json_encode($userDataArray);
