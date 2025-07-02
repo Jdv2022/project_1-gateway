@@ -15,9 +15,7 @@ services:
       - network
 
   app:
-    build:
-      context: .
-    image: ${APP_NAME}
+    image: project1-gateway:latest
     restart: unless-stopped
     working_dir: /var/www/sunrise/gateway
     volumes:
