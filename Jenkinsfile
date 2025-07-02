@@ -13,7 +13,6 @@ pipeline {
             steps {
                 sshagent (credentials: [env.SSH_CRED]) {
                     withCredentials([
-                        file(credentialsId: 'gateway_prod_env', variable: 'ENV_FILE'),
                         file(credentialsId: 'gateway_prod_test', variable: 'ENV_PROD_TEST'),
                         file(credentialsId: 'gateway_prod_testing', variable: 'ENV_PROD_TESTING')
                     ]) {
@@ -66,7 +65,6 @@ pipeline {
                         
                         sh """
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
-								set +e
                                 cd /var/www/html/sunset/gateway-test &&
                                 docker compose up -d
                             '
@@ -75,6 +73,74 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
                                 cd /var/www/html/sunset/gateway-test &&
                                 docker compose exec app ./vendor/bin/phpunit
+                            '
+                        """
+						sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway-test &&
+                                docker compose down &&
+        						docker network prune -f
+                            '
+                        """
+                    }
+                }
+            }
+        }
+		stage('Deploy ACTUAL Production') {
+            steps {
+                sshagent (credentials: [env.SSH_CRED]) {
+                    withCredentials([
+                        file(credentialsId: 'gateway_prod_env', variable: 'ENV_FILE'),
+                    ]) {
+                        // Set permissions
+                        sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                sudo chown -R jd:www-data /var/www/html/sunset/gateway &&
+                                sudo chmod -R 755 /var/www/html/sunset/gateway
+                            '
+                        """
+                        
+                        // Git pull with prune
+                        sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway &&
+                                if [ ! -d ".git" ]; then
+                                    git clone https://github.com/Jdv2022/project_1-gateway . 
+                                else
+                                    git fetch --prune
+                                    git reset --hard origin/main
+                                    git clean -fd
+                                fi
+                            '
+                        """
+                
+                        // Upload .env files
+                        sh """
+                            scp -o StrictHostKeyChecking=no \$ENV_FILE jd@212.85.25.94:/var/www/html/sunset/gateway-test/.env
+                        
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                sudo chmod 644 /var/www/html/sunset/gateway/.env
+                            '
+                        """
+                        
+                        sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway &&
+                                composer install
+                            '
+                        """
+                    
+                        sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                sudo chown -R jd:www-data /var/www/html/sunset/gateway &&
+                                sudo chmod -R 755 /var/www/html/sunset/gateway
+                            '
+                        """
+                        
+                        sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway &&
+                                docker compose up -d
                             '
                         """
                     }
