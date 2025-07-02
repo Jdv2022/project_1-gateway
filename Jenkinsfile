@@ -68,7 +68,7 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
                                 cd /var/www/html/sunset/gateway-test &&
                                 docker compose up -d &&
-                                phpunit --bootstrap src/autoload.php tests
+                                docker compose exec app phpunit --bootstrap src/autoload.php tests
                             '
                         """
                     }
