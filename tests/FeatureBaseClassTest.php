@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests;
 
 use Tests\TestCase;
 use Tymon\JWTAuth\Facades\JWTAuth;

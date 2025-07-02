@@ -15,6 +15,7 @@ use App\Services\AuthUserService;
 use Carbon\Carbon;
 use grpc\getUsers\GetUsersServiceClient;
 use protos_project_1\protos_client\ClientService;
+use Tests\FeatureBaseClassTest;
 
 class UsersControllerTest extends FeatureBaseClassTest {
 

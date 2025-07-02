@@ -12,6 +12,7 @@ use grpc\GetUserDetails\GetUserDetailsServiceClient;
 use grpc\GetUserDetails\GetUserDetailsResponse;
 use protos_project_1\protos_client\ClientService;
 use stdClass;
+use Tests\FeatureBaseClassTest;
 
 class AuthControllerTest extends FeatureBaseClassTest {
 	protected function tearDown(): void {
