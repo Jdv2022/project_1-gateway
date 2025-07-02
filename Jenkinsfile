@@ -67,7 +67,12 @@ pipeline {
                         sh """
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
                                 cd /var/www/html/sunset/gateway-test &&
-                                docker compose up -d &&
+                                docker compose up -d
+                            '
+                        """
+						sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway-test &&
                                 docker compose exec app ./vendor/bin/phpunit
                             '
                         """
