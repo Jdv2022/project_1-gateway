@@ -15,6 +15,7 @@ use Tests\TestCase;
 use Mockery;
 use Log;
 use Illuminate\Support\Facades\Redis;
+use Tests\FeatureBaseClassTest;
 
 class TeamsControllerTest extends FeatureBaseClassTest {
 

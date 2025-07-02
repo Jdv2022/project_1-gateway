@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Log;
 use DateTime;
 use Illuminate\Support\Facades\Redis;
+use Tests\FeatureBaseClassTest;
 
 class FEUtilityControllerTest extends FeatureBaseClassTest {
 

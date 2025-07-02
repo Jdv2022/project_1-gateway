@@ -17,6 +17,7 @@ use Tests\TestCase;
 use Carbon\Carbon;
 use Mockery;
 use Log;
+use Tests\FeatureBaseClassTest;
 
 class UserShiftTest extends FeatureBaseClassTest {
 

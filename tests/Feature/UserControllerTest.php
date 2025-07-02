@@ -16,6 +16,7 @@ use Carbon\Carbon;
 use protos_project_1\protos_client\ClientService;
 use grpc\Register\RegisterServiceClient;
 use grpc\userRegistrationFormData\UserRegistrationFormDataServiceClient;
+use Tests\FeatureBaseClassTest;
 
 class UserControllerTest extends FeatureBaseClassTest {
     /**
