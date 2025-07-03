@@ -62,4 +62,3 @@ networks:
     name: grpc_network
     driver: bridge
     external: true
-	
