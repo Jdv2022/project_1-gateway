@@ -59,6 +59,5 @@ networks:
   network:
   shared_net:
   grpc_network:
-   name: grpc_network
-   driver: bridge
-   external: true 
+    name: grpc_network
+    driver: bridge
