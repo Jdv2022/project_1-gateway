@@ -10,7 +10,7 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
     ports:
-      - "3008:3306"
+      - "3007:3306"
     networks:
       - network
 
@@ -32,8 +32,6 @@ services:
   redis:
     image: redis:alpine
     restart: unless-stopped
-    # ports:
-    #   - "6380:6379"
     networks:
       - network
       - shared_net
@@ -42,8 +40,8 @@ services:
     image: httpd:2.4
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "81:80"
+      - "444:443"
     volumes:
       - .:/var/www/sunrise/gateway
       - ./apache-config/httpd.conf:/usr/local/apache2/conf/httpd.conf
@@ -61,3 +59,4 @@ networks:
   grpc_network:
     name: grpc_network
     driver: bridge
+    external: true
