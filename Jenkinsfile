@@ -66,7 +66,7 @@ pipeline {
                         sh """
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
                                 cd /var/www/html/sunset/gateway-test &&
-                                docker compose up -d
+                                docker compose -f docker-compose-test.yaml up -d
                             '
                         """
 						sh """
