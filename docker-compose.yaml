@@ -58,8 +58,6 @@ networks:
   shared_net:
     name: shared_net
     driver: bridge
-    external: true
   grpc_network:
     name: grpc_network
     driver: bridge
-    external: true
