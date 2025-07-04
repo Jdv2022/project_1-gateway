@@ -37,19 +37,19 @@ services:
       - network
       - shared_net
 
-  apache:
-    image: httpd:2.4
-    restart: unless-stopped
-    ports:
-      - "81:80"
-      - "444:443"
-    volumes:
-      - .:/var/www/sunrise/gateway
-      - ./apache-config/httpd.conf:/usr/local/apache2/conf/httpd.conf
-    depends_on:
-      - app
-    networks:
-      - network
+  # apache:
+  #   image: httpd:2.4
+  #   restart: unless-stopped
+  #   ports:
+  #     - "81:80"
+  #     - "444:443"
+  #   volumes:
+  #     - .:/var/www/sunrise/gateway
+  #     - ./apache-config/httpd.conf:/usr/local/apache2/conf/httpd.conf
+  #   depends_on:
+  #     - app
+  #   networks:
+  #     - network
 
 volumes:
   dbdata:
