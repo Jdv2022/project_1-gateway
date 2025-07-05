@@ -145,7 +145,14 @@ pipeline {
                                 docker compose up -d
                             '
                         """
-						
+
+						sh """
+                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+                                cd /var/www/html/sunset/gateway &&
+                                docker exec -it gateway-app-1 ./setup.sh
+                            '
+                        """
+
 						sh """
                             ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
                                 sudo chown -R jd:www-data /var/www/html/sunset/gateway &&
