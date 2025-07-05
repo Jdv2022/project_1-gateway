@@ -34,6 +34,7 @@ pipeline {
                                     git fetch --prune
                                     git reset --hard origin/main
                                     git clean -fd
+									git submodule update --init --recursive
                                 fi
                             '
                         """
