@@ -14,22 +14,22 @@ services:
     networks:
       - network
 
-app:
-  image: project1-gateway:latest
-  restart: unless-stopped
-  working_dir: /var/www/sunrise/gateway
-  volumes:
-    - .:/var/www/sunrise/gateway
-  depends_on:
-    - mysql
-  environment:
-    - DB_HOST=mysql
-    - REDIS_HOST=redis
-  ports:
-    - "9000:9000"
-  networks:
-    - network
-    - grpc_network
+  app:
+    image: project1-gateway:latest
+    restart: unless-stopped
+    working_dir: /var/www/sunrise/gateway
+    volumes:
+      - .:/var/www/sunrise/gateway
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
+    ports:
+      - "9000:9000"
+    networks:
+      - network
+      - grpc_network
 
 
   redis:
