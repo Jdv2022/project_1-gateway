@@ -9,6 +9,7 @@ use Mockery;
 use protos_project_1\protos_client\ClientService;
 use grpc\GetArchives\GetArchivesServiceClient;
 use grpc\AddArchive\AddArchiveServiceClient;
+use grpc\RemoveArchive\RemoveArchiveServiceClient;
 use Illuminate\Support\Facades\Redis;
 use Tests\FeatureBaseClassTest;
 use Log;
@@ -114,10 +115,48 @@ class ArchivesControllerTest extends FeatureBaseClassTest {
 			'archive_reason' => 'test',
 		]);
 
-		// $testObjectResponse = $response['testObjectResponse'];
-		// $payload = $response['payload'];
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
 
-		// $testObjectResponse->assertStatus(200);
+		$testObjectResponse->assertStatus(200);
+	}
+
+	public function test_remove_archive(): void {
+		Log::info("Testing remove archive");
+
+		$mockGrpcClient = Mockery::mock(RemoveArchiveServiceClient::class);
+		$mockGrpcClient->shouldReceive('RemoveArchive')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(json_encode(['result' => true]));
+					$mockResponse->shouldReceive('getResult')  
+								->andReturn(true);
+
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('RemoveArchiveServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('/api/web/private/remove/users/archives', [
+			'action_by_user_id' => 1,
+			'user_id' => 2,
+			'timezone' => 'test',
+		]);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+		$testObjectResponse->assertStatus(200);
 	}
 
 }

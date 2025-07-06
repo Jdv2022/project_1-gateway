@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use protos_project_1\protos_client\ClientService;
 use grpc\GetArchives\GetArchivesRequest;
 use grpc\AddArchive\AddArchiveRequest;
+use grpc\RemoveArchive\RemoveArchiveRequest;
 use App\Services\AuthUserService;
 use Log;
 
@@ -74,6 +75,37 @@ class ArchivesController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 			return $this->returnFail(data: [], message: 'Archives add Unsuccessfull!');
+		}
+	}
+
+	public function removeArchives(Request $request): JsonResponse {
+		Log::info("Remove Archives status");
+		$validatedData = $request->validate([
+			'action_by_user_id' => 'required',
+			'user_id' => 'required',
+			'timezone' => 'required',
+		]);
+
+		$gprcRequest = new RemoveArchiveRequest();
+		$gprcRequest->setActionByUserId($validatedData['action_by_user_id']);
+		$gprcRequest->setUserId($validatedData['user_id']);
+		$gprcRequest->setTimezone($validatedData['timezone']);
+
+		$userClient = $this->clientService->RemoveArchiveServiceClient();
+		list($response, $status) = $userClient->RemoveArchive($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if($response->getResult()) {
+				return $this->returnSuccess(data: $response, message: "Archives remove successfully.");
+			}
+			else {
+				return $this->returnFail(data: [], message: 'Archives remove Unsuccessfull!');
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Archives remove Unsuccessfull!');
 		}
 	}
 

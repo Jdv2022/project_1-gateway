@@ -58,7 +58,8 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	
 	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
 	Route::POST('web/private/user/shift/assign', [UserShiftController::class, 'assignShift']);
-
+	
 	Route::POST('web/private/get/users/archives', [ArchivesController::class, 'getArchives']);
 	Route::POST('web/private/add/users/archives', [ArchivesController::class, 'addArchives']);
+	Route::POST('web/private/remove/users/archives', [ArchivesController::class, 'removeArchives']);
 });
