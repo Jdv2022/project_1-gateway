@@ -154,11 +154,13 @@ pipeline {
                         """
 
 						sh """
-                            ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
-                                sudo chown -R jd:www-data /var/www/html/sunset/gateway &&
-                                sudo chmod -R 755 /var/www/html/sunset/gateway
-                            '
-                        """
+							ssh -o StrictHostKeyChecking=no jd@212.85.25.94 '
+								cd /var/www/html/sunset/gateway &&
+								chown -R jd:www-data storage &&
+								find storage -type d -exec chmod 775 {} \\; &&
+								find storage -type f -exec chmod 664 {} \\;
+							'
+						"""
                     }
                 }
             }
