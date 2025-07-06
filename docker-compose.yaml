@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     working_dir: /var/www/sunrise/gateway
     volumes:
-      - /var/www/html/sunset/gateway:/var/www/sunrise/gateway
+      - .:/var/www/sunrise/gateway
     depends_on:
       - mysql
     environment:
