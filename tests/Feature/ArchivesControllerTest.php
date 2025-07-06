@@ -8,6 +8,7 @@ use Tests\TestCase;
 use Mockery;
 use protos_project_1\protos_client\ClientService;
 use grpc\GetArchives\GetArchivesServiceClient;
+use grpc\AddArchive\AddArchiveServiceClient;
 use Illuminate\Support\Facades\Redis;
 use Tests\FeatureBaseClassTest;
 use Log;
@@ -79,5 +80,44 @@ class ArchivesControllerTest extends FeatureBaseClassTest {
 
 		$testObjectResponse->assertStatus(200);
     }
+
+	public function test_add_archive(): void {
+		Log::info("Testing add archive");
+
+		$mockGrpcClient = Mockery::mock(AddArchiveServiceClient::class);
+		$mockGrpcClient->shouldReceive('AddArchive')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(json_encode(['result' => true]));
+					$mockResponse->shouldReceive('getResult')  
+								->andReturn(true);
+
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('AddArchiveServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('/api/web/private/add/users/archives', [
+			'action_by_user_id' => 1,
+			'user_id' => 2,
+			'timezone' => 'test',
+			'archive_reason' => 'test',
+		]);
+
+		// $testObjectResponse = $response['testObjectResponse'];
+		// $payload = $response['payload'];
+
+		// $testObjectResponse->assertStatus(200);
+	}
 
 }
