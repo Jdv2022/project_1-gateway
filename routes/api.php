@@ -13,6 +13,7 @@ use App\Http\Controllers\UserShiftController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\ArchivesController;
 use App\Http\Controllers\OverviewController;
+use App\Http\Controllers\LogsController;
 use App\Http\Middleware\AuthUserMiddleware;
 
 /*
@@ -63,6 +64,8 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/get/users/archives', [ArchivesController::class, 'getArchives']);
 	Route::POST('web/private/add/users/archives', [ArchivesController::class, 'addArchives']);
 	Route::POST('web/private/remove/users/archives', [ArchivesController::class, 'removeArchives']);
+
 	Route::POST('web/private/get/overview', [OverviewController::class, 'getOverview']);
 
+	Route::POST('web/private/get/logs', [LogsController::class, 'getLogs']);
 });
