@@ -11,6 +11,9 @@ use protos_project_1\protos_client\ClientService;
 use grpc\TeamLists\TeamListsResponse;
 use grpc\TeamLists\teamLists;
 use grpc\TeamLists\TeamListsServiceClient;
+use grpc\TeamUsersLists\TeamUsersListsResponse;
+use grpc\TeamUsersLists\TeamUsersListsServiceClient;
+use grpc\SuggestedMember\SuggestedMemberServiceClient;
 use Tests\TestCase;
 use Mockery;
 use Log;
@@ -44,7 +47,7 @@ class TeamsControllerTest extends FeatureBaseClassTest {
 					$mockResponse->shouldReceive('serializeToJsonString')
 								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
 					$mockResponse->shouldReceive('getResult')
-								->andReturn(true);
+								->andReturn(13);
 					$mockStatus = new \stdClass();
 					$mockStatus->code = \Grpc\STATUS_OK;
 					$mockStatus->details = '';
@@ -109,6 +112,76 @@ class TeamsControllerTest extends FeatureBaseClassTest {
 		$this->app->instance(ClientService::class, $mockClientService);
 
 		$response = $this->postRequest('api/web/private/user/teams/lists', []);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+		$testObjectResponse->assertStatus(200);
+	}
+
+	public function test_team_details() {
+		Log::info("test_team_details");
+
+		$mockGrpcClient = Mockery::mock(TeamUsersListsServiceClient::class);
+		$mockGrpcClient->shouldReceive('TeamUsersLists')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+
+					$mockResponse->shouldReceive('getTeamUsersLists')
+								->andReturn([]);
+
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+		
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('TeamUsersListsServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('api/web/private/user/team/details/' . 1, []);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+		$testObjectResponse->assertStatus(200);
+	}
+
+	public function test_suggested_member() {
+		Log::info("test_suggested_member");
+
+		$mockGrpcClient = Mockery::mock(SuggestedMemberServiceClient::class);
+		$mockGrpcClient->shouldReceive('SuggestedMember')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+
+					$mockResponse->shouldReceive('getTeamLists')
+								->andReturn([]);
+
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+		
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('SuggestedMemberServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('api/web/private/user/team/suggested/members', []);
 
 		$testObjectResponse = $response['testObjectResponse'];
 		$payload = $response['payload'];

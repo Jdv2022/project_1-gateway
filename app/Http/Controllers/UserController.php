@@ -15,6 +15,7 @@ use protos_project_1\protos_client\ClientService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redis;
+use grpc\EditUserDetails\EditUserDetailsRequest;
 
 class UserController extends __ApiBaseController {
 
@@ -217,6 +218,76 @@ class UserController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 			return $this->returnFail(data: [], message: "Server Error");
+		}
+	}
+
+	public function editUserProfile(Request $request):JsonResponse {
+		Log::info("Editing user profile...");
+		$validatedData = $request->validate([
+            'username' => 'required|string|max:12|regex:/^[a-zA-Z0-9_]+$/',
+            'password' => 'required|string|min:8|regex:/^[a-zA-Z0-9_]+$/',
+			'firstname' => 'required|string|max:255',
+			'middlename' => 'required|string|max:255',
+			'lastname' => 'required|string|max:255',
+			'email' => 'required|email|max:255',
+			'phone' => 'required|string|max:20',
+			'address' => 'required|string|max:255',
+			'birthdate' => 'required|date',
+			'gender' => 'required|string|max:10',
+			'department' => 'required',
+			'position' => 'required',
+			'file' => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ]);  
+
+		$userData = User::where('username', $validatedData['username'])->first();
+
+		if($userData) {
+			$userData->username = $validatedData['username'];
+			$userData->password = Hash::make($validatedData['password']);
+		}
+
+		$image = $request->file('file');
+		if($image) {
+			$imageName = date('Ymd_His') . '_' . time() . '.' . $image->getClientOriginalExtension();
+			$originalImageName = $image->getClientOriginalName();
+			$path = $image->storeAs($directory, $imageName, 'public');
+			$url = Storage::url($directory . '/' . $imageName);
+		}
+		else {
+			$originalImageName = 'null';
+			$url = 'null';
+		}
+		
+		$res = new EditUserDetailsRequest();
+		$res->setFirstName($validatedData['firstname']);
+		$res->setMiddleName($validatedData['middlename']);
+		$res->setLastName($validatedData['lastname']);
+		$res->setEmail($validatedData['email']);
+		$res->setPhone($validatedData['phone']);
+		$res->setAddress($validatedData['address']);
+		$res->setDateOfBirth($validatedData['birthdate']);
+		$res->setGender($validatedData['gender']);
+		$res->setFk($userData->id);
+		$res->setProfileImageURL($url);
+		$res->setProfileImageName($originalImageName);
+
+		$userClient = $this->clientService->EditUserDetailsServiceClient();
+		list($response, $status) = $userClient->EditUserDetails($res)->wait();
+
+		$message = $status->details;
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if($response->getResult()) {
+				return $this->returnSuccess(data: ['user_id' => $userData->id], message: "Update success!");
+			}
+			else {
+				Log::error("Failed error");
+				return $this->returnFail(data: [], message: 'Update Unsuccessfull!');
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Update Unsuccessfull!');
 		}
 	}
 

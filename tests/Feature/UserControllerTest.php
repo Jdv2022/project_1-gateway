@@ -17,6 +17,9 @@ use protos_project_1\protos_client\ClientService;
 use grpc\Register\RegisterServiceClient;
 use grpc\userRegistrationFormData\UserRegistrationFormDataServiceClient;
 use Tests\FeatureBaseClassTest;
+use grpc\EditUserDetails\EditUserDetailsRequest;
+use grpc\EditUserDetails\EditUserDetailsResponse;
+use grpc\EditUserDetails\EditUserDetailsServiceClient;
 
 class UserControllerTest extends FeatureBaseClassTest {
     /**
@@ -140,6 +143,75 @@ class UserControllerTest extends FeatureBaseClassTest {
 		$this->assertEquals(28, $result);
 
 		Carbon::setTestNow();
+	}
+
+	public function test_edit_user() {
+		$userId = 1;
+		$redisKey = 'user_' . $userId;
+
+        $userDataArray = json_decode(file_get_contents(base_path('tests/Fixtures/user.json')), true);
+        $userJson = json_encode($userDataArray);
+
+        Redis::shouldReceive('get')
+            ->once()
+            ->with($redisKey)
+            ->andReturn($userJson);
+			
+		$mockGrpcClient = Mockery::mock(EditUserDetailsServiceClient::class);
+		$mockGrpcClient->shouldReceive('EditUserDetails')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+						->andReturn(file_get_contents(base_path('tests/Fixtures/user.json')));
+					$mockResponse->shouldReceive('getResult')
+						->andReturn(true);
+					$status = new \stdClass();
+					$status->code = \Grpc\STATUS_OK;
+					$status->details = '';
+					return [$mockResponse, $status];
+				}
+			});
+		
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('EditUserDetailsServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+		$action_by_user_id = 1;
+		$tz = "TEST";
+		$first_name = "Test JD edited";
+		$middle_name = "JD edited";
+		$last_name = "JD edited";
+		$email = "JD@com.edited";
+		$phone = "0219370914";
+		$address = "TEST ADdress edited";
+		$department = "Pending Selection";
+		$date_of_birth = '2025-05-25 00:00:00';
+		$gender = true;
+		$position = "Manager";
+		$profile_image = "TEST PROFILE IMAGE edited";
+		$set_profile_image_u_r_l = "TEST SET PROFILE IMAGE URL edited";
+		$set_profile_image_Name = "TEST SET PROFILE IMAGE NAME edited";
+		$fk = 1;
+		$response = $this->postRequest('/api/web/private/user/edit', [
+            'username' => 'superuser',
+            'password' => 'securePass1',
+            'firstname' => 'John',
+            'middlename' => 'M',
+            'lastname' => 'Doe',
+            'email' => 'john@example.com',
+            'phone' => '09123456789',
+            'address' => '123 Street',
+            'birthdate' => '1995-01-01',
+            'gender' => 'Male',
+            'department' => 'IT',
+            'position' => 'Developer',
+		]);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+		
+		$testObjectResponse->assertStatus(200);
 	}
 
 }

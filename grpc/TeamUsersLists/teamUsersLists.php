@@ -34,11 +34,19 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
      */
     protected $position = '';
     /**
-     * Generated from protobuf field <code>string created_at = 6;</code>
+     * Generated from protobuf field <code>string profile_image_url = 6;</code>
+     */
+    protected $profile_image_url = '';
+    /**
+     * Generated from protobuf field <code>string profile_image_name = 7;</code>
+     */
+    protected $profile_image_name = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 8;</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>string updated_at = 7;</code>
+     * Generated from protobuf field <code>string updated_at = 9;</code>
      */
     protected $updated_at = '';
 
@@ -53,6 +61,8 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
      *     @type string $middle_name
      *     @type string $last_name
      *     @type string $position
+     *     @type string $profile_image_url
+     *     @type string $profile_image_name
      *     @type string $created_at
      *     @type string $updated_at
      * }
@@ -173,7 +183,51 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 6;</code>
+     * Generated from protobuf field <code>string profile_image_url = 6;</code>
+     * @return string
+     */
+    public function getProfileImageUrl()
+    {
+        return $this->profile_image_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile_image_url = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProfileImageUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->profile_image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile_image_name = 7;</code>
+     * @return string
+     */
+    public function getProfileImageName()
+    {
+        return $this->profile_image_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile_image_name = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProfileImageName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->profile_image_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 8;</code>
      * @return string
      */
     public function getCreatedAt()
@@ -182,7 +236,7 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 6;</code>
+     * Generated from protobuf field <code>string created_at = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -195,7 +249,7 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7;</code>
+     * Generated from protobuf field <code>string updated_at = 9;</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -204,7 +258,7 @@ class teamUsersLists extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7;</code>
+     * Generated from protobuf field <code>string updated_at = 9;</code>
      * @param string $var
      * @return $this
      */

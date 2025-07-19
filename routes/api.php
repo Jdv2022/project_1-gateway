@@ -45,6 +45,7 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/register', [UserController::class, 'gatewayRegistration']);
 	Route::POST('web/private/user/registration/form/data', [UserController::class, 'registrationFormData']);
 	Route::POST('web/private/user/profile/{id}', [UserController::class, 'getUserProfile']);
+	Route::POST('web/private/user/edit', [UserController::class, 'editUserProfile']);
 	
 	Route::POST('web/private/user/list', [UsersController::class, 'getUserLists']);
 
@@ -57,6 +58,8 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/teams/create', [TeamsController::class, 'createTeam']);
 	Route::POST('web/private/assign/user/to/teams', [TeamsController::class, 'assignUsersToTeam']);
 	Route::POST('web/private/user/teams/lists', [TeamsController::class, 'getTeamLists']);
+	Route::POST('web/private/user/team/details/{id}', [TeamsController::class, 'getTeamDetails']);
+	Route::POST('web/private/user/team/suggested/members', [TeamsController::class, 'getSuggestedMembers']);
 	
 	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
 	Route::POST('web/private/user/shift/assign', [UserShiftController::class, 'assignShift']);

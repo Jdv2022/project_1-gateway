@@ -10,6 +10,8 @@ use grpc\CreateTeam\CreateTeamRequest;
 use grpc\AssignUserToTeam\AssignUserToTeamRequest;
 use grpc\AssignUserToTeam\fK;
 use grpc\TeamLists\TeamListsRequest;
+use grpc\TeamUsersLists\TeamUsersListsRequest;
+use grpc\SuggestedMember\SuggestedMemberRequest;
 use Log;
 
 class TeamsController extends __ApiBaseController {
@@ -41,8 +43,8 @@ class TeamsController extends __ApiBaseController {
 
 		if($status->code === \Grpc\STATUS_OK) {
 			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
-			if($response->getResult()) {
-				return $this->returnSuccess(data: $response, message: "Team has been created successfully.");
+			if(is_numeric($response->getResult())) {
+				return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Team has been created successfully.");
 			}
 			else {
 				return $this->returnFail(data: [], message: 'Create Team Unsuccessfull!');
@@ -117,4 +119,53 @@ class TeamsController extends __ApiBaseController {
 			return $this->returnFail(data: [], message: 'Connection error to User Service!');
 		}
 	}
+
+	public function getTeamDetails(Request $resquest, $id): JsonResponse {
+		Log::info("Getting team members...");
+
+		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
+
+		$gprcRequest = new TeamUsersListsRequest();
+		$gprcRequest->setTeamId($id);
+		$gprcRequest->setTimeZone($tz);
+		$gprcRequest->setActionByUserId($superUser['id']);
+		
+		$userClient = $this->clientService->TeamUsersListsServiceClient();
+		list($response, $status) = $userClient->TeamUsersLists($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Successfully fetched team lists.");
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Connection error to User Service!');
+		}
+	}
+	
+
+	public function getSuggestedMembers(Request $request): JsonResponse {	
+		Log::info("Getting suggested members...");
+
+		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
+
+		$gprcRequest = new SuggestedMemberRequest();
+		$gprcRequest->setTimeZone($tz);
+		$gprcRequest->setActionByUserId($superUser['id']);
+		
+		$userClient = $this->clientService->SuggestedMemberServiceClient();
+		list($response, $status) = $userClient->SuggestedMember($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Successfully fetched suggested members.");
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Connection error to User Service!');
+		}
+	}
+
 }
