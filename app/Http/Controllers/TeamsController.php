@@ -11,6 +11,7 @@ use grpc\AssignUserToTeam\AssignUserToTeamRequest;
 use grpc\AssignUserToTeam\fK;
 use grpc\TeamLists\TeamListsRequest;
 use grpc\TeamUsersLists\TeamUsersListsRequest;
+use grpc\EditTeam\EditTeamRequest;
 use grpc\SuggestedMember\SuggestedMemberRequest;
 use Log;
 
@@ -144,7 +145,6 @@ class TeamsController extends __ApiBaseController {
 		}
 	}
 	
-
 	public function getSuggestedMembers(Request $request): JsonResponse {	
 		Log::info("Getting suggested members...");
 
@@ -165,6 +165,40 @@ class TeamsController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 			return $this->returnFail(data: [], message: 'Connection error to User Service!');
+		}
+	}
+
+	public function editTeam(Request $request): JsonResponse {
+		Log::info("Editing team...");
+
+		$validator = $request->validate([
+			'team_name' => 'required',
+			'description' => 'required',
+			'team_id' => 'required',
+		]);
+
+		$superUser = $this->authService->authUser();
+		$tz = $this->authService->getUserTimeZone();
+
+		$gprcRequest = new EditTeamRequest();
+		$gprcRequest->setTimeZone($tz);
+		$gprcRequest->setActionByUserId($superUser['id']);
+		
+		$userClient = $this->clientService->EditTeamServiceClient();
+		list($response, $status) = $userClient->EditTeam($gprcRequest)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if(is_numeric($response->getResult())) {
+				return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Team has been created successfully.");
+			}
+			else {
+				return $this->returnFail(data: [], message: 'Edit Team Unsuccessfull!');
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Save new team Unsuccessfull!');
 		}
 	}
 

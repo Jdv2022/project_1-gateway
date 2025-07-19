@@ -13,6 +13,7 @@ use grpc\TeamLists\teamLists;
 use grpc\TeamLists\TeamListsServiceClient;
 use grpc\TeamUsersLists\TeamUsersListsResponse;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
+use grpc\EditTeam\EditTeamServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
 use Tests\TestCase;
 use Mockery;
@@ -187,6 +188,43 @@ class TeamsControllerTest extends FeatureBaseClassTest {
 		$payload = $response['payload'];
 
 		$testObjectResponse->assertStatus(200);
+	}
+
+	public function test_edit_team() {
+		Log::info("test_edit_team");
+		
+		$mockGrpcClient = Mockery::mock(EditTeamServiceClient::class);
+		$mockGrpcClient->shouldReceive('EditTeam')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+					$mockResponse->shouldReceive('getResult')
+								->andReturn(13);
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('EditTeamServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('api/web/private/user/teams/edit', [
+            'team_name' => "Team 1",
+			'description' => "Team 1 description: test",
+			'team_id' => 1
+        ]);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+        $testObjectResponse->assertStatus(200);
 	}
 
 }
