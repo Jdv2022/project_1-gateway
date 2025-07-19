@@ -61,7 +61,8 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/team/details/{id}', [TeamsController::class, 'getTeamDetails']);
 	Route::POST('web/private/user/team/suggested/members', [TeamsController::class, 'getSuggestedMembers']);
 	Route::POST('web/private/user/teams/edit', [TeamsController::class, 'editTeam']);
-
+	Route::POST('web/private/user/team/remove', [TeamsController::class, 'removeUserTeam']);
+	
 	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
 	Route::POST('web/private/user/shift/assign', [UserShiftController::class, 'assignShift']);
 	

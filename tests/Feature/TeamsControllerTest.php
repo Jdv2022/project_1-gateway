@@ -15,6 +15,7 @@ use grpc\TeamUsersLists\TeamUsersListsResponse;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
 use grpc\EditTeam\EditTeamServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
+use grpc\RemoveUserTeam\RemoveUserTeamServiceClient;
 use Tests\TestCase;
 use Mockery;
 use Log;
@@ -219,6 +220,42 @@ class TeamsControllerTest extends FeatureBaseClassTest {
             'team_name' => "Team 1",
 			'description' => "Team 1 description: test",
 			'team_id' => 1
+        ]);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+        $testObjectResponse->assertStatus(200);
+	}
+
+	public function test_remove_user_team() {
+		Log::info("test_remove_user_team");
+
+		$mockGrpcClient = Mockery::mock(RemoveUserTeamServiceClient::class);
+		$mockGrpcClient->shouldReceive('RemoveUserTeam')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+					$mockResponse->shouldReceive('getResult')
+								->andReturn(13);
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('RemoveUserTeamServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+
+		$response = $this->postRequest('api/web/private/user/team/remove', [
+			'team_id' => 1,
+			'user_id' => 1
         ]);
 
 		$testObjectResponse = $response['testObjectResponse'];
