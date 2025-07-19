@@ -183,6 +183,9 @@ class TeamsController extends __ApiBaseController {
 		$gprcRequest = new EditTeamRequest();
 		$gprcRequest->setTimeZone($tz);
 		$gprcRequest->setActionByUserId($superUser['id']);
+		$gprcRequest->setTeamId($validator['team_id']);
+		$gprcRequest->setTeamName($validator['team_name']);
+		$gprcRequest->setDescription($validator['description']);
 		
 		$userClient = $this->clientService->EditTeamServiceClient();
 		list($response, $status) = $userClient->EditTeam($gprcRequest)->wait();
@@ -193,7 +196,7 @@ class TeamsController extends __ApiBaseController {
 				return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Team has been created successfully.");
 			}
 			else {
-				return $this->returnFail(data: [], message: 'Edit Team Unsuccessfull!');
+				return $this->returnFail(data: [], message: $response->getResult());
 			}
 		} 
 		else {
