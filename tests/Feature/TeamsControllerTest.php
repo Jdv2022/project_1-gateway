@@ -4,12 +4,11 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use grpc\CreateTeam\CreateTeamResponse;
-use grpc\CreateTeam\CreateTeamRequest;
 use grpc\CreateTeam\CreateTeamServiceClient;
+use grpc\DeleteTeam\DeleteTeamServiceClient;
 use protos_project_1\protos_client\ClientService;
-use grpc\TeamLists\TeamListsResponse;
 use grpc\TeamLists\teamLists;
+use grpc\TeamLists\TeamListsResponse;
 use grpc\TeamLists\TeamListsServiceClient;
 use grpc\TeamUsersLists\TeamUsersListsResponse;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
@@ -262,6 +261,42 @@ class TeamsControllerTest extends FeatureBaseClassTest {
 		$payload = $response['payload'];
 
         $testObjectResponse->assertStatus(200);
+	}
+
+	public function test_delete_user() {
+		Log::info("test_delete_user");
+
+		$mockGrpcClient = Mockery::mock(DeleteTeamServiceClient::class);
+		$mockGrpcClient->shouldReceive('DeleteTeam')
+			->andReturn(new class {
+				public function wait() {
+					$mockResponse = Mockery::mock();
+					$mockResponse->shouldReceive('serializeToJsonString')
+								->andReturn(file_get_contents(base_path('tests/Fixtures/user.json'), true));
+					$mockResponse->shouldReceive('getResult')
+								->andReturn(13);
+					$mockStatus = new \stdClass();
+					$mockStatus->code = \Grpc\STATUS_OK;
+					$mockStatus->details = '';
+
+					return [$mockResponse, $mockStatus];
+				}
+			});
+
+		$mockClientService = Mockery::mock(ClientService::class);
+		$mockClientService->shouldReceive('DeleteTeamServiceClient')->andReturn($mockGrpcClient);
+		
+		$this->app->instance(ClientService::class, $mockClientService);
+		Log::debug("request");
+		$response = $this->postRequest('api/web/private/user/team/delete', [
+			'team_id' => 1,
+			'user_id' => 1
+		]);
+
+		$testObjectResponse = $response['testObjectResponse'];
+		$payload = $response['payload'];
+
+		$testObjectResponse->assertStatus(200);
 	}
 
 }

@@ -14,6 +14,7 @@ use grpc\TeamUsersLists\TeamUsersListsRequest;
 use grpc\EditTeam\EditTeamRequest;
 use grpc\RemoveUserTeam\RemoveUserTeamRequest;
 use grpc\SuggestedMember\SuggestedMemberRequest;
+use grpc\DeleteTeam\DeleteTeamRequest;
 use Log;
 
 class TeamsController extends __ApiBaseController {
@@ -110,7 +111,7 @@ class TeamsController extends __ApiBaseController {
 		if($status->code === \Grpc\STATUS_OK) {
 			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
 			if($response->getTeamLists()) {
-				return $this->returnSuccess(data: $response->getTeamLists(), message: "Successfully fetched team lists.");
+				return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Successfully fetched team lists.");
 			}
 			else {
 				return $this->returnFail(data: [], message: 'Fetch team lists Unsuccessfull!');
@@ -238,6 +239,38 @@ class TeamsController extends __ApiBaseController {
 		else {
 			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
 			return $this->returnFail(data: [], message: 'Remove user from team Unsuccessfull!');
+		}
+	}
+
+	public function deleteTeam(Request $request): JsonResponse {
+		Log::info("Deleting team...");
+
+		$validator = $request->validate([
+			'team_id' => 'required',
+			'user_id' => 'required',
+		]);
+
+		$model = new DeleteTeamRequest();
+		$model->setTeamId($validator['team_id']);
+		$model->setActionByUserId($validator['user_id']);
+		$model->setTimeZone($this->authService->getUserTimeZone());
+		$model->setActionByUserId($this->authService->authUser()['id']);
+
+		$userClient = $this->clientService->DeleteTeamServiceClient();
+		list($response, $status) = $userClient->DeleteTeam($model)->wait();
+
+		if($status->code === \Grpc\STATUS_OK) {
+			Log::debug("Response: " . $response->serializeToJsonString() . PHP_EOL);
+			if($response->getResult()) {
+				return $this->returnSuccess(data: $response->serializeToJsonString(), message: "Team has been deleted successfully.");
+			}
+			else {
+				return $this->returnFail(data: [], message: "Delete team Unsuccessfull!");
+			}
+		} 
+		else {
+			Log::error("gRPC call failed with status: " . $status->details . PHP_EOL);
+			return $this->returnFail(data: [], message: 'Delete team Unsuccessfull!');
 		}
 	}
 

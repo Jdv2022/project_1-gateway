@@ -14,6 +14,7 @@ use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\ArchivesController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\LogsController;
+use App\Http\Controllers\DepartmentsController;
 use App\Http\Middleware\AuthUserMiddleware;
 
 /*
@@ -62,6 +63,7 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/user/team/suggested/members', [TeamsController::class, 'getSuggestedMembers']);
 	Route::POST('web/private/user/teams/edit', [TeamsController::class, 'editTeam']);
 	Route::POST('web/private/user/team/remove', [TeamsController::class, 'removeUserTeam']);
+	Route::POST('web/private/user/team/delete', [TeamsController::class, 'deleteTeam']);
 	
 	Route::POST('web/private/user/shift/create', [UserShiftController::class, 'createShift']);
 	Route::POST('web/private/user/shift/assign', [UserShiftController::class, 'assignShift']);
@@ -73,4 +75,8 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/get/overview', [OverviewController::class, 'getOverview']);
 
 	Route::POST('web/private/get/logs', [LogsController::class, 'getLogs']);
+	
+	Route::POST('web/private/user/departments', [DepartmentsController::class, 'getDepartments']);
+	Route::POST('web/private/user/create/department', [DepartmentsController::class, 'createDepartment']);
+	Route::POST('web/private/user/department/details/{id}', [DepartmentsController::class, 'getDepartmentDetail']);
 });
