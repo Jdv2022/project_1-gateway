@@ -75,8 +75,12 @@ Route::middleware([AuthUserMiddleware::class,])->group(function () {
 	Route::POST('web/private/get/overview', [OverviewController::class, 'getOverview']);
 
 	Route::POST('web/private/get/logs', [LogsController::class, 'getLogs']);
-	
+
 	Route::POST('web/private/user/departments', [DepartmentsController::class, 'getDepartments']);
 	Route::POST('web/private/user/create/department', [DepartmentsController::class, 'createDepartment']);
 	Route::POST('web/private/user/department/details/{id}', [DepartmentsController::class, 'getDepartmentDetail']);
+	Route::POST('web/private/user/department/edit', [DepartmentsController::class, 'editDepartment']);
+	Route::POST('web/private/user/department/delete', [DepartmentsController::class, 'deleteDepartment']);
+	Route::POST('web/private/suggested/department/members', [DepartmentsController::class, 'getDepartmentSuggestedMembers']);
+	Route::POST('web/private/department/lists', [DepartmentsController::class, 'getDepartmentMembers']);
 });
